@@ -1,25 +1,28 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://i.postimg.cc/Y0xf8R1F/dirdoc.png" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src='https://i.postimg.cc/Y0xf8R1F/dirdoc.png' border='0' alt='dirdoc'/></a></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## MODULO INTEGRADOR II
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Se nos plantea un problema: 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- En la Universidad Católica del Maule hay docentes que realizan diferentes tipos de capacitaciones para mejorar sus conocimientos y 
+capacidades, según la Fundación Dialnet “la formación se convierte en una de las principales herramientas que tienen las empresas, 
+organizaciones y administraciones para fortalecerse y desarrollar sus recursos humanos” [1]. Actualmente no se cuenta con una 
+plataforma web donde se puedan encontrar los datos de las capacitaciones ya realizadas por los docentes, lo que dificulta la 
+organización para cada persona, además de ser imposible poder obtener información estadística de cada capacitación con el fin de 
+poder mejorar cada una de ellas.
+Para la universidad es de vital importancia que sus docentes realicen la mayor cantidad de capacitaciones de docencia, ya que ayuda a 
+mejorar la relación de enseñanza maestro – alumno, cabe mencionar que no todos los docentes tienen esa base de docencia, esto se 
+debe a que no todos estudiaron una carrera dedicada a la enseñanza, algunos ejemplos son: ingenieros, arquitectos, médicos, abogados, 
+etc., según Higor Rodríguez Vite “La labor del docente es fundamental para que los estudiantes aprendan y trasciendan incluso los 
+obstáculos materiales y de rezago que deben afrontar, esto debido a la falta de habilidades para poder desarrollar materiales
+relacionados con las tecnologías, muchos docentes se angustian por tener que incorporar las TICS en el aula” [2]
+La información de las tareas o capacitaciones realizadas por los docentes de la universidad en la actualidad se almacenan y trabajan de 
+forma manual en un Excel, esto para la dirección de docencia produce un gran problema, ya que todas las solicitudes les llegan a ellos 
+al momento de que un docente necesite esta información. Normalmente cuando un docente necesita información de las capacitaciones 
+cursadas o datos de la misma realiza una solicitud a la dirección de docencia, donde muchas veces la respuesta de esta solicitud demora 
+ante la alta demanda de solicitudes o trabajo en general.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Learning Laravel
 
