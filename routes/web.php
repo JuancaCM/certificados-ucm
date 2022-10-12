@@ -34,5 +34,5 @@ Route::get('/perfil', function () {
 });
 
 Route::get('/contacto', function () {
-    return view('contacto');
+    return view('nav.contacto');
 });
