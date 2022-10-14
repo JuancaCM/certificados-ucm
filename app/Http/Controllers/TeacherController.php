@@ -37,7 +37,7 @@ class TeacherController extends Controller
 
             $user = new User();
             $user->rut = $rut;
-            $user->pass = '1234';
+            $user->pass = bcrypt('1234');
             $user->name = $name;
             $user->mail = $mail;
             $user->phone = $phone;
