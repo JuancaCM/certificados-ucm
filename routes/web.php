@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +22,8 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/registro', function () {
-    return view('users.registroUsers');
-});
+Route::get('/registro', [TeacherController::class, 'formulario']);
+Route::post('/registro', [TeacherController::class, 'guardar']);
 
 Route::get('/capacitaciones', function () {
     return view('capacitaciones');
