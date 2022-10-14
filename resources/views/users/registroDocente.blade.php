@@ -4,11 +4,11 @@
     <div class="card mt-3 col-md-4 offset-md-4">
         <div class="card-body">
 
-            @if (null!=session('insert') && session('insert'))
+            @if (null != session('insert') && session('insert'))
                 <div class="alert alert-success">
                     Docente insertado
                 </div>
-            @elseif (null!=session('insert') && !session('insert'))
+            @elseif (null != session('insert') && !session('insert'))
                 <div class="alert alert-danger">
                     Ha ocurrido un error al insertar
                 </div>
@@ -16,8 +16,10 @@
 
             <form method="POST">
                 @csrf
-                <label for="basic-url" class="form-label">Registro de Usuarios</label>
-
+                <div class="text-center">
+                    <label for="basic-url" class="form-label">Registro de Usuarios</label>
+                    <hr>
+                </div>
                 <div class="form-label mb-3">
                     <span class="text" </span>
                         <input name="rut" type="text" class="form-control" placeholder="Rut sin puntos y con guión"
@@ -62,19 +64,19 @@
                     @endforeach
                 </select>
 
-                <div class="col-auto mb-3 ">
+                <div class="col-auto mb-3 text-center">
                     <button type="submit" class="btn btn-light mb-3">Registrar</button>
                 </div>
 
             </form>
 
-            <div class="card-footer text-muted">
+            {{-- <div class="card-footer text-muted">
                 <h5 class="form-label">Subida Masiva</h5>
                 <div class="input-group mb-3">
                     <input type="file" class="form-control" id="inputGroupFile02">
                     <label class="input-group-text" for="inputGroupFile02">Subir</label>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>
