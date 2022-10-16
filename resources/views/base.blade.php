@@ -9,7 +9,7 @@
 
     <title>Registro Docente</title>
 
-    @vite(['resources/css/app.css', 'resources/css/bootstrap.min.css', 'resources/css/sb-admin-2.min.css', 'resources/js/app.js', 'resources/js/bootstrap.bundle.min.js', 'resources/js/jquery.min.js', 'resources/js/sb-admin-2.min.js'])
+    @vite(['resources/css/app.css', 'resources/css/bootstrap.min.css', 'resources/css/sb-admin-2.min.css', 'resources/js/jquery.min.js', 'resources/js/app.js', 'resources/js/bootstrap.bundle.min.js', 'resources/js/sb-admin-2.min.js'])
 
 </head>
 
@@ -42,6 +42,24 @@
                 <a class="nav-link" href="/registro">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Registro</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="/login">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Login</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="/perfil">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Perfil</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="/contacto">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Contacto</span></a>
             </li>
 
             <!-- Divider -->
@@ -147,7 +165,7 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <img src="img/logo.png" alt="">
+                    <a title="Dirdoc" href="/"><img src="img/logo.png" alt="Dirdoc">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">

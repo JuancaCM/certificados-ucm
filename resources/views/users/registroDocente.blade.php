@@ -1,23 +1,23 @@
 @extends('base')
 
 @section('content')
-    <div class="card mt-3 col-md-4 offset-md-4">
-        <div class="card-body">
+    <div class="card mt-3 col-md-4 offset-md-4 border-left-primary shadow">
+        <div class="card-body ">
 
             @if (null != session('insert') && session('insert'))
-                <div class="alert alert-success">
-                    Docente insertado
+                <div class="alert alert-success text-center">
+                    Docente registrado en la base de datos
                 </div>
             @elseif (null != session('insert') && !session('insert'))
-                <div class="alert alert-danger">
-                    Ha ocurrido un error al insertar
+                <div class="alert alert-danger text-center">
+                    Ha ocurrido un error al registrar al docente
                 </div>
             @endif
 
             <form method="POST">
                 @csrf
                 <div class="text-center">
-                    <label for="basic-url" class="form-label">Registro de Usuarios</label>
+                    <label for="Registro" class="form-label text-dark">Registro de docentes</label>
                     <hr>
                 </div>
                 <div class="form-label mb-3">
@@ -36,7 +36,7 @@
                     <input name="mail" type="email" class="form-control" placeholder="Correo" aria-label="Correo">
                 </div>
 
-                <select name="career" class="form-select mb-3" aria-label="Carrera">
+                <select name="career" class="form-control mb-3" aria-label="Carrera">
                     <option selected>Carrera</option>
                     @foreach ($careers as $career)
                         <option value="{{ $career->id }}">{{ $career->name }}</option>
@@ -50,22 +50,22 @@
                             aria-label="Telefono" aria-describedby="basic-addon1">
                 </div>
 
-                <select name="campus" class="form-select mb-3" aria-label="Sede">
+                <select name="campus" class="form-control mb-3" aria-label="Sede">
                     <option selected>Sede</option>
                     @foreach ($campuses as $campus)
                         <option value="{{ $campus->id }}">{{ $campus->name }}</option>
                     @endforeach
                 </select>
 
-                <select name="contract" class="form-select mb-3" aria-label="Contrato">
+                <select name="contract" class="form-control mb-3" aria-label="Contrato">
                     <option selected>Tipo de contrato</option>
                     @foreach ($contracts as $contract)
                         <option value="{{ $contract->id }}">{{ $contract->name }}</option>
                     @endforeach
                 </select>
 
-                <div class="col-auto mb-3 text-center">
-                    <button type="submit" class="btn btn-light mb-3">Registrar</button>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                 </div>
 
             </form>

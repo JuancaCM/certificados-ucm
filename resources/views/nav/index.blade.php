@@ -1,5 +1,4 @@
-@extends('base');
+@extends('base')
 
 @section('content')
- "Hola mundo"
 @endsection
