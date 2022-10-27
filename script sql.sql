@@ -6,9 +6,9 @@ INSERT INTO faculties (name) VALUES ('Ingenieria');
 INSERT INTO faculties (name) VALUES ('Salud');
 INSERT INTO faculties (name) VALUES ('Educacion');
 
-INSERT INTO careers (name) VALUES ('Informatica');
-INSERT INTO careers (name) VALUES ('Kinesiologia');
-INSERT INTO careers (name) VALUES ('Pedagogia');
+INSERT INTO careers (name, faculty_id) VALUES ('Informatica', 1);
+INSERT INTO careers (name, faculty_id) VALUES ('Kinesiologia', 2);
+INSERT INTO careers (name, faculty_id) VALUES ('Pedagogia', 3);
 
 INSERT INTO contracts (name) VALUES ('Planta Ordinario');
 INSERT INTO contracts (name) VALUES ('Planta Asociado');
