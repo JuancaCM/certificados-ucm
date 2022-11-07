@@ -68,6 +68,12 @@
                     <span>Registro certificaciones</span></a>
             </li>
 
+            <li class="nav-item active">
+                <a class="nav-link" href="/registroDimensiones">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Registro dimensiones</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 

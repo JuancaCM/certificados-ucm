@@ -29,6 +29,10 @@ Route::get('/registroCertificaciones', function () {
     return view('certis.registroCertificaciones');
 });
 
+Route::get('/registroDimensiones', function () {
+    return view('certis.registroDimensiones');
+});
+
 Route::get('/perfil', function () {
     return view('users.perfil');
 });
