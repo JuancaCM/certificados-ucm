@@ -2,8 +2,8 @@
 
 @section("content")
 
-<div class="card mt-3 col-md-4 offset-md-4 border-left-primary shadow">
-    <div class="card-body" >
+<div class="row justify-content-center">
+    <div class="col-sm-6 ">
 
 
 
