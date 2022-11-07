@@ -25,8 +25,8 @@ Route::get('/login', function () {
 Route::get('/registro', [TeacherController::class, 'formulario']);
 Route::post('/registro', [TeacherController::class, 'guardar']);
 
-Route::get('/capacitaciones', function () {
-    return view('capacitaciones');
+Route::get('/registroCertificaciones', function () {
+    return view('certis.registroCertificaciones');
 });
 
 Route::get('/perfil', function () {

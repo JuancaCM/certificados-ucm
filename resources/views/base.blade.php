@@ -62,6 +62,12 @@
                     <span>Contacto</span></a>
             </li>
 
+            <li class="nav-item active">
+                <a class="nav-link" href="/registroCertificaciones">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Registro certificaciones</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 

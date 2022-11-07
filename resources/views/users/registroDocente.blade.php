@@ -37,7 +37,7 @@
                 </div>
 
                 <select name="career" class="form-control mb-3" aria-label="Carrera">
-                    <option selected>Carrera</option>
+                    <option selected disabled>Carrera</option>
                     @foreach ($careers as $career)
                         <option value="{{ $career->id }}">{{ $career->name }}</option>
                     @endforeach
@@ -51,14 +51,14 @@
                 </div>
 
                 <select name="campus" class="form-control mb-3" aria-label="Sede">
-                    <option selected>Sede</option>
+                    <option selected disabled>Sede</option>
                     @foreach ($campuses as $campus)
                         <option value="{{ $campus->id }}">{{ $campus->name }}</option>
                     @endforeach
                 </select>
 
                 <select name="contract" class="form-control mb-3" aria-label="Contrato">
-                    <option selected>Tipo de contrato</option>
+                    <option selected disabled>Tipo de contrato</option>
                     @foreach ($contracts as $contract)
                         <option value="{{ $contract->id }}">{{ $contract->name }}</option>
                     @endforeach
