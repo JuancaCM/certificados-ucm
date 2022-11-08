@@ -3,7 +3,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
-            <div class="card">
+            <div class="card border-secondary ">
 
                 @if (null != session('insert') && session('insert'))
                     <div class="alert alert-success text-center">
@@ -17,8 +17,8 @@
 
                 <form method="POST">
                     @csrf
-                    <h5 class="card-header text-center">Registro de docentes</h5>
-                    <div class="card-body">
+                    <h5 class="card-header border-secondary bg-transparent text-center text-dark font-weight-bold">Registro de docentes</h5>
+                    <div class="card-body ">
                         <div class="row">
                             <div class="col s12 m6">
                                 <div class="form-label mb-3">
@@ -77,7 +77,7 @@
                             @endforeach
                         </select>
 
-                        <div class="mb-3">
+                        <div class="text-center">
                             <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                         </div>
 

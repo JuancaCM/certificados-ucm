@@ -13,8 +13,9 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
-            <div class="card">
-                <h5 class="card-header text-center">Registro de certificaciones</h5>
+            <div class="card border-secondary">
+                <h5 class="card-header border-secondary bg-transparent text-center text-dark font-weight-bold">Registro de
+                    certificaciones</h5>
                 <div class="card-body">
                     <div class="row">
                         <div class="col s12 m6">
@@ -119,12 +120,11 @@
                         <option selected disabled>Relator</option>
                     </select>
                 </div>
-                <div class="mt-3 mb-3 text-center">
+                <div class="mb-3 text-center">
                     <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 
