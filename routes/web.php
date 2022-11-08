@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,13 +26,19 @@ Route::get('/login', function () {
 Route::get('/registro', [TeacherController::class, 'formulario']);
 Route::post('/registro', [TeacherController::class, 'guardar']);
 
-Route::get('/registroCertificaciones', function () {
-    return view('certis.registroCertificaciones');
-});
+
+Route::get('/registroCertificaciones', [CourseController::class, 'formulario']);
+Route::post('/registroCertificaciones', [CourseController::class, 'guardar']);
+
+//Route::get('/registroCertificaciones', function () {
+//    return view('certis.registroCertificaciones');
+//});
 
 Route::get('/registroDimensiones', function () {
     return view('certis.registroDimensiones');
 });
+
+
 
 Route::get('/perfil', function () {
     return view('users.perfil');

@@ -17,6 +17,9 @@
                         <div class="col s12 m6">
                             <select name="dimension" class="form-control mb-3" aria-label="dimension">
                                 <option selected disabled>Dimension</option>
+                                @foreach ($dimensions as $dimension)
+                                <option value="{{ $dimension->id }}">{{ $dimension->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

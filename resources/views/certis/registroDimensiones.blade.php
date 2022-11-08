@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="mb-3 btn btn-primary">Registrar</button>
+                    <button type="submit" class="mb-3 btn btn-primary">Registrar</button> 
                 </div>
             </div>
         </div>
