@@ -1,15 +1,5 @@
 @extends('base')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-</head>
-
 @section('content')
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
@@ -84,30 +74,6 @@
                     </div>
                     <div class="row">
                         <div class="col s12 m6">
-                            <div class="form-label">
-                                <input name="fechaInicio" input id="datepicker" width="276"
-                                    placeholder="Fecha de inicio" />
-                                <script>
-                                    $('#datepicker').datepicker({
-                                        uiLibrary: 'bootstrap4'
-                                    });
-                                </script>
-                            </div>
-                        </div>
-                        <div class="col s12 m6">
-                            <div class="form-label mb-3">
-                                <input name="fechaTermino" input id="datepicker" width="276"
-                                    placeholder="Fecha de termino" />
-                                <script>
-                                    $('#datepicker').datepicker({
-                                        uiLibrary: 'bootstrap4'
-                                    });
-                                </script>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 m6">
                             <input type="text" class="form-control mb-3" placeholder="Link de inscripcion"
                                 aria-label="inscriptionLink" aria-describedby="basic-addon1">
                         </div>
@@ -119,6 +85,30 @@
                     <select name="modality" class="form-control mb-3" aria-label="modality">
                         <option selected disabled>Relator</option>
                     </select>
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <div class="form-label">
+                                <input name="fechaInicio" input id="datepicker" class="form-control"
+                                    placeholder="Fecha de inicio" />
+                                <script>
+                                    $('#datepicker').datepicker({
+                                        uiLibrary: 'bootstrap4'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col s12 m6">
+                            <div class="form-label mb-3">
+                                <input name="fechaTermino" input id="datepicker2" class="form-control"
+                                    placeholder="Fecha de termino" />
+                                <script>
+                                    $('#datepicker2').datepicker({
+                                        uiLibrary: 'bootstrap4'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="mb-3 text-center">
                     <button type="submit" class="btn btn-primary mb-3">Registrar</button>
