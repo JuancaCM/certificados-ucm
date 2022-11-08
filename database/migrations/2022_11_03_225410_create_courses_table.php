@@ -3,7 +3,6 @@
 use App\Models\Campus;
 use App\Models\CourseName;
 use App\Models\CourseTeacher;
-use App\Models\Dimension;
 use App\Models\Modality;
 use App\Models\State;
 use App\Models\TargetAudience;
@@ -23,7 +22,6 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Dimension::class)->constrained();
             $table->text('inscription');
             $table->text('program');
             $table->foreignIdFor(Type::class)->constrained();
@@ -33,7 +31,8 @@ return new class extends Migration
             $table->foreignIdFor(CourseName::class)->constrained();
             $table->foreignIdFor(CourseTeacher::class)->constrained();
             $table->foreignIdFor(TargetAudience::class)->constrained();
-            $table->integer('sesions');
+            $table->integer('duration');
+            $table->integer('sessions');
             $table->integer('synchronous_hours');
             $table->integer('autonomous_hours');
             $table->text('schedule');

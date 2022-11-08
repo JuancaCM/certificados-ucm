@@ -17,7 +17,8 @@
 
                 <form method="POST">
                     @csrf
-                    <h5 class="card-header border-secondary bg-transparent text-center text-dark font-weight-bold">Registro de docentes</h5>
+                    <h5 class="card-header border-secondary bg-transparent text-center text-dark font-weight-bold">Registro
+                        de docentes</h5>
                     <div class="card-body ">
                         <div class="row">
                             <div class="col s12 m6">
@@ -50,8 +51,6 @@
                                 </select>
                             </div>
                         </div>
-
-
                         <div class="row">
                             <div class="col s12 m6">
                                 <div class="form-label mb-3">
@@ -76,11 +75,10 @@
                                 <option value="{{ $contract->id }}">{{ $contract->name }}</option>
                             @endforeach
                         </select>
-
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                         </div>
-
+                    </div>
                 </form>
 
                 {{-- <div class="card-footer text-muted">

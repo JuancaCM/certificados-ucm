@@ -25,9 +25,9 @@ INSERT INTO states (name) VALUES ('En curso');
 INSERT INTO states (name) VALUES ('Realizado');
 INSERT INTO states (name) VALUES ('Pendiente');
 
-INSERT INTO course_names (name) VALUES ('Normas APA/Mendeley');
-INSERT INTO course_names (name) VALUES ('SAP Docente');
-INSERT INTO course_names (name) VALUES ('Comunicación efectiva y liderazgo educativo');
+INSERT INTO course_names (name, dimension_id) VALUES ('Normas APA/Mendeley', 1);
+INSERT INTO course_names (name, dimension_id) VALUES ('SAP Docente', 2);
+INSERT INTO course_names (name, dimension_id) VALUES ('Comunicación efectiva y liderazgo educativo', 3);
 
 INSERT INTO course_teachers (name, rut, mail, phone) VALUES ('Juanita Perez', '169517260', 'juanita@perez.cl', 967587243);
 INSERT INTO course_teachers (name, rut, mail, phone) VALUES ('Jon Doe', '154679870', 'jon@doe.cl', 067815263);
