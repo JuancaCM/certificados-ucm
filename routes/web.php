@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DimensionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,8 @@ Route::post('/registroCertificaciones', [CourseController::class, 'guardar']);
 Route::get('/registroDimensiones', function () {
     return view('certis.registroDimensiones');
 });
+Route::post('/registroDimensiones', [DimensionController::class, 'guardar']);
+
 
 
 
