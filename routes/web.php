@@ -39,6 +39,14 @@ Route::get('/listaUsuarios', function () {
     return view('users.listaUsuarios');
 });
 
+Route::get('/listaDimensiones', function () {
+    return view('certis.listaDimensiones');
+});
+
+Route::get('/listaCertificaciones', function () {
+    return view('certis.listaCertificaciones');
+});
+
 Route::get('/perfil', function () {
     return view('users.perfil');
 });
