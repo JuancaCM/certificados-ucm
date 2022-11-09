@@ -3,16 +3,31 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
-            <div class="card border-info mb-3">
-                @if (null != session('insert') && session('insert'))
-                    <div class="alert alert-success text-center">
-                        Taller registrado en la base de datos
-                    </div>
-                @elseif (null != session('insert') && !session('insert'))
-                    <div class="alert alert-danger text-center">
-                        Ha ocurrido un error al registrar el taller
-                    </div>
-                @endif
+            <div class="card border-info">
+                <div class="card-header mb-3">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/registro">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/registroDimensiones">Dimensiones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active">Certificaciones</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s12 m6">
+                    @if (null != session('insert') && session('insert'))
+                        <div class="alert alert-success text-center">
+                            Taller registrado en la base de datos
+                        </div>
+                    @elseif (null != session('insert') && !session('insert'))
+                        <div class="alert alert-danger text-center">
+                            Ha ocurrido un error al registrar el taller
+                        </div>
+                    @endif
+                </div>
                 <form method="POST">
                     @csrf
                     <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Registro

@@ -52,10 +52,10 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/registro">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Usuarios</span></a>
+                    <span>Registro</span></a>
             </li>
 
-            <li class="nav-item active">
+            {{--  <li class="nav-item active">
                 <a class="nav-link" href="/registroCertificaciones">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Certificaciones</span></a>
@@ -65,7 +65,7 @@
                 <a class="nav-link" href="/registroDimensiones">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dimensiones</span></a>
-            </li>
+            </li>  --}}
 
 
 

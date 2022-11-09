@@ -4,16 +4,30 @@
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
             <div class="card border-info">
-
-                @if (null != session('insert') && session('insert'))
-                    <div class="alert alert-success text-center">
-                        Docente registrado en la base de datos
-                    </div>
-                @elseif (null != session('insert') && !session('insert'))
-                    <div class="alert alert-danger text-center">
-                        Ha ocurrido un error al registrar al docente
-                    </div>
-                @endif
+                <div class="card-header mb-3">
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/registroDimensiones">Dimensiones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/registroCertificaciones">Certificaciones</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s12 m6">
+                    @if (null != session('insert') && session('insert'))
+                        <div class="alert alert-success text-center">
+                            Docente registrado correctamente en la base de datos
+                        </div>
+                    @elseif (null != session('insert') && !session('insert'))
+                        <div class="alert alert-danger text-center">
+                            Ha ocurrido un error al registrar al docente
+                        </div>
+                    @endif
+                </div>
 
                 <form method="POST">
                     @csrf
