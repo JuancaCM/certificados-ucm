@@ -34,7 +34,7 @@
             </a> --}}
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline mt-3">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
             </div>
 
             <!-- Divider -->

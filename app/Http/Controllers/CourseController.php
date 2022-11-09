@@ -11,8 +11,10 @@ use App\Models\Modality;
 use App\Models\State;
 use App\Models\TargetAudience;
 use App\Models\Type;
-
+use Carbon\Carbon;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
@@ -34,7 +36,7 @@ class CourseController extends Controller
     public function guardar(Request $req)
     {
         DB::beginTransaction();
-        try {
+        // try {
             $course_name = $req->input('name');
             $target_audience = $req->input('target_audience');
             $campus = $req->input('campus');
@@ -51,6 +53,8 @@ class CourseController extends Controller
             $fecha_inicio = $req->input('fecha_inicio');
             $fecha_termino = $req->input('fecha_termino');
             $schedule = $req->input('schedule');
+            $fecha_inicio = Carbon::createFromFormat('d/m/Y', $fecha_inicio)->toDateString();
+            $fecha_termino = Carbon::createFromFormat('d/m/Y', $fecha_termino)->toDateString();
 
             $course = new Course();
             $course->inscription = $inscription_link;
@@ -75,9 +79,10 @@ class CourseController extends Controller
             DB::commit();
 
             return back()->with('insert', true);
-        } catch (\Throwable $th) {
-            DB::rollBack();
-            return back()->with('insert', false);
-        }
+        // } catch (\Throwable $th) {
+        //     dd($th->getTraceAsString());
+        //     DB::rollBack();
+        //     return back()->with('insert', false);
+        // }
    }
 }
