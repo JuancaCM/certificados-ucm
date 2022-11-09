@@ -27,7 +27,6 @@ Route::get('/login', function () {
 Route::get('/registro', [TeacherController::class, 'formulario']);
 Route::post('/registro', [TeacherController::class, 'guardar']);
 
-
 Route::get('/registroCertificaciones', [CourseController::class, 'formulario']);
 Route::post('/registroCertificaciones', [CourseController::class, 'guardar']);
 
@@ -36,8 +35,9 @@ Route::get('/registroDimensiones', function () {
 });
 Route::post('/registroDimensiones', [DimensionController::class, 'guardar']);
 
-
-
+Route::get('/listaUsuarios', function () {
+    return view('users.listaUsuarios');
+});
 
 Route::get('/perfil', function () {
     return view('users.perfil');
