@@ -4,6 +4,17 @@
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
             <div class="card border-info">
+                <div class="col s12 m6 mt-3">
+                    @if (null != session('insert') && session('insert'))
+                        <div class="alert alert-success text-center">
+                            Dimension registrada correctamente en la base de datos
+                        </div>
+                    @elseif (null != session('insert') && !session('insert'))
+                        <div class="alert alert-danger text-center">
+                            Ha ocurrido un error al registrar el taller
+                        </div>
+                    @endif
+                </div>
                 <form method="POST">
                     @csrf
                     <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Registro

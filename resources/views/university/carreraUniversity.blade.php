@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
             <div class="card border-info">
-                <div class="col s12 m6">
+                <div class="col s12 m6 mt-3">
                     @if (null != session('insert') && session('insert'))
                         <div class="alert alert-success text-center">
                             Carrera registrada correctamente en la base de datos
@@ -38,13 +38,13 @@
                                             style="height: 100px"></textarea>
                                     </div>
                             </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary mb-3">Registrar</button>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary mb-3">Registrar</button>
-                    </div>
-                </div>
-            </form>
-                    {{-- <div class="card-footer text-muted">
+                </form>
+                {{-- <div class="card-footer text-muted">
                 <h5 class="form-label">Subida Masiva</h5>
                 <div class="input-group mb-3">
                     <input type="file" class="form-control" id="inputGroupFile02">
@@ -52,7 +52,7 @@
                 </div>
             </div> --}}
 
-             </div>
+            </div>
         </div>
     </div>
 @endsection

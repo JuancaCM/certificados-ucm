@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
             <div class="card border-info">
-                <div class="col s12 m6">
+                <div class="col s12 m6 mt-3">
                     @if (null != session('insert') && session('insert'))
                         <div class="alert alert-success text-center">
                             Estado registrado correctamente en la base de datos

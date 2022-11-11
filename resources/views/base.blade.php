@@ -118,13 +118,6 @@
                     <span>Dimensiones</span></a>
             </li>  --}}
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/listaUsuarios">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Vistas</span></a>
-            </li>
-
-
 
             <!-- Divider -->
             <hr class="sidebar-divider">

@@ -3,20 +3,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="card">
-            <div class="card-header mb-3">
-                <ul class="nav nav-tabs card-header-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/listaUsuarios">Usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/listaDimensiones">Dimensiones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active">Certificaciones</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="card mt-3 mb-3">
+            <div class="card mt-3 mb-3 ml-3 mr-3">
                 <div class="card-body">
                     <ol class="list-group list-group-numbered">
                         <div class="table-responsive">
