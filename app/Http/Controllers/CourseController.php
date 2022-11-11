@@ -33,6 +33,20 @@ class CourseController extends Controller
         return view('certis.registroCertificaciones', compact('dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
     }
 
+    public function formulario2()
+    {
+        $courses = Course::with('state')
+            ->with('campus')
+            ->with('course_name')
+            ->with('course_name.dimension')
+            ->with('course_teacher')
+            ->with('target_audience')
+            ->with('type')
+            ->with('modality')->get();
+
+        return view('certis.listaCertificaciones', compact('courses'));
+    }
+
     public function guardar(Request $req)
     {
         DB::beginTransaction();

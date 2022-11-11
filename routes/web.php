@@ -35,17 +35,11 @@ Route::get('/registroDimensiones', function () {
 });
 Route::post('/registroDimensiones', [DimensionController::class, 'guardar']);
 
-Route::get('/listaUsuarios', function () {
-    return view('users.listaUsuarios');
-});
+Route::get('/listaUsuarios', [TeacherController::class, 'formulario2']);
 
-Route::get('/listaDimensiones', function () {
-    return view('certis.listaDimensiones');
-});
+Route::get('/listaDimensiones', [DimensionController::class, 'formulario']);
 
-Route::get('/listaCertificaciones', function () {
-    return view('certis.listaCertificaciones');
-});
+Route::get('/listaCertificaciones', [CourseController::class, 'formulario2']);
 
 Route::get('/perfil', function () {
     return view('users.perfil');

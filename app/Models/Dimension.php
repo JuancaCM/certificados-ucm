@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Dimension extends Model
 {
     use HasFactory;
+
+    public function course_names()
+    {
+        return $this->hasMany(CourseName::class);
+    }
 }

@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
         integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     @vite(['resources/css/app.scss', 'resources/css/sb-admin-2.min.css', 'resources/js/app.js', 'resources/js/sb-admin-2.min.js'])
 
 </head>
@@ -33,8 +34,9 @@
                 </div>
             </a> --}}
             <!-- Sidebar Toggler (Sidebar) -->
+
             <div class="text-center d-none d-md-inline mt-3">
-                <button class="rounded-circle border-0" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+                <button class="rounded-circle border-0" id="sidebarToggle"></i></button>
             </div>
 
             <!-- Divider -->

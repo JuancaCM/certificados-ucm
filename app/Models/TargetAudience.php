@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class TargetAudience extends Model
 {
     use HasFactory;
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
 }

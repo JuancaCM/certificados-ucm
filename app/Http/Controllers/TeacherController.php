@@ -23,6 +23,17 @@ class TeacherController extends Controller
         return view('users.registroDocente', compact('careers', 'campuses', 'contracts', 'roles'));
     }
 
+    public function formulario2()
+    {
+        $teachers = Teacher::with('career')
+            ->with('career.faculty')
+            ->with('contract')
+            ->with('user')
+            ->with('campus')->get();
+
+        return view('users.listaUsuarios', compact('teachers'));
+    }
+
     public function guardar(Request $req)
     {
         DB::beginTransaction();
@@ -57,7 +68,6 @@ class TeacherController extends Controller
             DB::commit();
 
             return back()->with('insert', true);
-
         } catch (\Throwable $th) {
             DB::rollBack();
             return back()->with('insert', false);

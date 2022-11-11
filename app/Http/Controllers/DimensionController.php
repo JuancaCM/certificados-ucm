@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class DimensionController extends Controller
 {
+    public function formulario()
+    {
+        $dimensions = Dimension::all();
+
+        return view('certis.listaDimensiones', compact('dimensions'));
+    }
+
     public function guardar(Request $req)
     {
         DB::beginTransaction();
