@@ -1,4 +1,4 @@
-@extends('base')
+{{-- @extends('base')
 
 @section('content')
     <div class="row justify-content-center">
@@ -77,4 +77,4 @@
             </div>
         </div>
     </div>
-@endsection
+@endsection --}}

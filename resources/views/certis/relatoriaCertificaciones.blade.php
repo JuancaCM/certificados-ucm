@@ -58,10 +58,33 @@
                                         aria-label="Nombre" aria-describedby="basic-addon1">
                             </div>
                         </div>
-                        <div class="form-floating mb-3">
-                            <textarea name="description" class="form-control" placeholder="Observación" id="floatingTextarea2"
-                                style="height: 100px"></textarea>
-                        </div>   
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="form-label mb-3">
+                                 <span class="text" </span>
+                                        <input name="rut" type="text" class="form-control"
+                                            placeholder="Rut sin puntos y con guión" aria-label="Rut"
+                                            aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="input-group mb-3">
+                                    <input name="mail" type="email" class="form-control" placeholder="Correo"
+                                        aria-label="Correo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="form-label mb-3">
+                                    <span class="text" </span>
+                                        <input name="phone" type="text" class="form-control" placeholder="Telefono"
+                                            aria-label="Telefono" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                         </div>

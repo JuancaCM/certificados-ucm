@@ -13,6 +13,15 @@
                             <a class="nav-link" href="/analistaUsers">Analista</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="carreraUniversity">Carrera</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/facultadUniversity">Facultad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contratoUniversity">contrato</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/administradorUsers">Administrador</a>
                         </li>
                     </ul>
@@ -56,7 +65,7 @@
                                         aria-label="Correo">
                                 </div>
                             </div>
-                            {{-- <div class="col s12 m6">
+                            <div class="col s12 m6">
                                 <select name="career" class="form-control mb-3" aria-label="Carrera">
                                     <option selected disabled>Carrera</option>
                                     @foreach ($careers as $career)
@@ -79,15 +88,15 @@
                                     @foreach ($campuses as $campus)
                                         <option value="{{ $campus->id }}">{{ $campus->name }}</option>
                                     @endforeach
-                                </select> --}}
-                            {{-- </div>
+                                </select>
+                            </div>
                         </div>
                         <select name="contract" class="form-control mb-3" aria-label="Contrato">
                             <option selected disabled>Tipo de contrato</option>
                             @foreach ($contracts as $contract)
                                 <option value="{{ $contract->id }}">{{ $contract->name }}</option>
                             @endforeach
-                        </select> --}}
+                        </select>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                         </div>
