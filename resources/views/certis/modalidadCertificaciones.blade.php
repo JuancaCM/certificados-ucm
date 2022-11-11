@@ -10,7 +10,7 @@
                             <a class="nav-link" href="/registroCertificaciones">Certificaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active">Dimensiones</a>
+                            <a class="nav-link" href="/registroDimensiones">Dimensiones</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/estadoCertificaciones">Estado</a>
@@ -28,29 +28,43 @@
                             <a class="nav-link" href="/tipoCertificaciones">Tipo Certificación</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/modalidadCertificaciones">Modalidad</a>
-                        </li>
+                            <a class="nav-link active ">Modalidad</a>
+                        </li> 
                         <li class="nav-item">
                             <a class="nav-link" href="/inscritosCertificaciones">Inscritos</a>
-                        </li>    
+                        </li> 
                     </ul>
+                </div>
+                <div class="col s12 m6">
+                    @if (null != session('insert') && session('insert'))
+                        <div class="alert alert-success text-center">
+                            Modalidad registrada correctamente en la base de datos
+                        </div>
+                    @elseif (null != session('insert') && !session('insert'))
+                        <div class="alert alert-danger text-center">
+                            Ha ocurrido un error al registrar Modalidad
+                        </div>
+                    @endif
                 </div>
                 <form method="POST">
                     @csrf
                     <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Registro
-                        de dimensiones</h5>
-                    <div class="card-body">
-                        <div class="form-label mb-3">
-                            <input name="dimension" type="text" class="form-control" placeholder="Nombre dimensión"
-                                aria-label="course_names" aria-describedby="basic-addon1">
+                        de Modalidad</h5>
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <span class="text" </span>
+                                    <input name="name" type="text" class="form-control" placeholder="Nombre Modalidad"
+                                        aria-label="Nombre" aria-describedby="basic-addon1">
+                            </div>
                         </div>
                         <div class="form-floating mb-3">
-                            <textarea name="description" class="form-control" placeholder="Descripción" id="floatingTextarea2"
+                            <textarea name="description" class="form-control" placeholder="Observación" id="floatingTextarea2"
                                 style="height: 100px"></textarea>
+                        </div>   
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                         </div>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="mb-3 btn btn-primary">Registrar</button>
                     </div>
                 </form>
             </div>

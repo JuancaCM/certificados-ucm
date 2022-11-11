@@ -50,7 +50,7 @@
             </li> --}}
 
             <li class="nav-item active">
-                <a class="nav-link" href="/registro">
+                <a class="nav-link" href="/registroCertificaciones">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Registro</span></a>
             </li>
@@ -71,6 +71,12 @@
                 <a class="nav-link" href="/listaUsuarios">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Vistas</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="/registroDocente">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Registro Usuarios</span></a>
             </li>
 
 

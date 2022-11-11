@@ -30,6 +30,10 @@ Route::post('/registro', [TeacherController::class, 'guardar']);
 Route::get('/registroCertificaciones', [CourseController::class, 'formulario']);
 Route::post('/registroCertificaciones', [CourseController::class, 'guardar']);
 
+Route::get('/registroDocente', function () {
+    return view('users.registroDocente');
+});
+
 Route::get('/registroDimensiones', function () {
     return view('certis.registroDimensiones');
 });
@@ -47,6 +51,44 @@ Route::get('/listaCertificaciones', function () {
     return view('certis.listaCertificaciones');
 });
 
+Route::get('/analistaUsers', function () {
+    return view('users.analistaUsers');
+});
+
+Route::get('/administradorUsers', function () {
+    return view('users.administradorUsers');
+});
+
+Route::get('/estadoCertificaciones', function () {
+    return view('certis.estadoCertificaciones');
+});
+
+
+
+Route::get('/sedeCertificaciones', function () {
+    return view('certis.sedeCertificaciones');
+});
+
+Route::get('/relatoriaCertificaciones', function () {
+    return view('certis.relatoriaCertificaciones');
+});
+
+Route::get('/publico_objetivoCertificaciones', function () {
+    return view('certis.publico_objetivoCertificaciones');
+});
+
+Route::get('/tipoCertificaciones', function () {
+    return view('certis.tipoCertificaciones');
+});
+
+Route::get('/modalidadCertificaciones', function () {
+    return view('certis.modalidadCertificaciones');
+});
+
+Route::get('/inscritosCertificaciones', function () {
+    return view('certis.inscritosCertificaciones');
+});
+
 Route::get('/perfil', function () {
     return view('users.perfil');
 });
@@ -54,3 +96,4 @@ Route::get('/perfil', function () {
 Route::get('/contacto', function () {
     return view('nav.contacto');
 });
+
