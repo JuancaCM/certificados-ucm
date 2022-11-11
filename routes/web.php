@@ -63,6 +63,7 @@ Route::post('/modalidadCertificaciones', [ModalityController::class, 'guardar'])
 
 Route::post('/publico_objetivoCertificaciones', [TargetAudienceController::class, 'guardar']);
 
+Route::get('/carreraUniversity', [CareerController::class, 'formulario']);
 Route::post('/carreraUniversity', [CareerController::class, 'guardar']);
 
 Route::post('/facultadUniversity', [FacultyController::class, 'guardar']);
@@ -107,9 +108,7 @@ Route::get('/modalidadCertificaciones', function () {
     return view('certis.modalidadCertificaciones');
 });
 
-Route::get('/carreraUniversity', function () {
-    return view('university.carreraUniversity');
-});
+
 
 Route::get('/facultadUniversity', function () {
     return view('university.facultadUniversity');

@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Career;
+use App\Models\Faculty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CareerController extends Controller
 {
+
+    public function formulario()
+    {
+        $faculties = Faculty::all();
+
+        return view('university.carreraUniversity', compact('faculties'));
+    }
+
     public function guardar(Request $req)
     {
         DB::beginTransaction();

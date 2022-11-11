@@ -30,9 +30,13 @@
                         </div>
                         <div class="row">
                             <div class="col s12 m6">
+                                <select name="career" class="form-control mb-3" aria-label="Carrera">
+                                    <option selected disabled>Facultad</option>
+                                    @foreach ($faculties as $faculty)
+                                        <option value="{{ $faculty->id }}">{{ $faculty->name }}</option>
+                                    @endforeach
+                                </select>
                                 <span class="text" </span>
-                                    <input name="facultad" type="text" class="form-control" placeholder="Id_facultad"
-                                        aria-label="Nombre" aria-describedby="basic-addon1">
                                     <div class="form-floating mt-3 mb-3">
                                         <textarea name="description" class="form-control" placeholder="Observación" id="floatingTextarea2"
                                             style="height: 100px"></textarea>
