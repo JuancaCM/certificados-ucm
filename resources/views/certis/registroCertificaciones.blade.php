@@ -4,37 +4,6 @@
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
             <div class="card border-info">
-                <div class="card-header mb-3">
-                    <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active">Certificaciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/registroDimensiones">Dimensiones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/estadoCertificaciones">Estado</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/sedeCertificaciones">Sede</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/relatoriaCertificaciones">Relatoria</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/publico_objetivoCertificaciones">Publico objetivo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/tipoCertificaciones">Tipo Certificación</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/modalidadCertificaciones">Modalidad</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/inscritosCertificaciones">Inscritos</a>
-                        </li>     
-                    </ul>
-                </div>
                 <div class="col s12 m6">
                     @if (null != session('insert') && session('insert'))
                         <div class="alert alert-success text-center">

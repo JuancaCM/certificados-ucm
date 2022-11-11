@@ -4,37 +4,6 @@
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
             <div class="card border-info">
-                <div class="card-header mb-3">
-                    <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/registroCertificaciones">Certificaciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active">Dimensiones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/estadoCertificaciones">Estado</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/sedeCertificaciones">Sede</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/relatoriaCertificaciones">Relatoria</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/publico_objetivoCertificaciones">Publico objetivo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/tipoCertificaciones">Tipo Certificación</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/modalidadCertificaciones">Modalidad</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/inscritosCertificaciones">Inscritos</a>
-                        </li>    
-                    </ul>
-                </div>
                 <form method="POST">
                     @csrf
                     <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Registro

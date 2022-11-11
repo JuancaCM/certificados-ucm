@@ -4,28 +4,6 @@
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
             <div class="card border-info">
-                <div class="card-header mb-3">
-                    <ul class="nav nav-tabs card-header-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active">Docentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/analistaUsers">Analista</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="carreraUniversity">Carrera</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/facultadUniversity">Facultad</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contratoUniversity">contrato</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/administradorUsers">Administrador</a>
-                        </li>
-                    </ul>
-                </div>
                 <div class="col s12 m6">
                     @if (null != session('insert') && session('insert'))
                         <div class="alert alert-success text-center">

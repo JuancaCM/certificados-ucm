@@ -1,4 +1,4 @@
-{{-- @extends('base')
+@extends('base')
 
 @section('content')
     <div class="row justify-content-center">
@@ -32,7 +32,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active ">Inscritos</a>
-                        </li> 
+                        </li>
                     </ul>
                 </div>
                 <div class="col s12 m6">
@@ -68,7 +68,7 @@
                         <div class="form-floating mb-3">
                             <textarea name="description" class="form-control" placeholder="Observación" id="floatingTextarea2"
                                 style="height: 100px"></textarea>
-                        </div>   
+                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                         </div>
@@ -77,4 +77,4 @@
             </div>
         </div>
     </div>
-@endsection --}}
+@endsection
