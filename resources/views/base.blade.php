@@ -52,9 +52,58 @@
             </li> --}}
 
             <li class="nav-item active">
-                <a class="nav-link" href="/registro">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Registro</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReg"
+                    aria-expanded="true" aria-controls="collapseReg">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Registro</span>
+                </a>
+                <div id="collapseReg" class="collapse" aria-labelledby="headingReg" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/registroCertificaciones">Certificaciones</a>
+                        <a class="collapse-item" href="/registroDimensiones">Dimensiones</a>
+                        <a class="collapse-item" href="/estadoCertificaciones">Estado</a>
+                        <a class="collapse-item" href="/sedeCertificaciones">Sede</a>
+                        <a class="collapse-item" href="/relatoriaCertificaciones">Relatoria</a>
+                        <a class="collapse-item" href="/publico_objetivoCertificaciones">Publico objetivo</a>
+                        <a class="collapse-item" href="/tipoCertificaciones">Tipo certificacion</a>
+                        <a class="collapse-item" href="/modalidadCertificaciones">Modalidad</a>
+                        <a class="collapse-item" href="/inscritosCertificaciones">Inscritos</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegUser"
+                    aria-expanded="true" aria-controls="collapseRegUser">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Registro Usuarios</span>
+                </a>
+                <div id="collapseRegUser" class="collapse" aria-labelledby="headingRegUser" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/registroDocente">Docente</a>
+                        <a class="collapse-item" href="/analistaUsers">Analista</a>
+                        <a class="collapse-item" href="/administradorUsers">Administrador</a>
+                        <h6 class="collapse-header">Datos de usuario:</h6>
+                        <a class="collapse-item" href="/contratoUniversity">Contrato</a>
+                        <a class="collapse-item" href="/facultadUniversity">Facultad</a>
+                        <a class="collapse-item" href="/carreraUniversity">Carrera</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
+                    aria-expanded="true" aria-controls="collapseTable">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Tablas</span>
+                </a>
+                <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/listaUsuarios">Usuarios</a>
+                        <a class="collapse-item" href="/listaCertificaciones">Certificaciones</a>
+                        <a class="collapse-item" href="/listaDimensiones">Dimensiones</a>
+                    </div>
+                </div>
             </li>
 
             {{--  <li class="nav-item active">
@@ -74,6 +123,7 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Vistas</span></a>
             </li>
+
 
 
             <!-- Divider -->
