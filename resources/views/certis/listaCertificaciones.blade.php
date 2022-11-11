@@ -47,7 +47,8 @@
                                             <td scope="row" class="align-middle">{{ $course->campus->name }}</td>
                                             <td scope="row" class="align-middle">{{ $course->modality->name }}</td>
                                             <td scope="row" class="align-middle">{{ $course->course_teacher->name }}</td>
-                                            <td scope="row" class="align-middle">{{ $course->target_audience->name }}</td>
+                                            <td scope="row" class="align-middle">{{ $course->target_audience->name }}
+                                            </td>
                                             <td scope="row" class="align-middle">{{ $course->sessions }}</td>
                                             <td scope="row" class="align-middle">{{ $course->synchronous_hours }}</td>
                                             <td scope="row" class="align-middle">{{ $course->autonomous_hours }}</td>
@@ -56,9 +57,10 @@
                                             <td scope="row" class="align-middle">{{ $course->end }}</td>
                                             <td scope="row" class="align-middle">
                                                 <div class="text-center mb-1"><a class="btn btn-warning btn-sm"
-                                                        href="#" role="button"><i class="bi bi-pencil-square"></i></a></div>
-                                                <div class="text-center"><a class="btn btn-danger btn-sm"
-                                                        href="#" role="button"><i class="bi bi-file-earmark-x"></i></a></div>
+                                                        href="#" role="button"><i
+                                                            class="bi bi-pencil-square"></i></a></div>
+                                                <div class="text-center"><a class="btn btn-danger btn-sm" href="#"
+                                                        role="button"><i class="bi bi-file-earmark-x"></i></a></div>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -69,6 +71,11 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('table').DataTable();
+        });
+    </script>
 @endsection

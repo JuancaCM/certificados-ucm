@@ -13,6 +13,9 @@
         integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
     @vite(['resources/css/app.scss', 'resources/css/sb-admin-2.min.css', 'resources/js/app.js', 'resources/js/sb-admin-2.min.js'])
 
 </head>
@@ -78,7 +81,8 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Registro Usuarios</span>
                 </a>
-                <div id="collapseRegUser" class="collapse" aria-labelledby="headingRegUser" data-parent="#accordionSidebar">
+                <div id="collapseRegUser" class="collapse" aria-labelledby="headingRegUser"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/registroDocente">Docente</a>
                         <a class="collapse-item" href="/analistaUsers">Analista</a>
@@ -438,4 +442,5 @@
                 </div>
             </div>
 </body>
+
 </html>
