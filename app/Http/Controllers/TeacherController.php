@@ -20,7 +20,7 @@ class TeacherController extends Controller
         $contracts = Contract::all();
         $roles = Role::all();
 
-        return view('users.registroDocente', compact('careers', 'campuses', 'contracts', 'roles'));
+        return view('admin/users.registroDocente', compact('careers', 'campuses', 'contracts', 'roles'));
     }
 
     public function formulario2()
@@ -31,7 +31,7 @@ class TeacherController extends Controller
             ->with('user')
             ->with('campus')->get();
 
-        return view('users.listaUsuarios', compact('teachers'));
+        return view('admin/users.listaUsuarios', compact('teachers'));
     }
 
     public function guardar(Request $req)

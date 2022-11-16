@@ -47,7 +47,7 @@ Route::post('/registroDocente', [TeacherController::class, 'guardar']);
 
 
 Route::get('/registroDimensiones', function () {
-    return view('certis.registroDimensiones');
+    return view('admin/certis.registroDimensiones');
 });
 Route::post('/registroDimensiones', [DimensionController::class, 'guardar']);
 
@@ -77,45 +77,45 @@ Route::get('/listaDimensiones', [DimensionController::class, 'formulario']);
 Route::get('/listaCertificaciones', [CourseController::class, 'formulario2']);
 
 Route::get('/analistaUsers', function () {
-    return view('users.analistaUsers');
+    return view('admin/users.analistaUsers');
 });
 
 Route::get('/administradorUsers', function () {
-    return view('users.administradorUsers');
+    return view('admin/users.administradorUsers');
 });
 
 Route::get('/estadoCertificaciones', function () {
-    return view('certis.estadoCertificaciones');
+    return view('admin/certis.estadoCertificaciones');
 });
 
 Route::get('/sedeCertificaciones', function () {
-    return view('certis.sedeCertificaciones');
+    return view('admin/certis.sedeCertificaciones');
 });
 
 Route::get('/relatoriaCertificaciones', function () {
-    return view('certis.relatoriaCertificaciones');
+    return view('admin/certis.relatoriaCertificaciones');
 });
 
 Route::get('/publico_objetivoCertificaciones', function () {
-    return view('certis.publico_objetivoCertificaciones');
+    return view('admin/certis.publico_objetivoCertificaciones');
 });
 
 Route::get('/tipoCertificaciones', function () {
-    return view('certis.tipoCertificaciones');
+    return view('admin/certis.tipoCertificaciones');
 });
 
 Route::get('/modalidadCertificaciones', function () {
-    return view('certis.modalidadCertificaciones');
+    return view('admin/certis.modalidadCertificaciones');
 });
 
 
 
 Route::get('/facultadUniversity', function () {
-    return view('university.facultadUniversity');
+    return view('admin/university.facultadUniversity');
 });
 
 Route::get('/contratoUniversity', function () {
-    return view('university.contratoUniversity');
+    return view('admin/university.contratoUniversity');
 });
 
 // Route::get('/inscritosCertificaciones', function () {

@@ -14,7 +14,7 @@ class CareerController extends Controller
     {
         $faculties = Faculty::all();
 
-        return view('university.carreraUniversity', compact('faculties'));
+        return view('admin/university.carreraUniversity', compact('faculties'));
     }
 
     public function guardar(Request $req)

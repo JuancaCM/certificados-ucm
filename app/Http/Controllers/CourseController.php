@@ -30,7 +30,7 @@ class CourseController extends Controller
         $target_audiences = TargetAudience::all();
         $course_names = CourseName::all();
 
-        return view('certis.registroCertificaciones', compact('dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
+        return view('admin/certis.registroCertificaciones', compact('dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
     }
 
     public function formulario2()
@@ -44,7 +44,7 @@ class CourseController extends Controller
             ->with('type')
             ->with('modality')->get();
 
-        return view('certis.listaCertificaciones', compact('courses'));
+        return view('admin/certis.listaCertificaciones', compact('courses'));
     }
 
     public function guardar(Request $req)
