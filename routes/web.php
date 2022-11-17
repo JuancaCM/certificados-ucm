@@ -118,9 +118,9 @@ Route::get('/contratoUniversity', function () {
     return view('admin/university.contratoUniversity');
 });
 
-// Route::get('/inscritosCertificaciones', function () {
-//     return view('certis.inscritosCertificaciones');
-// });
+Route::get('/inscritosCertificaciones', function () {
+    return view('admin/certis.inscritosCertificaciones');
+});
 
 Route::get('/perfil', function () {
     return view('users.perfil');
@@ -130,3 +130,6 @@ Route::get('/contacto', function () {
     return view('nav.contacto');
 });
 
+Route::get('/cursos', function () {
+    return view('docente.cursos');
+});
