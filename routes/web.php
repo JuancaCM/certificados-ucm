@@ -12,6 +12,7 @@ use App\Http\Controllers\ModalityController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\ContractController;
+use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('pdf', [PdfController::class, 'index']);
 
 Route::get('/', function () {
     return view('nav.index');
