@@ -60,15 +60,6 @@
                         </div>
                     </div>
                 </form>
-
-                {{-- <div class="card-footer text-muted">
-                <h5 class="form-label">Subida Masiva</h5>
-                <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputGroupFile02">
-                    <label class="input-group-text" for="inputGroupFile02">Subir</label>
-                </div>
-            </div> --}}
-
             </div>
         </div>
     </div>

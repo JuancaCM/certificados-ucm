@@ -13,6 +13,8 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\ContractController;
 use App\Http\Controllers\PdfController;
+use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,7 +50,6 @@ Route::post('/relatoriaCertificaciones', [CourseTeacherController::class, 'guard
 Route::get('/registroDocente', [TeacherController::class, 'formulario']);
 Route::post('/registroDocente', [TeacherController::class, 'guardar']);
 
-
 Route::get('/registroDimensiones', function () {
     return view('admin/certis.registroDimensiones');
 });
@@ -78,6 +79,10 @@ Route::get('/listaUsuarios', [TeacherController::class, 'formulario2']);
 Route::get('/listaDimensiones', [DimensionController::class, 'formulario']);
 
 Route::get('/listaCertificaciones', [CourseController::class, 'formulario2']);
+
+Route::post('/administradorUsers', [UserController::class, 'guardar']);
+
+Route::post('/analistaUsers', [UserController::class, 'save']);
 
 Route::get('/analistaUsers', function () {
     return view('admin/users.analistaUsers');
