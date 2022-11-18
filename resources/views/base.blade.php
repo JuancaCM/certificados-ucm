@@ -55,6 +55,19 @@
             </li> --}}
 
             <li class="nav-item active">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegSuperAdmin"
+                    aria-expanded="true" aria-controls="collapseRegSuperAdmin">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Super Admin</span>
+                </a>
+                <div id="collapseRegSuperAdmin" class="collapse" aria-labelledby="headingReg" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/administradorUsers">Administrador</a>
+                    </div>
+                </div>
+            </li> 
+                       
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReg"
                     aria-expanded="true" aria-controls="collapseReg">
                     <i class="fas fa-fw fa-cog"></i>
@@ -86,7 +99,6 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/registroDocente">Docente</a>
                         <a class="collapse-item" href="/analistaUsers">Analista</a>
-                        <a class="collapse-item" href="/administradorUsers">Administrador</a>
                         <h6 class="collapse-header">Datos de usuario:</h6>
                         <a class="collapse-item" href="/contratoUniversity">Contrato</a>
                         <a class="collapse-item" href="/facultadUniversity">Facultad</a>
@@ -106,6 +118,7 @@
                         <a class="collapse-item" href="/listaUsuarios">Usuarios</a>
                         <a class="collapse-item" href="/listaCertificaciones">Certificaciones</a>
                         <a class="collapse-item" href="/listaDimensiones">Dimensiones</a>
+                        <a class="collapse-item" href="/cursos">Cursos</a>
                     </div>
                 </div>
             </li>
