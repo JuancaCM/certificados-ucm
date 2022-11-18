@@ -12,6 +12,7 @@ use App\Http\Controllers\ModalityController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\ContractController;
+use App\Http\Controllers\InscribedController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\UserController;
 
@@ -138,6 +139,4 @@ Route::get('/contacto', function () {
     return view('nav.contacto');
 });
 
-Route::get('/cursos', function () {
-    return view('docente.cursos');
-});
+Route::get('/cursos', [InscribedController::class, 'formulario']);

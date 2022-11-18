@@ -43,4 +43,9 @@ class Course extends Model
     {
         return $this->belongsTo(Modality::class);
     }
+
+    public function inscribeds()
+    {
+        return $this->hasMany(Inscribed::class);
+    }
 }

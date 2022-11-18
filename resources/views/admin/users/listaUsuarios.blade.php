@@ -6,7 +6,7 @@
             <div class="card mt-3 mb-3 ml-3 mr-3">
                 <div class="card-body">
                     <ol class="list-group list-group-numbered">
-                        <table id="table" class="table table-striped table-bordered">
+                        <table id='table' class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -51,7 +51,11 @@
 
     <script>
         $(document).ready(function() {
-            $('table').DataTable();
+            $('table').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.13.1/i18n/es-CL.json'
+                }
+            });
         });
     </script>
 @endsection

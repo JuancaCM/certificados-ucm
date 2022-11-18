@@ -41,7 +41,11 @@
 
     <script>
         $(document).ready(function() {
-            $('table').DataTable();
+            $('table').DataTable({
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.13.1/i18n/es-CL.json'
+                }
+            });
         });
     </script>
 @endsection
