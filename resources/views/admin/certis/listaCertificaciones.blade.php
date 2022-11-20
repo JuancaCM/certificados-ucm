@@ -23,6 +23,7 @@
                                         <th scope="col">Sesiones</th>
                                         <th scope="col">Horas sincronicas</th>
                                         <th scope="col">Horas autonomas</th>
+                                        <th scope="col">Duración total</th>
                                         <th scope="col">Horario</th>
                                         <th scope="col">Inicio</th>
                                         <th scope="col">Cierre</th>
@@ -35,11 +36,11 @@
                                             <td scope="row" class="align-middle">{{ $course->id }}</td>
                                             <td scope="row" class="align-middle">{{ $course->course_name->name }}</td>
                                             <td scope="row" class="align-middle">
-                                                <div class="text-center"><a class="btn btn-info btn-sm"
+                                                <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
                                                         href="{{ $course->inscription }}" role="button">Ver</a></div>
                                             </td>
                                             <td scope="row" class="align-middle">
-                                                <div class="text-center"><a class="btn btn-info btn-sm"
+                                                <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
                                                         href="{{ $course->program }}" role="button">Ver</a></div>
                                             </td>
                                             <td scope="row" class="align-middle">{{ $course->type->name }}</td>
@@ -47,11 +48,11 @@
                                             <td scope="row" class="align-middle">{{ $course->campus->name }}</td>
                                             <td scope="row" class="align-middle">{{ $course->modality->name }}</td>
                                             <td scope="row" class="align-middle">{{ $course->course_teacher->name }}</td>
-                                            <td scope="row" class="align-middle">{{ $course->target_audience->name }}
-                                            </td>
+                                            <td scope="row" class="align-middle">{{ $course->target_audience->name }}</td>
                                             <td scope="row" class="align-middle">{{ $course->sessions }}</td>
                                             <td scope="row" class="align-middle">{{ $course->synchronous_hours }}</td>
                                             <td scope="row" class="align-middle">{{ $course->autonomous_hours }}</td>
+                                            <td scope="row" class="align-middle">{{ $course->duration }}</td>
                                             <td scope="row" class="align-middle">{{ $course->schedule }}</td>
                                             <td scope="row" class="align-middle">{{ $course->start }}</td>
                                             <td scope="row" class="align-middle">{{ $course->end }}</td>

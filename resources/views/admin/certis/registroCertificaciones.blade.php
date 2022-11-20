@@ -92,11 +92,6 @@
                                 </div>
                             </div>
                             <div class="col s12 m6">
-                                <div class="form-label mb-3">
-                                    <input name="duration" type="number" min="0" class="form-control"
-                                        placeholder="Duracion total (hrs)" aria-label="duracionTotal"
-                                        aria-describedby="basic-addon1">
-                                </div>
                             </div>
                         </div>
                         <div class="row">

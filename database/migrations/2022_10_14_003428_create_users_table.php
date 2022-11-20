@@ -16,11 +16,12 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->text('rut');
+            $table->text('rut')->unique();
             $table->text('name');
             $table->text('pass');
             $table->text('mail');
             $table->text('phone');
+            $table->text('sex')->nullable();
             $table->foreignIdFor(Role::class)->constrained();
             $table->timestamps();
         });

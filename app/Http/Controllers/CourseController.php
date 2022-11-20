@@ -58,9 +58,9 @@ class CourseController extends Controller
             $type = $req->input('type');
             $modality = $req->input('modality');
             $sessions = $req->input('sessions');
-            $duration = $req->input('duration');
             $synchronous_hours = $req->input('synchronous_hours');
             $autonomous_hours = $req->input('autonomous_hours');
+            $duration = ($sessions * $synchronous_hours) + $autonomous_hours;
             $inscription_link = $req->input('inscription_link');
             $program_link = $req->input('program_link');
             $course_teacher = $req->input('course_teacher');

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->id();
             $table->text('name');
             $table->foreignIdFor(Dimension::class)->constrained();
+            $table->text('contents');
             $table->text('observation')->nullable();
             $table->timestamps();
         });
