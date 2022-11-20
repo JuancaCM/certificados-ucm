@@ -25,20 +25,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                     @foreach ($inscribeds as $inscribed)
+                                    @foreach ($inscribeds as $inscribed)
                                         <tr>
                                             <td scope="row" class="align-middle">{{ $inscribed->id }}</td>
-                                            <td scope="row" class="align-middle">{{ $inscribed->teacher->user->rut }}</td>
-                                            <td scope="row" class="align-middle">{{ $inscribed->teacher->user->name }}</td>
-                                            <td scope="row" class="align-middle">{{ $inscribed->teacher->user->mail }}</td>
-                                            <td scope="row" class="align-middle">{{ $inscribed->teacher->career->name }}</td>
-                                            <td scope="row" class="align-middle">{{ $inscribed->teacher->career->faculty->name }}</td>
-                                            <td scope="row" class="align-middle">{{ $inscribed->teacher->contract->name }}</td>
-                                            <td scope="row" class="align-middle">{{ date('Y', strtotime($inscribed->course->start)) }}</td>
-                                            <td scope="row" class="align-middle">{{ $inscribed->course->course_name->name }}</td>
+                                            <td scope="row" class="align-middle">{{ $inscribed->teacher->user->rut }}
+                                            </td>
+                                            <td scope="row" class="align-middle">{{ $inscribed->teacher->user->name }}
+                                            </td>
+                                            <td scope="row" class="align-middle">{{ $inscribed->teacher->user->mail }}
+                                            </td>
+                                            <td scope="row" class="align-middle">{{ $inscribed->teacher->career->name }}
+                                            </td>
+                                            <td scope="row" class="align-middle">
+                                                {{ $inscribed->teacher->career->faculty->name }}</td>
+                                            <td scope="row" class="align-middle">
+                                                {{ $inscribed->teacher->contract->name }}</td>
+                                            <td scope="row" class="align-middle">
+                                                {{ date('Y', strtotime($inscribed->course->start)) }}</td>
+                                            <td scope="row" class="align-middle">
+                                                {{ $inscribed->course->course_name->name }}</td>
                                             <td scope="row" class="align-middle">{{ $inscribed->attendance }}</td>
-                                            <td scope="row" class="align-middle">{{ $inscribed->course->synchronous_hours }}</td>
-                                            <td scope="row" class="align-middle">{{ $inscribed->course->course_name->dimension->name }}</td>
+                                            <td scope="row" class="align-middle">
+                                                {{ $inscribed->course->synchronous_hours }}</td>
+                                            <td scope="row" class="align-middle">
+                                                {{ $inscribed->course->course_name->dimension->name }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

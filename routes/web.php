@@ -132,7 +132,7 @@ Route::get('/inscritosCertificaciones', function () {
 });
 
 Route::get('/perfil', function () {
-    return view('users.perfil');
+    return view('teacher.profile');
 });
 
 Route::get('/contacto', function () {

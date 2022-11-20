@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Registro Docente</title>
+    <title>Certificados DIRDOC-UCM</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
         integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
@@ -60,13 +60,14 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Super Admin</span>
                 </a>
-                <div id="collapseRegSuperAdmin" class="collapse" aria-labelledby="headingReg" data-parent="#accordionSidebar">
+                <div id="collapseRegSuperAdmin" class="collapse" aria-labelledby="headingReg"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/administradorUsers">Administrador</a>
                     </div>
                 </div>
-            </li> 
-                       
+            </li>
+
             <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReg"
                     aria-expanded="true" aria-controls="collapseReg">
@@ -113,7 +114,8 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Tablas</span>
                 </a>
-                <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+                <div id="collapseTable" class="collapse" aria-labelledby="headingTable"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/listaUsuarios">Usuarios</a>
                         <a class="collapse-item" href="/listaCertificaciones">Certificaciones</a>
