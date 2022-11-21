@@ -83,7 +83,7 @@ Route::post('/registroAdmin', [UserController::class, 'guardarAdmin']);
 Route::post('/registroAnalista', [UserController::class, 'guardarAnalista']);
 
 Route::get('/registroAnalista', function () {
-    return view('admin/users.analistaUsers');
+    return view('admin/users.registroAnalista');
 });
 
 Route::get('/registroAdmin', function () {

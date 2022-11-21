@@ -21,7 +21,7 @@
                         de dimensiones</h5>
                     <div class="card-body">
                         <div class="form-label mb-3">
-                            <label><span style="color: red">*</span>Nombre:</label>
+                            <label><span style="color: red">*</span>Nombre de la dimensión:</label>
                             <input name="dimension" type="text" class="form-control" aria-label="course_names"
                                 aria-describedby="basic-addon1" required>
                         </div>

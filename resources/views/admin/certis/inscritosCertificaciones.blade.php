@@ -23,14 +23,14 @@
                         <div class="row">
                             <div class="col s12 m6">
                                 <span class="text">
-                                    <label><span style="color: red">*</span>Nombre del docente:</label>
+                                    <label><span style="color: red">*</span>Docente:</label>
                                     <input name="name_teacher" type="text" class="form-control" aria-label="Nombre"
                                         aria-describedby="basic-addon1" required>
                                 </span>
                             </div>
                             <div class="col s12 m6">
                                 <span class="text">
-                                    <label><span style="color: red">*</span>Nombre de la certificación:</label>
+                                    <label><span style="color: red">*</span>Certificación:</label>
                                     <input name="name_course" type="text" class="form-control" aria-label="Nombre"
                                         aria-describedby="basic-addon1" required>
                                 </span>

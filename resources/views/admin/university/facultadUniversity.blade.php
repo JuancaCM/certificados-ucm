@@ -19,7 +19,7 @@
                 <form method="POST">
                     @csrf
                     <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Registro
-                        de Facultad</h5>
+                        de facultad o dirección</h5>
                     <div class="card-body ">
                         <div class="row">
                             <div class="col s12 m6 mb-3">

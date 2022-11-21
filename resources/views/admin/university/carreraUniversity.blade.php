@@ -19,7 +19,7 @@
                 <form method="POST">
                     @csrf
                     <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Registro
-                        de Carrera</h5>
+                        de carrera o unidad</h5>
                     <div class="card-body ">
                         <div class="row">
                             <div class="col s12 m6 mb-3">
@@ -30,8 +30,6 @@
                                         aria-describedby="basic-addon1" required>
                                 </span>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col s12 m6">
                                 <label><span style="color: red">*</span>Facultad o dirección a la que pertenece: <i
                                         class="bi bi-question-circle" data-toggle="tooltip" data-placement="right"
@@ -42,6 +40,10 @@
                                         <option value="{{ $faculty->id }}">{{ $faculty->name }}</option>
                                     @endforeach
                                 </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m6">
                                 <span class="text">
                                     <div class="form-floating mt-3 mb-3">
                                         <label>Observación: <i class="bi bi-question-circle" data-toggle="tooltip"

@@ -18,12 +18,12 @@
                 <form method="POST">
                     @csrf
                     <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Registro
-                        de Publico objetivo</h5>
+                        de publico objetivo</h5>
                     <div class="card-body ">
                         <div class="row">
                             <div class="col s12 m6 mb-3">
                                 <span class="text">
-                                    <label><span style="color: red">*</span>Nombre de la sede:</label>
+                                    <label><span style="color: red">*</span>Nombre del publico objetivo:</label>
                                     <input name="name" type="text" class="form-control" aria-label="Nombre"
                                         aria-describedby="basic-addon1" required>
                                 </span>
