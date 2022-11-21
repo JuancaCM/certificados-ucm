@@ -140,3 +140,7 @@ Route::get('/contacto', function () {
 });
 
 Route::get('/cursos', [InscribedController::class, 'formulario']);
+
+Route::get('/infoCerti', function () {
+    return view('infoCerti');
+});
