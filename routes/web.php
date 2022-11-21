@@ -139,4 +139,8 @@ Route::get('/contacto', function () {
     return view('nav.contacto');
 });
 
+Route::get('/editarDocente', [TeacherController::class, 'formularioEditar']);
+Route::post('/editarDocente', [TeacherController::class, 'guardarEditar']);
+
+
 Route::get('/cursos', [InscribedController::class, 'formulario']);

@@ -34,6 +34,56 @@ class TeacherController extends Controller
         return view('admin/users.listaUsuarios', compact('teachers'));
     }
 
+    public function formularioEditar(Request $req)
+    {
+        $teacher = Teacher::find($req->input('id'));
+        $careers = Career::all();
+        $campuses = Campus::all();
+        $contracts = Contract::all();
+        $roles = Role::all();
+
+        return view('admin/users/editar.editTeacher', compact('teacher', 'careers', 'campuses', 'contracts', 'roles'));
+    }
+
+    public function guardarEditar(Request $req)
+    {
+        DB::beginTransaction();
+        try {
+            $userId = $req->input('userId');
+            $rut = $req->input('rut');
+            $name = $req->input('name');
+            $mail = $req->input('mail');
+            $career = $req->input('career');
+            $campus = $req->input('campus');
+            $contract = $req->input('contract');
+            $phone = $req->input('phone');
+
+            $user = User::find($userId);
+            $user->rut = $rut;
+            $user->name = $name;
+            $user->mail = $mail;
+            $user->phone = $phone;
+
+            $user->save();
+
+            $teacherId = $req->input('teacherId');
+
+            $teacher = Teacher::find($teacherId);
+            $teacher->career_id = $career;
+            $teacher->campus_id = $campus;
+            $teacher->contract_id = $contract;
+
+            $teacher->save();
+
+            DB::commit();
+
+            return redirect()->to('/listaUsuarios')->with('insert', true);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return redirect()->to('/listaUsuarios')->with('insert', false);
+        }
+    }
+
     public function guardar(Request $req)
     {
         DB::beginTransaction();

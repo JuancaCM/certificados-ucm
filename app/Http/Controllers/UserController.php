@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-
-
     public function guardar(Request $req)
     {
         DB::beginTransaction();
