@@ -13,6 +13,7 @@
     </div>
     <div class="row justify-content-center">
         <div class="card mt-3 mb-3 ml-3 mr-3">
+            <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Docentes</h5>
             <div class="card-body">
                 <ol class="list-group list-group-numbered">
                     <table id='table' class="table table-striped table-bordered">

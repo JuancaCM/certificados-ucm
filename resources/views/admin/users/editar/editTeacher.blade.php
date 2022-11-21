@@ -17,7 +17,7 @@
                                         <input name="rut" type="text" class="form-control"
                                             value="{{ $teacher->user->rut }}" aria-label="Rut"
                                             aria-describedby="basic-addon1">
-                                        <snall class="form-text text-muted">Sin puntos y con guion</small>
+                                        <small class="form-text text-muted">Sin puntos y con guion</small>
                                     </span>
                                 </div>
                             </div>
@@ -100,9 +100,4 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 @endsection

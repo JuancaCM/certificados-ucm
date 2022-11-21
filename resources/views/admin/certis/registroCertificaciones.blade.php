@@ -3,7 +3,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
-            <div class="card border-info">
+            <div class="card shadow">
                 <div class="col s12 m6 mt-3">
                     @if (null != session('insert') && session('insert'))
                         <div class="alert alert-success text-center">
@@ -23,8 +23,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col s12 m6">
-                                <select name="name" class="form-control mb-3" aria-label="name">
-                                    <option selected disabled>Nombre de la certificación</option>
+                                <label>Nombre de la certificación: <i class="bi bi-question-circle" data-toggle="tooltip"
+                                    data-placement="right" title="Si no encuentra la certificación, vaya a la sección de registro de certificaciones."></i></label>
+                                <select name="name" class="form-control mb-3" aria-label="name" required>
+                                    <option selected disabled>Certificación</option>
                                     @foreach ($course_names as $course_name)
                                         <option value="{{ $course_name->id }}">{{ $course_name->name }}</option>
                                     @endforeach
@@ -33,7 +35,9 @@
                         </div>
                         <div class="row">
                             <div class="col s12 m6">
-                                <select name="target_audience" class="form-control mb-3" aria-label="modality">
+                                <label>Público objetivo: <i class="bi bi-question-circle" data-toggle="tooltip"
+                                    data-placement="right" title="Si no encuentra el publico objetivo, vaya a la sección de registro de publico objetivo."></i></label>
+                                <select name="target_audience" class="form-control mb-3" aria-label="modality" required>
                                     <option selected disabled>Publico objetivo</option>
                                     @foreach ($target_audiences as $target_audience)
                                         <option value="{{ $target_audience->id }}">{{ $target_audience->name }}</option>
@@ -41,7 +45,9 @@
                                 </select>
                             </div>
                             <div class="col s12 m6">
-                                <select name="campus" class="form-control mb-3" aria-label="campus">
+                                <label>Sede: <i class="bi bi-question-circle" data-toggle="tooltip"
+                                    data-placement="right" title="Si no encuentra la sede, vaya a la sección de registro de sedes."></i></label>
+                                <select name="campus" class="form-control mb-3" aria-label="campus" required>
                                     <option selected disabled>Sede</option>
                                     @foreach ($campuses as $campus)
                                         <option value="{{ $campus->id }}">{{ $campus->name }}</option>
@@ -51,15 +57,19 @@
                         </div>
                         <div class="row">
                             <div class="col s12 m6">
-                                <select name="type" class="form-control mb-3" aria-label="type">
-                                    <option selected disabled>Tipo de certificación</option>
+                                <label>Tipo de certificación: <i class="bi bi-question-circle" data-toggle="tooltip"
+                                    data-placement="right" title="Si no encuentra el tipo de certificación, vaya a la sección de registro de tipos de certificación."></i></label>
+                                <select name="type" class="form-control mb-3" aria-label="type" required>
+                                    <option selected disabled>Tipo</option>
                                     @foreach ($types as $type)
                                         <option value="{{ $type->id }}">{{ $type->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="col s12 m6">
-                                <select name="state" class="form-control mb-3" aria-label="course_teacher">
+                                <label>Estado del curso: <i class="bi bi-question-circle" data-toggle="tooltip"
+                                    data-placement="right" title="Si no encuentra el estado, vaya a la sección de registro de estados de certificación."></i></label>
+                                <select name="state" class="form-control mb-3" aria-label="course_teacher" required>
                                     <option selected disabled>Estado</option>
                                     @foreach ($states as $state)
                                         <option value="{{ $state->id }}">{{ $state->name }}</option>
@@ -69,7 +79,9 @@
                         </div>
                         <div class="row">
                             <div class="col s12 m6">
-                                <select name="modality" class="form-control mb-3" aria-label="modality">
+                                <label>Modalidad: <i class="bi bi-question-circle" data-toggle="tooltip"
+                                    data-placement="right" title="Si no encuentra la modalidad, vaya a la sección de registro de modalidades."></i></label>
+                                <select name="modality" class="form-control mb-3" aria-label="modality" required>
                                     <option selected disabled>Modalidad</option>
                                     @foreach ($modalities as $modality)
                                         <option value="{{ $modality->id }}">{{ $modality->name }}</option>
@@ -77,18 +89,19 @@
                                 </select>
                             </div>
                             <div class="col s12 m6">
+                                <label>Horario:</label>
                                 <div class="form-label mb-3">
-                                    <input name="schedule" type="text" class="form-control" placeholder="Horario"
-                                        aria-label="schedule" aria-describedby="basic-addon1">
+                                    <input name="schedule" type="text" class="form-control" aria-label="schedule"
+                                        aria-describedby="basic-addon1" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col s12 m6">
                                 <div class="form-label mb-3">
+                                    <label>Cantidad de sesiones:</label>
                                     <input name="sessions" type="number" min="0" class="form-control"
-                                        placeholder="Cantidad de sesiones" aria-label="sessions"
-                                        aria-describedby="basic-addon1">
+                                        aria-label="sessions" aria-describedby="basic-addon1" required>
                                 </div>
                             </div>
                             <div class="col s12 m6">
@@ -96,33 +109,35 @@
                         </div>
                         <div class="row">
                             <div class="col s12 m6">
+                                <label>Horas sincrónicas:</label>
                                 <input name="synchronous_hours" type="number" min="0" class="form-control"
-                                    placeholder="Horas sincronicas" aria-label="synchronous_hours"
-                                    aria-describedby="basic-addon1">
+                                    aria-label="synchronous_hours" aria-describedby="basic-addon1" required>
                             </div>
                             <div class="col s12 m6">
                                 <div class="form-label mb-3">
+                                    <label>Horas autonomas:</label>
                                     <input name="autonomous_hours" type="number" min="0" class="form-control"
-                                        placeholder="Horas autonomas" aria-label="autonomous_hours"
-                                        aria-describedby="basic-addon1">
+                                        aria-label="autonomous_hours" aria-describedby="basic-addon1" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col s12 m6">
+                                <label>Enlace de inscripción:</label>
                                 <input name="inscription_link" type="text" class="form-control mb-3"
-                                    placeholder="Link de inscripcion" aria-label="inscription_link"
-                                    aria-describedby="basic-addon1">
+                                    aria-label="inscription_link" aria-describedby="basic-addon1" required>
                             </div>
                             <div class="col s12 m6">
+                                <label>Enlace del programa:</label>
                                 <input name="program_link" type="text" class="form-control mb-3"
-                                    placeholder="Link del programa" aria-label="program_link"
-                                    aria-describedby="basic-addon1">
+                                    aria-label="program_link" aria-describedby="basic-addon1" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col s12 m6">
-                                <select name="course_teacher" class="form-control mb-3" aria-label="modality">
+                                <label>Relator del curso: <i class="bi bi-question-circle" data-toggle="tooltip"
+                                    data-placement="right" title="Si no encuentra al relator, vaya a la sección de registro de relatores."></i></label>
+                                <select name="course_teacher" class="form-control mb-3" aria-label="modality" required>
                                     <option selected disabled>Relator</option>
                                     @foreach ($course_teachers as $course_teacher)
                                         <option value="{{ $course_teacher->id }}">{{ $course_teacher->name }}</option>
@@ -133,8 +148,8 @@
                         <div class="row">
                             <div class="col s12 m6">
                                 <div class="form-label">
-                                    <input name="fecha_inicio" input id="datepicker" class="form-control"
-                                        placeholder="Fecha de inicio" />
+                                    <label>Fecha de inicio:</label>
+                                    <input name="fecha_inicio" input id="datepicker" class="form-control" required>
                                     <script>
                                         $('#datepicker').datepicker({
                                             uiLibrary: 'bootstrap4'
@@ -144,8 +159,8 @@
                             </div>
                             <div class="col s12 m6">
                                 <div class="form-label mb-3">
-                                    <input name="fecha_termino" input id="datepicker2" class="form-control"
-                                        placeholder="Fecha de termino" />
+                                    <label>Fecha de termino:</label>
+                                    <input name="fecha_termino" input id="datepicker2" class="form-control" required>
                                     <script>
                                         $('#datepicker2').datepicker({
                                             uiLibrary: 'bootstrap4'
@@ -154,6 +169,7 @@
                                 </div>
                             </div>
                         </div>
+                        <p style="color: red">*Todos los campos son obligatorios</p>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Registrar</button>
                         </div>
@@ -162,17 +178,9 @@
             </div>
         </div>
     </div>
-
-
-    {{--  <div class="card mt-3 col-md-4 offset-md-4">
-        <div class="card-body">
-            <ol class="list-group list-group-numbered">
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">Capacitación 1</div>
-                        Dimensión o datos de la capacitacion
-                    </div>
-                    <span class="btn btn-light ">Descargar certificado</span>
-        </div>
-    </div>  --}}
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 @endsection

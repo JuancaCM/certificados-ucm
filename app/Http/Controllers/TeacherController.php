@@ -31,7 +31,7 @@ class TeacherController extends Controller
             ->with('user')
             ->with('campus')->get();
 
-        return view('admin/users.listaUsuarios', compact('teachers'));
+        return view('admin/users.listaDocentes', compact('teachers'));
     }
 
     public function formularioEditar(Request $req)
@@ -77,10 +77,10 @@ class TeacherController extends Controller
 
             DB::commit();
 
-            return redirect()->to('/listaUsuarios')->with('insert', true);
+            return redirect()->to('/listaDocentes')->with('insert', true);
         } catch (\Throwable $th) {
             DB::rollBack();
-            return redirect()->to('/listaUsuarios')->with('insert', false);
+            return redirect()->to('/listaDocentes')->with('insert', false);
         }
     }
 

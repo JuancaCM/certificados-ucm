@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function guardar(Request $req)
+    public function guardarAdmin(Request $req)
     {
         DB::beginTransaction();
         try {
@@ -36,7 +36,7 @@ class UserController extends Controller
         }
     }
 
-    public function save(Request $req)
+    public function guardarAnalista(Request $req)
     {
         DB::beginTransaction();
         try {

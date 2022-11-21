@@ -63,7 +63,7 @@
                 <div id="collapseRegSuperAdmin" class="collapse" aria-labelledby="headingReg"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/administradorUsers">Administrador</a>
+                        <a class="collapse-item" href="/registroAdmin">Administrador</a>
                     </div>
                 </div>
             </li>
@@ -99,7 +99,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/registroDocente">Docente</a>
-                        <a class="collapse-item" href="/analistaUsers">Analista</a>
+                        <a class="collapse-item" href="/registroAnalista">Analista</a>
                         <h6 class="collapse-header">Datos de usuario:</h6>
                         <a class="collapse-item" href="/contratoUniversity">Contrato</a>
                         <a class="collapse-item" href="/facultadUniversity">Facultad</a>
@@ -117,10 +117,10 @@
                 <div id="collapseTable" class="collapse" aria-labelledby="headingTable"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/listaUsuarios">Usuarios</a>
+                        <a class="collapse-item" href="/listaDocentes">Docentes</a>
                         <a class="collapse-item" href="/listaCertificaciones">Certificaciones</a>
                         <a class="collapse-item" href="/listaDimensiones">Dimensiones</a>
-                        <a class="collapse-item" href="/cursos">Cursos</a>
+                        <a class="collapse-item" href="/talleres">Cursos</a>
                     </div>
                 </div>
             </li>
@@ -456,7 +456,4 @@
                     </div>
                 </div>
             </div>
-</body>
-
-div>
 </body>

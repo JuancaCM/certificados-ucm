@@ -3,7 +3,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-sm-6 ">
-            <div class="card border-info">
+            <div class="card shadow">
                 <div class="col s12 m6 mt-3">
                     @if (null != session('insert') && session('insert'))
                         <div class="alert alert-success text-center">
@@ -18,19 +18,23 @@
                 <form method="POST">
                     @csrf
                     <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Registro
-                        de Sede</h5>
+                        de sedes</h5>
                     <div class="card-body ">
                         <div class="row">
                             <div class="col s12 m6 mb-3">
-                                <span class="text" </span>
-                                    <input name="name" type="text" class="form-control" placeholder="Nombre sede"
-                                        aria-label="Nombre" aria-describedby="basic-addon1">
+                                <span class="text">
+                                    <label><span style="color: red">*</span>Nombre de la sede:</label>
+                                    <input name="name" type="text" class="form-control" aria-label="Nombre"
+                                        aria-describedby="basic-addon1" required>
+                                </span>
                             </div>
                         </div>
                         <div class="form-floating mb-3">
-                            <textarea name="description" class="form-control" placeholder="Observación" id="floatingTextarea2"
-                                style="height: 100px"></textarea>
+                            <label>Observación: <i class="bi bi-question-circle" data-toggle="tooltip"
+                                    data-placement="right" title="Este campo es opcional, lo puede omitir."></i></label>
+                            <textarea name="description" class="form-control" style="height: 100px"></textarea>
                         </div>
+                        <p style="color: red">*Campos obligatorios</p>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                         </div>
@@ -39,4 +43,9 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 @endsection

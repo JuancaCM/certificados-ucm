@@ -39,9 +39,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/registro', [TeacherController::class, 'formulario']);
-Route::post('/registro', [TeacherController::class, 'guardar']);
-
 Route::get('/registroCertificaciones', [CourseController::class, 'formulario']);
 Route::post('/registroCertificaciones', [CourseController::class, 'guardar']);
 
@@ -75,22 +72,22 @@ Route::post('/facultadUniversity', [FacultyController::class, 'guardar']);
 
 Route::post('/contratoUniversity', [ContractController::class, 'guardar']);
 
-Route::get('/listaUsuarios', [TeacherController::class, 'formulario2']);
+Route::get('/listaDocentes', [TeacherController::class, 'formulario2']);
 
 Route::get('/listaDimensiones', [DimensionController::class, 'formulario']);
 
 Route::get('/listaCertificaciones', [CourseController::class, 'formulario2']);
 
-Route::post('/administradorUsers', [UserController::class, 'guardar']);
+Route::post('/registroAdmin', [UserController::class, 'guardarAdmin']);
 
-Route::post('/analistaUsers', [UserController::class, 'save']);
+Route::post('/registroAnalista', [UserController::class, 'guardarAnalista']);
 
-Route::get('/analistaUsers', function () {
+Route::get('/registroAnalista', function () {
     return view('admin/users.analistaUsers');
 });
 
-Route::get('/administradorUsers', function () {
-    return view('admin/users.administradorUsers');
+Route::get('/registroAdmin', function () {
+    return view('superAdmin/registroAdmin');
 });
 
 Route::get('/estadoCertificaciones', function () {
@@ -143,8 +140,8 @@ Route::get('/editarDocente', [TeacherController::class, 'formularioEditar']);
 Route::post('/editarDocente', [TeacherController::class, 'guardarEditar']);
 
 
-Route::get('/cursos', [InscribedController::class, 'formulario']);
+Route::get('/talleres', [InscribedController::class, 'formulario']);
 
-Route::get('/infoCerti', function () {
-    return view('infoCerti');
+Route::get('/certificado', function () {
+    return view('admin/certis.contenidoCertificado');
 });
