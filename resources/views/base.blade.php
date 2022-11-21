@@ -57,7 +57,7 @@
             <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegSuperAdmin"
                     aria-expanded="true" aria-controls="collapseRegSuperAdmin">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa-regular fa-mask"></i>
                     <span>Super Admin</span>
                 </a>
                 <div id="collapseRegSuperAdmin" class="collapse" aria-labelledby="headingReg"
@@ -406,7 +406,7 @@
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="/perfil">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Perfil
                                     </a>

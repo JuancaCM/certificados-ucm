@@ -144,3 +144,7 @@ Route::post('/editarDocente', [TeacherController::class, 'guardarEditar']);
 
 
 Route::get('/cursos', [InscribedController::class, 'formulario']);
+
+Route::get('/infoCerti', function () {
+    return view('infoCerti');
+});
