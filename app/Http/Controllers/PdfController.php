@@ -29,7 +29,7 @@ class PdfController extends Controller
 
         PDF::MultiCell(0, 0, $title, 0, 'C', 0, 1, '', 40.8);
 
-        PDF::setImageScale ( 2.09 );
+        PDF::setImageScale(2.09);
         PDF::writeHTMLCell(0, 0, 27.8, 41.8, '<img src="img/firma.png"/>');
 
         PDF::SetFont($font, '', 11.3, '', true);
@@ -46,9 +46,6 @@ class PdfController extends Controller
 
         $nameD = $certificate->directorName;
         $cargo = $certificate->position;
-        $constancia = $certificate->constancy;
-        $constanciaM = $certificate->constancyM;
-        $constanciaF = $certificate->constancyF;
         $nameT = User::find($teacher->user_id)->name;
         $varRut = $certificate->varRut;
         $rut = User::find($teacher->user_id)->rut;
@@ -61,36 +58,37 @@ class PdfController extends Controller
         $duracion = $certification->duration;
         $varContenido = $certificate->varContent;
         $contenidos = CourseName::find($certification->course_name_id)->contents;
-        $final = $certificate->end;
         $ciudad = "Talca";
 
-        if (User::find($teacher->user_id)->sex == 'M'){
-            $sexo = $constanciaM;
-        } elseif (User::find($teacher->user_id)->sex == 'F'){
-            $sexo = $constanciaF;
+        if (User::find($teacher->user_id)->sex == 'M') {
+            $constancia = $certificate->constancyM;
+            $final = $certificate->endM;
+        } elseif (User::find($teacher->user_id)->sex == 'F') {
+            $constancia = $certificate->constancyF;
+            $final = $certificate->endF;
         } else {
-            $sexo = $constancia;
+            $constancia = $certificate->constancy;
+            $final = $certificate->end;
         }
 
         $text = <<<EOD
-            $nameD, $cargo, $sexo $nameT, $varRut $rut, $participacion "$taller" $organizacion $fecha, $varDuracion $duracion horas.
+            $nameD, $cargo, $constancia $nameT, $varRut $rut, $participacion "$taller" $organizacion $fecha, $varDuracion $duracion horas.
             $varContenido $contenidos.
             $final
         EOD;
 
-        PDF::setImageScale ( 13.5 );
-        PDF::writeHTMLCell(0, 0, 32, 8.4, '<img src="img/Logo UCM.png"/>');
-        PDF::setImageScale ( 6.1 );
-        PDF::writeHTMLCell(0, 0, 135, 5, '<img src="img/Logo CDID.png"/>', 0, 0, 0, true);
+        PDF::setImageScale(13.5);
+        PDF::writeHTMLCell(0, 0, 32, 8.4, '<img src="img/LogoUCM.png"/>');
+        PDF::setImageScale(6.1);
+        PDF::writeHTMLCell(0, 0, 135, 5, '<img src="img/LogoCDID.png"/>', 0, 0, 0, true);
 
         PDF::setCellPaddings(20, '', 20, '');
         // PDF::writeHTMLCell(0, 0, '', 85, $text."\n");
-        PDF::MultiCell(0, 0, $text."\n", 0, 'J', 0, 1, '', 83, true, 0, false, false);
+        PDF::MultiCell(0, 0, $text . "\n", 0, 'J', 0, 1, '', 83, true, 0, false, false);
 
-        PDF::MultiCell(0, 0, $ciudad.", ".$fecha, 0, 'R', 0, 1, '', 218, true, 0, false, false);
+        PDF::MultiCell(0, 0, $ciudad . ", " . $fecha, 0, 'R', 0, 1, '', 218, true, 0, false, false);
 
         // PDF::write(0, $output, '', 0, 'J', true, 0, false, false, 0);
         PDF::Output('Certificado.pdf');
-
     }
 }
