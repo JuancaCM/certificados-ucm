@@ -10,6 +10,7 @@ use App\Http\Controllers\TargetAudienceController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\ModalityController;
 use App\Http\Controllers\CareerController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\ContractController;
 use App\Http\Controllers\InscribedController;
@@ -124,9 +125,8 @@ Route::get('/contratoUniversity', function () {
     return view('admin/university.contratoUniversity');
 });
 
-Route::get('/inscritosCertificaciones', function () {
-    return view('admin/certis.inscritosCertificaciones');
-});
+Route::get('/inscribir', [InscribedController::class, 'formularioInscribir']);
+Route::post('/inscribir', [InscribedController::class, 'inscribir']);
 
 Route::get('/perfil', function () {
     return view('teacher.profile');
@@ -140,8 +140,14 @@ Route::get('/editarDocente', [TeacherController::class, 'formularioEditar']);
 Route::post('/editarDocente', [TeacherController::class, 'guardarEditar']);
 
 
-Route::get('/talleres', [InscribedController::class, 'formulario']);
+Route::get('/certDocentes', [InscribedController::class, 'formulario']);
 
-Route::get('/certificado', function () {
-    return view('admin/certis.contenidoCertificado');
+Route::get('/certificado', [CertificateController::class, 'formulario']);
+Route::post('/certificado', [CertificateController::class, 'guardarCertificado']);
+Route::get('/imagenes', function () {
+    return view('admin/certis.imagenesCertificado');
+});
+
+Route::get('/talleres', function () {
+    return view('admin/certis.cursos');
 });

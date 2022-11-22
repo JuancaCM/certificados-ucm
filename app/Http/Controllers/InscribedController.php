@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Inscribed;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +17,15 @@ class InscribedController extends Controller
         return view('admin.courses', compact('inscribeds'));
     }
 
-    public function guardarAdmin(Request $req)
+    public function formularioInscribir()
+    {
+        $teachers = Teacher::all();
+        $courses = Course::all();
+
+        return view('admin/certis.inscritosCertificaciones', compact('teachers', 'courses'));
+    }
+
+    public function inscribir(Request $req)
     {
         DB::beginTransaction();
         try {
@@ -24,9 +34,10 @@ class InscribedController extends Controller
             $observation = $req->input('description');
 
             $inscription = new Inscribed();
-            $inscription->name = $teacherId;
-            $inscription->rut = $courseId;
-            $inscription->rut = $observation;
+            $inscription->teacher_id = $teacherId;
+            $inscription->course_id = $courseId;
+            $inscription->attendance = '';
+            $inscription->authorization = 0;
 
             $inscription->save();
 

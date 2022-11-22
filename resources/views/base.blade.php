@@ -84,7 +84,8 @@
                         <a class="collapse-item" href="/publico_objetivoCertificaciones">Publico objetivo</a>
                         <a class="collapse-item" href="/tipoCertificaciones">Tipo certificacion</a>
                         <a class="collapse-item" href="/modalidadCertificaciones">Modalidad</a>
-                        <a class="collapse-item" href="/inscritosCertificaciones">Inscritos</a>
+                        <a class="collapse-item" href="/inscribir">Inscribir</a>
+                        <a class="collapse-item" href="/certificado">Certificado</a>
                     </div>
                 </div>
             </li>
@@ -120,7 +121,8 @@
                         <a class="collapse-item" href="/listaDocentes">Docentes</a>
                         <a class="collapse-item" href="/listaCertificaciones">Certificaciones</a>
                         <a class="collapse-item" href="/listaDimensiones">Dimensiones</a>
-                        <a class="collapse-item" href="/talleres">Cursos</a>
+                        <a class="collapse-item" href="/certDocentes">Docentes certificados</a>
+                        <a class="collapse-item" href="/talleres">Talleres</a>
                     </div>
                 </div>
             </li>

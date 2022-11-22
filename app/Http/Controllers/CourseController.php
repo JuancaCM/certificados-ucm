@@ -50,7 +50,7 @@ class CourseController extends Controller
     public function guardar(Request $req)
     {
         DB::beginTransaction();
-        // try {
+        try {
             $course_name = $req->input('name');
             $target_audience = $req->input('target_audience');
             $campus = $req->input('campus');
@@ -67,8 +67,8 @@ class CourseController extends Controller
             $fecha_inicio = $req->input('fecha_inicio');
             $fecha_termino = $req->input('fecha_termino');
             $schedule = $req->input('schedule');
-            $fecha_inicio = Carbon::createFromFormat('d/m/Y', $fecha_inicio)->toDateString();
-            $fecha_termino = Carbon::createFromFormat('d/m/Y', $fecha_termino)->toDateString();
+            $fecha_inicio = Carbon::createFromFormat('m/d/Y', $fecha_inicio)->toDateString();
+            $fecha_termino = Carbon::createFromFormat('m/d/Y', $fecha_termino)->toDateString();
 
             $course = new Course();
             $course->inscription = $inscription_link;
@@ -93,10 +93,11 @@ class CourseController extends Controller
             DB::commit();
 
             return back()->with('insert', true);
-        // } catch (\Throwable $th) {
-        //     dd($th->getTraceAsString());
-        //     DB::rollBack();
-        //     return back()->with('insert', false);
-        // }
+        } catch (\Throwable $th) {
+            // \Log::debug($th->getMessage());
+            // dd($th->getTraceAsString());
+            DB::rollBack();
+            return back()->with('insert', false);
+        }
    }
 }

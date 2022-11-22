@@ -13,7 +13,7 @@ use TCPDF_FONTS;
 
 class PdfController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
 
         $font = TCPDF_FONTS::addTTFfont('fonts/Century Gothic.otf', 'TrueTypeUnicode', '', 96);
@@ -35,8 +35,8 @@ class PdfController extends Controller
         PDF::SetFont($font, '', 11.3, '', true);
         PDF::SetCellHeightRatio(1.8);
 
-        $idT = 1; //CAMBIAR ESTO
-        $idC = 1;
+        $idT = $req->input('idT');
+        $idC = $req->input('idC');
         $teacher = Teacher::find($idT);
         $certification = Course::find($idC);
         $certificate = Certificate::find(1);

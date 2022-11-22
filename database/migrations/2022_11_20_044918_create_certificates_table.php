@@ -27,6 +27,8 @@ return new class extends Migration
             $table->text('varDuration');
             $table->text('varContent');
             $table->text('end');
+            $table->text('endM');
+            $table->text('endF');
             $table->timestamps();
         });
     }

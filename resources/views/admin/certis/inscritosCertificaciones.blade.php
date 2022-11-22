@@ -7,7 +7,7 @@
                 <div class="col s12 m6 mt-3">
                     @if (null != session('insert') && session('insert'))
                         <div class="alert alert-success text-center">
-                            Inscripción correctamente en la base de datos
+                            Inscrito correctamente en la base de datos
                         </div>
                     @elseif (null != session('insert') && !session('insert'))
                         <div class="alert alert-danger text-center">
@@ -22,27 +22,28 @@
                     <div class="card-body ">
                         <div class="row">
                             <div class="col s12 m6">
-                                <span class="text">
-                                    <label><span style="color: red">*</span>Docente:</label>
-                                    <input name="name_teacher" type="text" class="form-control" aria-label="Nombre"
-                                        aria-describedby="basic-addon1" required>
-                                </span>
+                                <label>Docente:</label>
+                                <select name="name_teacher" class="form-control mb-3" aria-label="Teacher" required>
+                                    <option selected disabled>Nombre</option>
+                                    @foreach ($teachers as $teacher)
+                                        <option value="{{ $teacher->id }}">{{ $teacher->user->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="col s12 m6">
-                                <span class="text">
-                                    <label><span style="color: red">*</span>Certificación:</label>
-                                    <input name="name_course" type="text" class="form-control" aria-label="Nombre"
-                                        aria-describedby="basic-addon1" required>
-                                </span>
+                                <label>Certificación:</label>
+                                <select name="name_course" class="form-control mb-3" aria-label="Course" required>
+                                    <option selected disabled>Nombre</option>
+                                    @foreach ($courses as $course)
+                                    <p>{{$course->state->name}}</p>
+                                        @if ($course->state->name != 'Realizado' and $course->state->name != 'Cancelado')
+                                            <option value="{{ $course->id }}">{{ $course->course_name->name }} ({{ $course->state->name }})</option>
+                                        @endif
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
-                        <div class="form-floating mb-3 mt-3">
-                            <label>Observación: <i class="bi bi-question-circle" data-toggle="tooltip"
-                                    data-placement="right" title="Este campo es opcional, lo puede omitir."></i></label>
-                            <textarea name="description" class="form-control" placeholder="Observación" id="floatingTextarea2"
-                                style="height: 100px"></textarea>
-                        </div>
-                        <p style="color: red">*Campos obligatorios</p>
+                        <p style="color: red">* Todos los campos son obligatorios</p>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary mb-3">Registrar</button>
                         </div>
@@ -56,4 +57,4 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    @endsection
+@endsection

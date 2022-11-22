@@ -36,12 +36,20 @@
                                         <td scope="row" class="align-middle">{{ $course->id }}</td>
                                         <td scope="row" class="align-middle">{{ $course->course_name->name }}</td>
                                         <td scope="row" class="align-middle">
-                                            <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
-                                                    href="{{ $course->inscription }}" role="button">Ver</a></div>
+                                            @if (filter_var($course->inscription, FILTER_VALIDATE_URL))
+                                                <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
+                                                        href="{{ $course->inscription }}" role="button">Ver</a></div>
+                                            @else
+                                                {{ $course->inscription }}
+                                            @endif
                                         </td>
                                         <td scope="row" class="align-middle">
-                                            <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
-                                                    href="{{ $course->program }}" role="button">Ver</a></div>
+                                            @if (filter_var($course->program, FILTER_VALIDATE_URL))
+                                                <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
+                                                        href="{{ $course->program }}" role="button">Ver</a></div>
+                                            @else
+                                                {{ $course->program }}
+                                            @endif
                                         </td>
                                         <td scope="row" class="align-middle">{{ $course->type->name }}</td>
                                         <td scope="row" class="align-middle">{{ $course->state->name }}</td>
