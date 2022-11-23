@@ -159,7 +159,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p style="color: red">*Campos son obligatorios</p>
+                        <p style="color: red">*Campos obligatorios</p>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Registrar</button>
                         </div>

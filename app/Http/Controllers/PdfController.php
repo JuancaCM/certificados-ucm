@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Certificate;
 use App\Models\Course;
 use App\Models\CourseName;
+use App\Models\Inscribed;
 use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -35,8 +36,16 @@ class PdfController extends Controller
         PDF::SetFont($font, '', 11.3, '', true);
         PDF::SetCellHeightRatio(1.8);
 
-        $idT = $req->input('idT');
-        $idC = $req->input('idC');
+        $id = $req->input('id');
+        $idI = Inscribed::find($id);
+
+        if ($idI->authorization != 1) {
+            return redirect()->to('/');
+        }
+
+        $idT = $idI->teacher_id;
+        $idC = $idI->course_id;
+
         $teacher = Teacher::find($idT);
         $certification = Course::find($idC);
         $certificate = Certificate::find(1);

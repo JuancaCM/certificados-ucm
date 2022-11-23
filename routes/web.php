@@ -139,15 +139,25 @@ Route::get('/contacto', function () {
 Route::get('/editarDocente', [TeacherController::class, 'formularioEditar']);
 Route::post('/editarDocente', [TeacherController::class, 'guardarEditar']);
 
-
 Route::get('/certDocentes', [InscribedController::class, 'formulario']);
 
 Route::get('/certificado', [CertificateController::class, 'formulario']);
 Route::post('/certificado', [CertificateController::class, 'guardarCertificado']);
+
 Route::get('/imagenes', function () {
     return view('admin/certis.imagenesCertificado');
 });
 
-Route::get('/talleres', function () {
-    return view('admin/certis.cursos');
-});
+Route::get('/editarCertificacion', [CourseController::class, 'formularioEditar']);
+Route::post('/editarCertificacion', [CourseController::class, 'guardarEditar']);
+
+Route::get('/editarDimension', [DimensionController::class, 'formularioEditar']);
+Route::post('/editarDimension', [DimensionController::class, 'guardarEditar']);
+
+Route::get('/inscritos', [InscribedController::class, 'inscritos']);
+Route::post('/inscritos', [InscribedController::class, 'guardarEditar']);
+
+Route::get('/relatores', [CourseTeacherController::class, 'formulario']);
+
+Route::get('/editarRelator', [CourseTeacherController::class, 'formularioEditar']);
+Route::post('/editarRelator', [CourseTeacherController::class, 'guardarEditar']);

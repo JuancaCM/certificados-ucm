@@ -1,6 +1,17 @@
 @extends('base')
 
 @section('content')
+    <div class="col s12 m6">
+        @if (null != session('insert') && session('insert'))
+            <div class="alert alert-success text-center">
+                Dimensión modificada correctamente
+            </div>
+        @elseif (null != session('insert') && !session('insert'))
+            <div class="alert alert-danger text-center">
+                Ha ocurrido un error al modificar la dimensión
+            </div>
+        @endif
+    </div>
     <div class="row justify-content-center">
         <div class="card mt-3 mb-3 ml-3 mr-3">
             <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Dimensiones</h5>
@@ -23,7 +34,7 @@
                                         <td scope="row" class="align-middle">{{ $dimension->name }}</td>
                                         <td scope="row" class="align-middle">{{ $dimension->description }}</td>
                                         <td scope="row" class="align-middle">
-                                            <div class="text-center mb-1"><a class="btn btn-warning btn-sm" href="#"
+                                            <div class="text-center mb-1"><a class="btn btn-warning btn-sm" href="/editarDimension?id={{ $dimension->id }}"
                                                     role="button"><i class="bi bi-pencil-square"></i></a></div>
                                             <div class="text-center"><a class="btn btn-danger btn-sm" href="#"
                                                     role="button"><i class="bi bi-file-earmark-x"></i></a></div>

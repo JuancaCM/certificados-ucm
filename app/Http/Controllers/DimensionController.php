@@ -37,4 +37,37 @@ class DimensionController extends Controller
             return back()->with('insert', false);
         }
     }
+
+    public function formularioEditar(Request $req)
+    {
+        $dimension = Dimension::find($req->input('id'));
+
+        return view('admin/certis/editar.editDimension', compact('dimension'));
+    }
+
+    public function guardarEditar(Request $req)
+    {
+        DB::beginTransaction();
+        try {
+
+            $dimension = $req->input('dimension');
+            $description = $req->input('description');
+
+            $dimen = Dimension::find($req->input('id'));
+
+            $dimen->name = $dimension;
+            $dimen->description = $description;
+
+            $dimen->save();
+
+            DB::commit();
+
+            return redirect()->to('/listaDimensiones')->with('insert', true);
+        } catch (\Throwable $th) {
+            // \Log::debug($th->getMessage());
+            // dd($th->getTraceAsString());
+            DB::rollBack();
+            return redirect()->to('/listaDimensiones')->with('insert', false);
+        }
+    }
 }

@@ -119,10 +119,10 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/listaDocentes">Docentes</a>
+                        <a class="collapse-item" href="/relatores">Relatores</a>
                         <a class="collapse-item" href="/listaCertificaciones">Certificaciones</a>
                         <a class="collapse-item" href="/listaDimensiones">Dimensiones</a>
                         <a class="collapse-item" href="/certDocentes">Docentes certificados</a>
-                        <a class="collapse-item" href="/talleres">Talleres</a>
                     </div>
                 </div>
             </li>
