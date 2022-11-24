@@ -14,7 +14,7 @@ class User extends Model
         return $this->hasMany(Teacher::class);
     }
 
-    public function roles()
+    public function role()
     {
         return $this->belongsTo(Role::class);
     }

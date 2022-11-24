@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -20,7 +21,7 @@ class UserController extends Controller
             $admin = new User();
             $admin->name = $name;
             $admin->rut = $rut;
-            $admin->pass = bcrypt($rut);
+            $admin->pass = Hash::make($rut);
             $admin->mail = $mail;
             $admin->phone = $phone;
             $admin->role_id = 1;
@@ -48,7 +49,7 @@ class UserController extends Controller
             $analista = new User();
             $analista->name = $name;
             $analista->rut = $rut;
-            $analista->pass = bcrypt($rut);
+            $analista->pass = Hash::make($rut);
             $analista->mail = $mail;
             $analista->phone = $phone;
             $analista->role_id = 3;

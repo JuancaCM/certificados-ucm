@@ -10,6 +10,7 @@ use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class TeacherController extends Controller
 {
@@ -98,7 +99,7 @@ class TeacherController extends Controller
 
             $user = new User();
             $user->rut = $rut;
-            $user->pass = bcrypt('1234');
+            $user->pass = Hash::make($rut);
             $user->name = $name;
             $user->mail = $mail;
             $user->phone = $phone;

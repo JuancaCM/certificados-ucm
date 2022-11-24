@@ -72,8 +72,6 @@ class InscribedController extends Controller
             $inscribed->attendance = $attendance;
             $inscribed->authorization = $authorization;
 
-            dd($attendance);
-
             $inscribed->save();
 
             DB::commit();

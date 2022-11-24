@@ -53,81 +53,84 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Login</span></a>
             </li> --}}
-
-            <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegSuperAdmin"
-                    aria-expanded="true" aria-controls="collapseRegSuperAdmin">
-                    <i class="fa-regular fa-mask"></i>
-                    <span>Super Admin</span>
-                </a>
-                <div id="collapseRegSuperAdmin" class="collapse" aria-labelledby="headingReg"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/registroAdmin">Administrador</a>
+            @if (session('role_name') === 'superAdmin')
+                <li class="nav-item active">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse"
+                        data-target="#collapseRegSuperAdmin" aria-expanded="true" aria-controls="collapseRegSuperAdmin">
+                        <i class="fa-regular fa-mask"></i>
+                        <span>Super Admin</span>
+                    </a>
+                    <div id="collapseRegSuperAdmin" class="collapse" aria-labelledby="headingReg"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="/registroAdmin">Administrador</a>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
+            @endif
 
-            <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReg"
-                    aria-expanded="true" aria-controls="collapseReg">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Registro</span>
-                </a>
-                <div id="collapseReg" class="collapse" aria-labelledby="headingReg" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/registroCertificaciones">Certificaciones</a>
-                        <a class="collapse-item" href="/registroDimensiones">Dimensiones</a>
-                        <a class="collapse-item" href="/estadoCertificaciones">Estado</a>
-                        <a class="collapse-item" href="/sedeCertificaciones">Sede</a>
-                        <a class="collapse-item" href="/relatoriaCertificaciones">Relatoria</a>
-                        <a class="collapse-item" href="/publico_objetivoCertificaciones">Publico objetivo</a>
-                        <a class="collapse-item" href="/tipoCertificaciones">Tipo certificacion</a>
-                        <a class="collapse-item" href="/modalidadCertificaciones">Modalidad</a>
-                        <a class="collapse-item" href="/inscribir">Inscribir</a>
-                        <a class="collapse-item" href="/certificado">Certificado</a>
+            @if (session('role_name') === 'Administrador')
+                <li class="nav-item active">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReg"
+                        aria-expanded="true" aria-controls="collapseReg">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Registro</span>
+                    </a>
+                    <div id="collapseReg" class="collapse" aria-labelledby="headingReg" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="/registroCertificaciones">Certificaciones</a>
+                            <a class="collapse-item" href="/registroDimensiones">Dimensiones</a>
+                            <a class="collapse-item" href="/estadoCertificaciones">Estado</a>
+                            <a class="collapse-item" href="/sedeCertificaciones">Sede</a>
+                            <a class="collapse-item" href="/relatoriaCertificaciones">Relatoria</a>
+                            <a class="collapse-item" href="/publico_objetivoCertificaciones">Publico objetivo</a>
+                            <a class="collapse-item" href="/tipoCertificaciones">Tipo certificacion</a>
+                            <a class="collapse-item" href="/modalidadCertificaciones">Modalidad</a>
+                            <a class="collapse-item" href="/inscribir">Inscribir</a>
+                            <a class="collapse-item" href="/certificado">Certificado</a>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
 
-            <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegUser"
-                    aria-expanded="true" aria-controls="collapseRegUser">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Registro Usuarios</span>
-                </a>
-                <div id="collapseRegUser" class="collapse" aria-labelledby="headingRegUser"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/registroDocente">Docente</a>
-                        <a class="collapse-item" href="/registroAnalista">Analista</a>
-                        <h6 class="collapse-header">Datos de usuario:</h6>
-                        <a class="collapse-item" href="/contratoUniversity">Contrato</a>
-                        <a class="collapse-item" href="/facultadUniversity">Facultad</a>
-                        <a class="collapse-item" href="/carreraUniversity">Carrera</a>
+                <li class="nav-item active">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegUser"
+                        aria-expanded="true" aria-controls="collapseRegUser">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Registro Usuarios</span>
+                    </a>
+                    <div id="collapseRegUser" class="collapse" aria-labelledby="headingRegUser"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="/registroDocente">Docente</a>
+                            <a class="collapse-item" href="/registroAnalista">Analista</a>
+                            <h6 class="collapse-header">Datos de usuario:</h6>
+                            <a class="collapse-item" href="/contratoUniversity">Contrato</a>
+                            <a class="collapse-item" href="/facultadUniversity">Facultad</a>
+                            <a class="collapse-item" href="/carreraUniversity">Carrera</a>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
 
-            <li class="nav-item active">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
-                    aria-expanded="true" aria-controls="collapseTable">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Tablas</span>
-                </a>
-                <div id="collapseTable" class="collapse" aria-labelledby="headingTable"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/listaDocentes">Docentes</a>
-                        <a class="collapse-item" href="/relatores">Relatores</a>
-                        <a class="collapse-item" href="/listaCertificaciones">Certificaciones</a>
-                        <a class="collapse-item" href="/listaDimensiones">Dimensiones</a>
-                        <a class="collapse-item" href="/certDocentes">Docentes certificados</a>
+                <li class="nav-item active">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
+                        aria-expanded="true" aria-controls="collapseTable">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Tablas</span>
+                    </a>
+                    <div id="collapseTable" class="collapse" aria-labelledby="headingTable"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="/listaDocentes">Docentes</a>
+                            <a class="collapse-item" href="/relatores">Relatores</a>
+                            <a class="collapse-item" href="/listaCertificaciones">Certificaciones</a>
+                            <a class="collapse-item" href="/listaDimensiones">Dimensiones</a>
+                            <a class="collapse-item" href="/certDocentes">Docentes certificados</a>
+                        </div>
                     </div>
-                </div>
-            </li>
+                </li>
+            @endif
 
-            {{--  <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="/registroCertificaciones">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Certificaciones</span></a>
@@ -137,11 +140,11 @@
                 <a class="nav-link" href="/registroDimensiones">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dimensiones</span></a>
-            </li>  --}}
+            </li> --}}
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            {{-- <hr class="sidebar-divider"> --}}
 
             <!-- Heading -->
             {{-- <div class="sidebar-heading">
@@ -453,7 +456,7 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="login.html">Logout</a>
+                            <a class="btn btn-primary" href="/logout">Logout</a>
                         </div>
                     </div>
                 </div>
