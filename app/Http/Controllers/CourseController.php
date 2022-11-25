@@ -55,6 +55,7 @@ class CourseController extends Controller
             'Julio',
             'Agosto',
             'Septiembre',
+            'Octubre',
             'Noviembre',
             'Diciembre',
         ];

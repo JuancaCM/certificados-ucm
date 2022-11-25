@@ -36,7 +36,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(SuperAdmin::class)->group(function () {
 
-    Route::get('/perfil', function () {return view('teacher.profile');});
+    Route::get('/perfil', [UserController::class, 'profile']);
 
     Route::get('/registroAdmin', function () {return view('superAdmin/registroAdmin');});
 
@@ -47,7 +47,7 @@ Route::middleware(SuperAdmin::class)->group(function () {
 
 Route::middleware(Admin::class)->group(function () {
 
-    Route::get('/perfil', function () {return view('teacher.profile');});
+    Route::get('/perfil', [UserController::class, 'profile']);
 
     Route::get('/', function () {return view('nav.index');});
 
@@ -142,17 +142,21 @@ Route::middleware(Docente::class)->group(function () {
 
     Route::get('/contacto', function () {return view('nav.contacto');});
 
-    Route::get('/perfil', function () {return view('teacher.profile');});
+    Route::get('/perfil', [UserController::class, 'profile']);
 
-    Route::get('/', function () {return view('nav.index');    });
+    Route::get('/', function () {return view('nav.index');});
 
     Route::get('pdf', [PdfController::class, 'index']);
+
+    Route::get('/terminados', [TeacherController::class, 'verTerminados']);
+
+    Route::get('/enCurso', [TeacherController::class, 'verEnCurso']);
 
 });
 
 Route::middleware(Analista::class)->group(function () {
 
-    Route::get('/perfil', function () {return view('teacher.profile');});
+    Route::get('/perfil', [UserController::class, 'profile']);
 
     Route::get('/', function () {return view('nav.index');});
 

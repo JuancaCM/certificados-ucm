@@ -1,3 +1,4 @@
+INSERT INTO roles (name) VALUES ('SuperAdmin');
 INSERT INTO roles (name) VALUES ('Administrador');
 INSERT INTO roles (name) VALUES ('Docente');
 INSERT INTO roles (name) VALUES ('Analista');
@@ -25,9 +26,10 @@ INSERT INTO states (name) VALUES ('En curso');
 INSERT INTO states (name) VALUES ('Realizado');
 INSERT INTO states (name) VALUES ('Pendiente');
 
-INSERT INTO course_names (name, dimension_id) VALUES ('Normas APA/Mendeley', 1);
-INSERT INTO course_names (name, dimension_id) VALUES ('SAP Docente', 2);
-INSERT INTO course_names (name, dimension_id) VALUES ('Comunicación efectiva y liderazgo educativo', 3);
+INSERT INTO course_names (name, dimension_id, contents) VALUES ('Normas APA/Mendeley', 1, '');
+INSERT INTO course_names (name, dimension_id, contents) VALUES ('SAP Docente', 2, '');
+INSERT INTO course_names (name, dimension_id, contents) VALUES ('Comunicación efectiva y liderazgo educativo', 3, '');
+INSERT INTO course_names (name, dimension_id, contents) VALUES ('¿Cómo buscar información científica y no fallar en el intento?', 3, 'Alfabetización informacional, Identificar necesidad de información, Delimitar el tema, Identificar conceptos principales, Tesauros, Operadores booleanos, Estrategias de búsqueda, Operadores de proximidad, Símbolos de truncamiento, Recurso de información, Evaluación de la información, Fuentes de información, Criterios de valoración, Recursos de información SIBIB, Búsquedas de información, Fake News, Uso ético de la información y Gestores bibliográficos');
 
 INSERT INTO course_teachers (name, rut, mail, phone) VALUES ('Juanita Perez', '169517260', 'juanita@perez.cl', 967587243);
 INSERT INTO course_teachers (name, rut, mail, phone) VALUES ('Jon Doe', '154679870', 'jon@doe.cl', 067815263);
@@ -44,3 +46,7 @@ INSERT INTO types (name) VALUES ('Seminario web');
 INSERT INTO modalities (name) VALUES ('Presencial');
 INSERT INTO modalities (name) VALUES ('Online');
 INSERT INTO modalities (name) VALUES ('Presencial y online');
+
+INSERT INTO certificates (title, directorName, position, constancy, constancyM, constancyF, varRut, participation, organization, varDuration, varContent, end, endM, endF) VALUES ('CONSTANCIA DE PARTICIPACIÓN', 'SRA. ANA JARA ROJAS', 'Directora General de Docencia de la Universidad Católica del Maule', 'deja constancia que el académico Sr/a.', 'deja constancia que el académico Sr.', 'deja constancia que la académica Sra.', 'RUN', 'participó en el taller', 'organizado por el Centro de Desarrollo e Innovación Docente (CDID), realizado el día', 'con una duración total de', 'Los contenidos abordados fueron:', 'Se extiende la presente constancia de participación a petición del interesado para los fines que estime convenientes.', 'Se extiende la presente constancia de participación a petición del interesado para los fines que estime convenientes.', 'Se extiende la presente constancia de participación a petición de la interesada para los fines que estime convenientes.');
+
+INSERT INTO users (rut, name, pass, mail, phone, sex, role_id) VALUES ('18779441-2', 'Luis Varela Gutierrez', '$2a$10$ZG1cLa2Tp//6zny8FsjRFuvKKm53jjk1tDeMW826kv1bay/TpjZ6a', 'luisvarelag@outlook.com', '982262817', 'M', 1);

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script src="https://kit.fontawesome.com/88b0394940.js" crossorigin="anonymous"></script>
 
     @vite(['resources/css/app.scss', 'resources/css/sb-admin-2.min.css', 'resources/js/app.js', 'resources/js/sb-admin-2.min.js'])
 
@@ -27,8 +28,6 @@
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-
 
             <!-- Sidebar - Brand -->
             {{-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -48,17 +47,17 @@
             <!-- Nav Item - Dashboard -->
 
 
-            {{-- <li class="nav-item active">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="/login">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Login</span></a>
-            </li> --}}
-            @if (session('role_name') === 'superAdmin')
-                <li class="nav-item active">
+                    <span>Login</span></a> --}}
+            </li>
+            @if (session('role_name') === 'SuperAdmin')
+                <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse"
                         data-target="#collapseRegSuperAdmin" aria-expanded="true" aria-controls="collapseRegSuperAdmin">
-                        <i class="fa-regular fa-mask"></i>
-                        <span>Super Admin</span>
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Registrar</span>
                     </a>
                     <div id="collapseRegSuperAdmin" class="collapse" aria-labelledby="headingReg"
                         data-parent="#accordionSidebar">
@@ -70,33 +69,12 @@
             @endif
 
             @if (session('role_name') === 'Administrador')
-                <li class="nav-item active">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReg"
-                        aria-expanded="true" aria-controls="collapseReg">
-                        <i class="fas fa-fw fa-cog"></i>
-                        <span>Registro</span>
-                    </a>
-                    <div id="collapseReg" class="collapse" aria-labelledby="headingReg" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="/registroCertificaciones">Certificaciones</a>
-                            <a class="collapse-item" href="/registroDimensiones">Dimensiones</a>
-                            <a class="collapse-item" href="/estadoCertificaciones">Estado</a>
-                            <a class="collapse-item" href="/sedeCertificaciones">Sede</a>
-                            <a class="collapse-item" href="/relatoriaCertificaciones">Relatoria</a>
-                            <a class="collapse-item" href="/publico_objetivoCertificaciones">Publico objetivo</a>
-                            <a class="collapse-item" href="/tipoCertificaciones">Tipo certificacion</a>
-                            <a class="collapse-item" href="/modalidadCertificaciones">Modalidad</a>
-                            <a class="collapse-item" href="/inscribir">Inscribir</a>
-                            <a class="collapse-item" href="/certificado">Certificado</a>
-                        </div>
-                    </div>
-                </li>
 
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegUser"
                         aria-expanded="true" aria-controls="collapseRegUser">
-                        <i class="fas fa-fw fa-cog"></i>
-                        <span>Registro Usuarios</span>
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>Registro de Usuarios</span>
                     </a>
                     <div id="collapseRegUser" class="collapse" aria-labelledby="headingRegUser"
                         data-parent="#accordionSidebar">
@@ -111,11 +89,32 @@
                     </div>
                 </li>
 
-                <li class="nav-item active">
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReg"
+                        aria-expanded="true" aria-controls="collapseReg">
+                        <i class="fa-solid fa-square-plus"></i>
+                        <span>Crear</span>
+                    </a>
+                    <div id="collapseReg" class="collapse" aria-labelledby="headingReg" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="/registroCertificaciones">Certificaciones</a>
+                            <a class="collapse-item" href="/registroDimensiones">Dimensiones</a>
+                            <a class="collapse-item" href="/relatoriaCertificaciones">Relatores</a>
+                            <h6 class="collapse-header">Datos de certificaciones:</h6>
+                            <a class="collapse-item" href="/estadoCertificaciones">Estado</a>
+                            <a class="collapse-item" href="/sedeCertificaciones">Sede</a>
+                            <a class="collapse-item" href="/publico_objetivoCertificaciones">Publico objetivo</a>
+                            <a class="collapse-item" href="/tipoCertificaciones">Tipo certificacion</a>
+                            <a class="collapse-item" href="/modalidadCertificaciones">Modalidad</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
                         aria-expanded="true" aria-controls="collapseTable">
                         <i class="fas fa-fw fa-cog"></i>
-                        <span>Tablas</span>
+                        <span>Ver</span>
                     </a>
                     <div id="collapseTable" class="collapse" aria-labelledby="headingTable"
                         data-parent="#accordionSidebar">
@@ -129,6 +128,25 @@
                     </div>
                 </li>
             @endif
+
+            @if (session('role_name') === 'Docente')
+                <li class="nav-item active">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
+                        aria-expanded="true" aria-controls="collapseTable">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Certificaciones</span>
+                    </a>
+                    <div id="collapseTable" class="collapse" aria-labelledby="headingTable"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="/terminados">Terminadas</a>
+                            <a class="collapse-item" href="/enCurso">En curso</a>
+                        </div>
+                    </div>
+                </li>
+            @endif
+
+
 
             {{-- <li class="nav-item active">
                 <a class="nav-link" href="/registroCertificaciones">
@@ -216,11 +234,16 @@
             </li> --}}
 
             <!-- Nav Item - Charts -->
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li> --}}
+            <li class="nav-item">
+                <a class="nav-link" href="/inscribir">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Inscribir Docentes</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/certificado">
+                    <i class="fa-solid fa-certificate"></i>
+                    <span>Modificar Certificado</span></a>
+            </li>
 
             <!-- Nav Item - Tables -->
             {{-- <li class="nav-item">
@@ -405,7 +428,7 @@
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ session('name') }}</span>
                                     <img class="img-profile rounded-circle" src="img/admin.png">
                                 </a>
                                 <!-- Dropdown - User Information -->
@@ -447,16 +470,16 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesión</h5>
                             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
-                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                        <div class="modal-body">Presiona el boton "Cerrar Sesión" para terminar con la sesión actual.
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="/logout">Logout</a>
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                            <a class="btn btn-primary" href="/logout">Cerrar Sesión</a>
                         </div>
                     </div>
                 </div>

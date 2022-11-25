@@ -24,7 +24,7 @@ class UserController extends Controller
             $admin->pass = Hash::make($rut);
             $admin->mail = $mail;
             $admin->phone = $phone;
-            $admin->role_id = 1;
+            $admin->role_id = 2;
 
             $admin->save();
 
@@ -63,5 +63,19 @@ class UserController extends Controller
             DB::rollBack();
             return back()->with('insert', false);
         }
+    }
+
+    public function profile()
+    {
+        $user = User::where('id', session('id'))
+            ->with('teachers')
+            ->with('teachers.career')
+            ->with('teachers.career.faculty')
+            ->with('teachers.contract')
+            ->get();
+
+        $user = $user->first();
+
+        return view('profile', compact('user'));
     }
 }

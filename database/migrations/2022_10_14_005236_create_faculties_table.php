@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('faculties', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
+            $table->string('name')->unique();
             $table->text('observation')->nullable();
             $table->timestamps();
         });

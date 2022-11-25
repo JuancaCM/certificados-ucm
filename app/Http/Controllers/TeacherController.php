@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Campus;
 use App\Models\Career;
 use App\Models\Contract;
+use App\Models\Inscribed;
 use App\Models\Role;
 use App\Models\Teacher;
 use App\Models\User;
@@ -103,7 +104,7 @@ class TeacherController extends Controller
             $user->name = $name;
             $user->mail = $mail;
             $user->phone = $phone;
-            $user->role_id = 2;
+            $user->role_id = 3;
 
             $user->save();
             $userId = $user->id;
@@ -123,5 +124,59 @@ class TeacherController extends Controller
             DB::rollBack();
             return back()->with('insert', false);
         }
+    }
+
+    public function verTerminados(Request $req)
+    {
+        $teacher = Teacher::where('user_id', session('id'))->get()->first();
+
+        $inscribeds = Inscribed::where('teacher_id', $teacher->id)
+            ->with('course')
+            ->with('course.state')
+            ->get();
+
+        $meses = [
+            'Enero',
+            'Febrero',
+            'Marzo',
+            'Abril',
+            'Mayo',
+            'Junio',
+            'Julio',
+            'Agosto',
+            'Septiembre',
+            'Octubre',
+            'Noviembre',
+            'Diciembre',
+        ];
+
+        return view('teacher/listaTerminados', compact('inscribeds', 'meses'));
+    }
+
+    public function verEnCurso()
+    {
+        $teacher = Teacher::where('user_id', session('id'))->get()->first();
+
+        $inscribeds = Inscribed::where('teacher_id', $teacher->id)
+            ->with('course')
+            ->with('course.state')
+            ->get();
+
+        $meses = [
+            'Enero',
+            'Febrero',
+            'Marzo',
+            'Abril',
+            'Mayo',
+            'Junio',
+            'Julio',
+            'Agosto',
+            'Septiembre',
+            'Octubre',
+            'Noviembre',
+            'Diciembre',
+        ];
+
+        return view('teacher/listaEnCurso', compact('inscribeds', 'meses'));
     }
 }

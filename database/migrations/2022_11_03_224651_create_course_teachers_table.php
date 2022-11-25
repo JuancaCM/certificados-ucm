@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('course_teachers', function (Blueprint $table) {
             $table->id();
-            $table->text('rut');
+            $table->string('rut')->unique();
             $table->text('name');
             $table->text('mail');
             $table->text('phone');

@@ -32,6 +32,7 @@ class InscribedController extends Controller
             'Julio',
             'Agosto',
             'Septiembre',
+            'Octubre',
             'Noviembre',
             'Diciembre',
         ];
@@ -53,6 +54,7 @@ class InscribedController extends Controller
             'Julio',
             'Agosto',
             'Septiembre',
+            'Octubre',
             'Noviembre',
             'Diciembre',
         ];

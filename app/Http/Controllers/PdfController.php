@@ -50,7 +50,7 @@ class PdfController extends Controller
         $certification = Course::find($idC);
         $certificate = Certificate::find(1);
         $month = date('m', strtotime($certification->start));
-        $meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Noviembre', 'Diciembre'];
+        $meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
         $mes = $meses[ltrim($month, 0) - 1];
 
         $nameD = $certificate->directorName;
@@ -67,6 +67,13 @@ class PdfController extends Controller
         $duracion = $certification->duration;
         $varContenido = $certificate->varContent;
         $contenidos = CourseName::find($certification->course_name_id)->contents;
+
+        if (blank($contenidos)) {
+            $varContenido = NULL;
+        } else {
+            $contenidos = $contenidos.'.';
+        }
+
         $ciudad = "Talca";
 
         if (User::find($teacher->user_id)->sex == 'M') {
@@ -82,7 +89,7 @@ class PdfController extends Controller
 
         $text = <<<EOD
             $nameD, $cargo, $constancia $nameT, $varRut $rut, $participacion "$taller" $organizacion $fecha, $varDuracion $duracion horas.
-            $varContenido $contenidos.
+            $varContenido $contenidos
             $final
         EOD;
 

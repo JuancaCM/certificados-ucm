@@ -37,7 +37,7 @@
                                     {{ $month = date('m', strtotime($course->start)) }}
                                     {{ $mes = $meses[ltrim($month, 0) - 1] }}
                                     <p>{{ $course->state->name }}</p>
-                                    @if ($course->state->name === 'Pendiente')
+                                    @if ($course->state->name === 'Pendiente' or $course->state->name === 'En curso')
                                         <option value="{{ $course->id }}">{{ $course->course_name->name }}
                                             ({{ $mes }})
                                             ({{ $course->schedule }})</option>
