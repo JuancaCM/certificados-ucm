@@ -69,7 +69,6 @@
             @endif
 
             @if (session('role_name') === 'Administrador')
-
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRegUser"
                         aria-expanded="true" aria-controls="collapseRegUser">
@@ -133,7 +132,7 @@
                 <li class="nav-item active">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
                         aria-expanded="true" aria-controls="collapseTable">
-                        <i class="fas fa-fw fa-cog"></i>
+                        <i class="fa-solid fa-graduation-cap"></i>
                         <span>Certificaciones</span>
                     </a>
                     <div id="collapseTable" class="collapse" aria-labelledby="headingTable"
@@ -234,16 +233,18 @@
             </li> --}}
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="/inscribir">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>Inscribir Docentes</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/certificado">
-                    <i class="fa-solid fa-certificate"></i>
-                    <span>Modificar Certificado</span></a>
-            </li>
+            @if (session('role_name') === 'Administrador')
+                <li class="nav-item">
+                    <a class="nav-link" href="/inscribir">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Inscribir Docentes</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/certificado">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Modificar Certificado</span></a>
+                </li>
+            @endif
 
             <!-- Nav Item - Tables -->
             {{-- <li class="nav-item">
@@ -428,7 +429,8 @@
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ session('name') }}</span>
+                                    <span
+                                        class="mr-2 d-none d-lg-inline text-gray-600 small">{{ session('name') }}</span>
                                     <img class="img-profile rounded-circle" src="img/admin.png">
                                 </a>
                                 <!-- Dropdown - User Information -->

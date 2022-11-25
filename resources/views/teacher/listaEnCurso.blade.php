@@ -3,7 +3,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="card mt-3 mb-3 ml-3 mr-3">
-            <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Cursos terminados</h5>
+            <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Talleres en curso</h5>
             <div class="card-body">
                 <ol class="list-group list-group-numbered">
                     <div class="table-responsive">

@@ -12,7 +12,7 @@
                         <div class="mb-3 s12 m6">
                             <label for="">Rut:</label>
                             <input name="rut" type="text" class="form-control" aria-describedby="emailHelp">
-                            <small>Rut sin puntos ni guion</small>
+                            <small>Rut sin puntos y con guion</small>
                         </div>
                         <div class="mb-3 s12 m6">
                             <label for="">Contraseña:</label>

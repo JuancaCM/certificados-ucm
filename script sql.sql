@@ -49,4 +49,12 @@ INSERT INTO modalities (name) VALUES ('Presencial y online');
 
 INSERT INTO certificates (title, directorName, position, constancy, constancyM, constancyF, varRut, participation, organization, varDuration, varContent, end, endM, endF) VALUES ('CONSTANCIA DE PARTICIPACIÓN', 'SRA. ANA JARA ROJAS', 'Directora General de Docencia de la Universidad Católica del Maule', 'deja constancia que el académico Sr/a.', 'deja constancia que el académico Sr.', 'deja constancia que la académica Sra.', 'RUN', 'participó en el taller', 'organizado por el Centro de Desarrollo e Innovación Docente (CDID), realizado el día', 'con una duración total de', 'Los contenidos abordados fueron:', 'Se extiende la presente constancia de participación a petición del interesado para los fines que estime convenientes.', 'Se extiende la presente constancia de participación a petición del interesado para los fines que estime convenientes.', 'Se extiende la presente constancia de participación a petición de la interesada para los fines que estime convenientes.');
 
-INSERT INTO users (rut, name, pass, mail, phone, sex, role_id) VALUES ('18779441-2', 'Luis Varela Gutierrez', '$2a$10$ZG1cLa2Tp//6zny8FsjRFuvKKm53jjk1tDeMW826kv1bay/TpjZ6a', 'luisvarelag@outlook.com', '982262817', 'M', 1);
+INSERT INTO users (rut, name, pass, mail, phone, sex, role_id)
+VALUES ('18779441-2', 'Luis Varela Gutierrez', '$2y$10$2lvaoujlxOvd4R70znv7rOoOv.3g34KGczpDVu6nTP9rgatd0hhX6', 'luisvarelag@outlook.com',
+'982262817', 'M', 1);
+
+INSERT INTO users (rut, name, pass, mail, phone, sex, role_id)
+VALUES ('1', 'Juan Perez', '$2y$10$2lvaoujlxOvd4R70znv7rOoOv.3g34KGczpDVu6nTP9rgatd0hhX6', 'luisvarelag@outlook.com',
+'982262817', 'M', 1);
+
+INSERT INTO users (user_id, campus_id, career_id, contract_id) VALUES ();
