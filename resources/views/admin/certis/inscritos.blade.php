@@ -50,7 +50,7 @@
                                         @if ($inscribed->authorization === 1)
                                             <td scope="row" class="align-middle">
                                                 <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
-                                                        href="/pdf?id={{ $inscribed->id }}" role="button">Ver</a>
+                                                        href="/pdf?id={{ $inscribed->id }}" role="button"><i class="fa-solid fa-eye"></i></a>
                                             </td>
                                         @else
                                             <td scope="row" class="align-middle">
@@ -61,10 +61,10 @@
                                             <div class="text-center mb-1"><button type="button"
                                                     class="btn btn-warning btn-sm" data-toggle="modal"
                                                     data-target="#modal{{ $inscribed->id }}">
-                                                    <i class="bi bi-pencil-square"></i>
+                                                    <i class="fa-solid fa-pen-to-square"></i>
                                                 </button></div>
                                             <div class="text-center"><a class="btn btn-danger btn-sm" href="#"
-                                                    role="button"><i class="bi bi-file-earmark-x"></i></a></div>
+                                                    role="button"><i class="fa-solid fa-trash"></i></a></div>
                                         </td>
                                     </tr>
 
@@ -84,7 +84,7 @@
                                                     <div class="modal-body">
                                                         <label><span style="color: red">*</span>Asistencia:</label>
                                                         <input name="attendance" type="text" class="form-control"
-                                                            aria-label="course_names" aria-describedby="basic-addon1"
+                                                            aria-label="attendance" aria-describedby="basic-addon1"
                                                             value="{{ $inscribed->attendance }}" required>
                                                         <label><span style="color: red">*</span>Autorizado para obtener
                                                             certificado:</label>

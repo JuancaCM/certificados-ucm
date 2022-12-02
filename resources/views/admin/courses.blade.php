@@ -53,7 +53,7 @@
                                                 {{ $inscribed->course->course_name->dimension->name }}</td>
                                             <td scope="row" class="align-middle">
                                                 <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
-                                                        href="/pdf?id={{ $inscribed->id }}" role="button">Ver</a>
+                                                        href="/pdf?id={{ $inscribed->id }}" role="button"><i class="fa-solid fa-eye"></i></a>
                                             </td>
                                         </tr>
                                     @endif

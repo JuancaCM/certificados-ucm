@@ -35,9 +35,9 @@
                                         <td scope="row" class="align-middle">{{ $dimension->description }}</td>
                                         <td scope="row" class="align-middle">
                                             <div class="text-center mb-1"><a class="btn btn-warning btn-sm" href="/editarDimension?id={{ $dimension->id }}"
-                                                    role="button"><i class="bi bi-pencil-square"></i></a></div>
+                                                    role="button"><i class="fa-solid fa-pen-to-square"></i></a></div>
                                             <div class="text-center"><a class="btn btn-danger btn-sm" href="#"
-                                                    role="button"><i class="bi bi-file-earmark-x"></i></a></div>
+                                                    role="button"><i class="fa-solid fa-trash"></i></a></div>
                                         </td>
                                     </tr>
                                 @endforeach

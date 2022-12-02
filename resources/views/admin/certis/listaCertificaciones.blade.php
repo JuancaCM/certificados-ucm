@@ -57,7 +57,7 @@
                                         @if (in_array($course->id, $inscribeds))
                                             <td scope="row" class="align-middle">
                                                 <div class="text-center"><a class="btn btn-info btn-sm"
-                                                        href="/inscritos?id={{ $course->id }}" role="button">Ver</a>
+                                                        href="/inscritos?id={{ $course->id }}" role="button"><i class="fa-solid fa-eye"></i></a>
                                                 </div>
                                             </td>
                                         @else
@@ -66,7 +66,7 @@
                                         <td scope="row" class="align-middle">
                                             @if (filter_var($course->inscription, FILTER_VALIDATE_URL))
                                                 <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
-                                                        href="{{ $course->inscription }}" role="button">Ver</a></div>
+                                                        href="{{ $course->inscription }}" role="button"><i class="fa-solid fa-eye"></i></a></div>
                                             @else
                                                 {{ $course->inscription }}
                                             @endif
@@ -74,7 +74,7 @@
                                         <td scope="row" class="align-middle">
                                             @if (filter_var($course->program, FILTER_VALIDATE_URL))
                                                 <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
-                                                        href="{{ $course->program }}" role="button">Ver</a></div>
+                                                        href="{{ $course->program }}" role="button"><i class="fa-solid fa-eye"></i></a></div>
                                             @else
                                                 {{ $course->program }}
                                             @endif
@@ -104,10 +104,10 @@
                                             {{ date('d-m-Y', strtotime($course->end)) }}</td>
                                         <td scope="row" class="align-middle">
                                             <div class="text-center mb-1"><a class="btn btn-warning btn-sm"
-                                                    href="/editarCertificacion?id={{ $course->id }}" role="button"><i
-                                                        class="bi bi-pencil-square"></i></a></div>
+                                                    href="/editarCertificacion?id={{ $course->id }}" role="button">
+                                                    <i class="fa-solid fa-pen-to-square"></i></a></div>
                                             <div class="text-center"><a class="btn btn-danger btn-sm" href="#"
-                                                    role="button"><i class="bi bi-file-earmark-x"></i></a></div>
+                                                    role="button"><i class="fa-solid fa-trash"></i></a></div>
                                         </td>
                                     </tr>
                                 @endforeach
