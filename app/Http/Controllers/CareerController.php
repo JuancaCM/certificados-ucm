@@ -21,13 +21,13 @@ class CareerController extends Controller
     {
         DB::beginTransaction();
         try {
-            $career = $req->input('name');
-            $id_faculty= $req->input('faculty');
+            $careerName = $req->input('name');
+            $idFaculty= $req->input('faculty');
             $observation = $req->input('observation');
 
             $career = new Career();
-            $career->name = $career;
-            $career->faculty_id = $id_faculty;
+            $career->name = $careerName;
+            $career->faculty_id = $idFaculty;
             $career->observation= $observation;
 
             $career->save();
