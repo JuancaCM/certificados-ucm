@@ -49,7 +49,7 @@
                                 @foreach ($courses as $course)
                                     @php
                                         $month = ltrim(date('m', strtotime($course->start)), 0);
-                                        $mes = $meses[$month - 1];
+                                        $monthName = $monthsNames[$month - 1];
                                     @endphp
                                     <tr>
                                         <td scope="row" class="align-middle">{{ $course->id }}</td>
@@ -82,7 +82,7 @@
                                         <td scope="row" class="align-middle">{{ $course->type->name }}</td>
                                         <td scope="row" class="align-middle">{{ $course->state->name }}</td>
                                         <td scope="row" class="align-middle">{{ $course->campus->name }}</td>
-                                        <td scope="row" class="align-middle">{{ $mes }}</td>
+                                        <td scope="row" class="align-middle">{{ $monthName }}</td>
                                         @if ($month >= 1 and $month <= 6)
                                             <td scope="row" class="align-middle">1° Semestre</td>
                                         @else
@@ -104,7 +104,7 @@
                                             {{ date('d-m-Y', strtotime($course->end)) }}</td>
                                         <td scope="row" class="align-middle">
                                             <div class="text-center mb-1"><a class="btn btn-warning btn-sm"
-                                                    href="/editarCertificacion?id={{ $course->id }}" role="button">
+                                                    href="/editar-certificacion?id={{ $course->id }}" role="button">
                                                     <i class="fa-solid fa-pen-to-square"></i></a></div>
                                             <div class="text-center"><a class="btn btn-danger btn-sm" href="#"
                                                     role="button"><i class="fa-solid fa-trash"></i></a></div>

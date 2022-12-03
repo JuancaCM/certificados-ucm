@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
-    public function formulario()
+    public function form()
     {
         $dimensions = Dimension::all();
         $campuses = Campus::all();
@@ -34,7 +34,58 @@ class CourseController extends Controller
         return view('admin/certifications.registroCertificaciones', compact('dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
     }
 
-    public function formulario2()
+    public function saveForm(Request $req)
+    {
+        DB::beginTransaction();
+        try {
+            $course_name = $req->input('name');
+            $target_audience = $req->input('target_audience');
+            $campus = $req->input('campus');
+            $state = $req->input('state');
+            $type = $req->input('type');
+            $modality = $req->input('modality');
+            $sessions = $req->input('sessions');
+            $synchronous_hours = $req->input('synchronous_hours');
+            $autonomous_hours = $req->input('autonomous_hours');
+            $duration = ($sessions * $synchronous_hours) + $autonomous_hours;
+            $inscription_link = $req->input('inscription_link');
+            $program_link = $req->input('program_link');
+            $course_teacher = $req->input('course_teacher');
+            $start = $req->input('start');
+            $end = $req->input('end');
+            $schedule = $req->input('schedule');
+
+            $course = new Course();
+            $course->inscription = $inscription_link;
+            $course->program = $program_link;
+            $course->type_id = $type;
+            $course->state_id = $state;
+            $course->campus_id = $campus;
+            $course->modality_id = $modality;
+            $course->course_name_id = $course_name;
+            $course->course_teacher_id = $course_teacher;
+            $course->target_audience_id = $target_audience;
+            $course->duration = $duration;
+            $course->sessions = $sessions;
+            $course->synchronous_hours = $synchronous_hours;
+            $course->autonomous_hours = $autonomous_hours;
+            $course->schedule = $schedule;
+            $course->start = $start;
+            $course->end = $end;
+
+            $course->save();
+
+            DB::commit();
+
+            return back()->with('insert', true);
+        } catch (\Throwable $th) {
+            // \Log::debug($th->getMessage());
+            DB::rollBack();
+            return back()->with('insert', false);
+        }
+    }
+
+    public function viewList()
     {
         $courses = Course::with('state')
             ->with('campus')
@@ -45,7 +96,7 @@ class CourseController extends Controller
             ->with('type')
             ->with('modality')->get();
 
-        $meses = [
+        $monthsNames = [
             'Enero',
             'Febrero',
             'Marzo',
@@ -62,10 +113,10 @@ class CourseController extends Controller
 
         $inscribeds = Inscribed::select('course_id')->get()->pluck('course_id')->toArray();
 
-        return view('admin/certifications.listaCertificaciones', compact('courses', 'inscribeds', 'meses'));
+        return view('admin/certifications/table-views/certifications-view', compact('courses', 'inscribeds', 'monthsNames'));
     }
 
-    public function formularioEditar(Request $req)
+    public function editForm(Request $req)
     {
         $course = Course::find($req->input('id'));
         $dimensions = Dimension::all();
@@ -77,10 +128,10 @@ class CourseController extends Controller
         $target_audiences = TargetAudience::all();
         $course_names = CourseName::all();
 
-        return view('admin/certifications/editar.editCertification', compact('course', 'dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
+        return view('admin/certifications/editar.edit-certification', compact('course', 'dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
     }
 
-    public function guardarEditar(Request $req)
+    public function saveEdit(Request $req)
     {
         DB::beginTransaction();
         try {
@@ -98,8 +149,8 @@ class CourseController extends Controller
             $inscription_link = $req->input('inscription_link');
             $program_link = $req->input('program_link');
             $course_teacher = $req->input('course_teacher');
-            $fecha_inicio = $req->input('fecha_inicio');
-            $fecha_termino = $req->input('fecha_termino');
+            $start = $req->input('start');
+            $end = $req->input('end');
             $schedule = $req->input('schedule');
 
             $course = Course::Find($req->input('id'));
@@ -118,69 +169,18 @@ class CourseController extends Controller
             $course->synchronous_hours = $synchronous_hours;
             $course->autonomous_hours = $autonomous_hours;
             $course->schedule = $schedule;
-            $course->start = $fecha_inicio;
-            $course->end = $fecha_termino;
+            $course->start = $start;
+            $course->end = $end;
 
             $course->save();
 
             DB::commit();
 
-            return redirect()->to('/listaCertificaciones')->with('insert', true);
+            return redirect()->to('/certificaciones')->with('insert', true);
         } catch (\Throwable $th) {
             // \Log::debug($th->getMessage());
             DB::rollBack();
-            return redirect()->to('/listaCertificaciones')->with('insert', false);
-        }
-    }
-
-    public function guardar(Request $req)
-    {
-        DB::beginTransaction();
-        try {
-            $course_name = $req->input('name');
-            $target_audience = $req->input('target_audience');
-            $campus = $req->input('campus');
-            $state = $req->input('state');
-            $type = $req->input('type');
-            $modality = $req->input('modality');
-            $sessions = $req->input('sessions');
-            $synchronous_hours = $req->input('synchronous_hours');
-            $autonomous_hours = $req->input('autonomous_hours');
-            $duration = ($sessions * $synchronous_hours) + $autonomous_hours;
-            $inscription_link = $req->input('inscription_link');
-            $program_link = $req->input('program_link');
-            $course_teacher = $req->input('course_teacher');
-            $fecha_inicio = $req->input('fecha_inicio');
-            $fecha_termino = $req->input('fecha_termino');
-            $schedule = $req->input('schedule');
-
-            $course = new Course();
-            $course->inscription = $inscription_link;
-            $course->program = $program_link;
-            $course->type_id = $type;
-            $course->state_id = $state;
-            $course->campus_id = $campus;
-            $course->modality_id = $modality;
-            $course->course_name_id = $course_name;
-            $course->course_teacher_id = $course_teacher;
-            $course->target_audience_id = $target_audience;
-            $course->duration = $duration;
-            $course->sessions = $sessions;
-            $course->synchronous_hours = $synchronous_hours;
-            $course->autonomous_hours = $autonomous_hours;
-            $course->schedule = $schedule;
-            $course->start = $fecha_inicio;
-            $course->end = $fecha_termino;
-
-            $course->save();
-
-            DB::commit();
-
-            return back()->with('insert', true);
-        } catch (\Throwable $th) {
-            // \Log::debug($th->getMessage());
-            DB::rollBack();
-            return back()->with('insert', false);
+            return redirect()->to('/certificaciones')->with('insert', false);
         }
     }
 }

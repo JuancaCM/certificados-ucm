@@ -53,8 +53,13 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::get('pdf', [PdfController::class, 'index']);
 
-    Route::get('/registroCertificaciones', [CourseController::class, 'formulario']);
-    Route::post('/registroCertificaciones', [CourseController::class, 'guardar']);
+    Route::get('/nueva-certificacion', [CourseController::class, 'form']);
+    Route::post('/nueva-certificacion', [CourseController::class, 'saveForm']);
+
+    Route::get('/certificaciones', [CourseController::class, 'viewList']);
+
+    Route::get('/editar-certificacion', [CourseController::class, 'editForm']);
+    Route::post('/editar-certificacion', [CourseController::class, 'saveEdit']);
 
     Route::get('/relatoriaCertificaciones', [CourseTeacherController::class, 'formulario']);
     Route::post('/relatoriaCertificaciones', [CourseTeacherController::class, 'guardar']);
@@ -90,8 +95,6 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::get('/listaDimensiones', [DimensionController::class, 'formulario']);
 
-    Route::get('/listaCertificaciones', [CourseController::class, 'formulario2']);
-
     Route::post('/registroAnalista', [UserController::class, 'guardarAnalista']);
 
     Route::get('/registroAnalista', function () {return view('admin/users.registroAnalista');});
@@ -120,9 +123,6 @@ Route::middleware(Admin::class)->group(function () {
     Route::post('/modificar-certificado', [CertificateController::class, 'saveForm']);
 
     Route::get('/imagenes', function () {return view('admin/certifications.imagenesCertificado');});
-
-    Route::get('/editarCertificacion', [CourseController::class, 'formularioEditar']);
-    Route::post('/editarCertificacion', [CourseController::class, 'guardarEditar']);
 
     Route::get('/editarDimension', [DimensionController::class, 'formularioEditar']);
     Route::post('/editarDimension', [DimensionController::class, 'guardarEditar']);
