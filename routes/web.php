@@ -77,8 +77,8 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::post('/publico_objetivoCertificaciones', [TargetAudienceController::class, 'guardar']);
 
-    Route::get('/carreraUniversity', [CareerController::class, 'formulario']);
-    Route::post('/carreraUniversity', [CareerController::class, 'guardar']);
+    Route::get('/nueva-carrera', [CareerController::class, 'form']);
+    Route::post('/nueva-carrera', [CareerController::class, 'saveForm']);
 
     Route::post('/facultadUniversity', [FacultyController::class, 'guardar']);
 

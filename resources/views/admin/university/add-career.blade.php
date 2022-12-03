@@ -22,7 +22,7 @@
                         de carrera o unidad</h5>
                     <div class="card-body ">
                         <div class="row">
-                            <div class="col s12 m6 mb-3">
+                            <div class="col s12 m6 mb-4">
                                 <span class="text">
                                     <label><span style="color: red">*</span>Nombre de la carrera o
                                         unidad:</label>
@@ -30,11 +30,13 @@
                                         aria-describedby="basic-addon1" required>
                                 </span>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col s12 m6">
                                 <label><span style="color: red">*</span>Facultad o dirección a la que pertenece: <i
                                         class="bi bi-question-circle" data-toggle="tooltip" data-placement="right"
                                         title="Si no encuentra la facultad o dirección, vaya a la sección de registro de facultad."></i></label>
-                                <select name="career" class="form-control mb-3" aria-label="Carrera" required>
+                                <select name="faculty" class="form-control mb-3" aria-label="Facultad" required>
                                     <option selected disabled>Facultad</option>
                                     @foreach ($faculties as $faculty)
                                         <option value="{{ $faculty->id }}">{{ $faculty->name }}</option>

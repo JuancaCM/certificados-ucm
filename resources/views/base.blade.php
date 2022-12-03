@@ -64,7 +64,7 @@
                             <h6 class="collapse-header">Datos de usuario:</h6>
                             <a class="collapse-item" href="/contratoUniversity">Contrato</a>
                             <a class="collapse-item" href="/facultadUniversity">Facultad</a>
-                            <a class="collapse-item" href="/carreraUniversity">Carrera</a>
+                            <a class="collapse-item" href="/nueva-carrera">Carrera</a>
                         </div>
                     </div>
                 </li>

@@ -10,27 +10,27 @@ use Illuminate\Support\Facades\DB;
 class CareerController extends Controller
 {
 
-    public function formulario()
+    public function form()
     {
         $faculties = Faculty::all();
 
-        return view('admin/university.carreraUniversity', compact('faculties'));
+        return view('admin/university.add-career', compact('faculties'));
     }
 
-    public function guardar(Request $req)
+    public function saveForm(Request $req)
     {
         DB::beginTransaction();
         try {
             $career = $req->input('name');
-            $Id_facultad= $req->input('facultad');
-            $observacion = $req->input('observation');
+            $id_faculty= $req->input('faculty');
+            $observation = $req->input('observation');
 
-            $carrera = new Career();
-            $carrera->name = $career;
-            $carrera->faculty_id = $Id_facultad;
-            $carrera->observation= $observacion;
+            $career = new Career();
+            $career->name = $career;
+            $career->faculty_id = $id_faculty;
+            $career->observation= $observation;
 
-            $carrera->save();
+            $career->save();
 
             DB::commit();
 
