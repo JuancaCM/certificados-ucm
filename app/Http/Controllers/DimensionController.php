@@ -13,7 +13,7 @@ class DimensionController extends Controller
     {
         $dimensions = Dimension::all();
 
-        return view('admin/certis.listaDimensiones', compact('dimensions'));
+        return view('admin/certifications.listaDimensiones', compact('dimensions'));
     }
 
     public function guardar(Request $req)
@@ -42,7 +42,7 @@ class DimensionController extends Controller
     {
         $dimension = Dimension::find($req->input('id'));
 
-        return view('admin/certis/editar.editDimension', compact('dimension'));
+        return view('admin/certifications/editar.editDimension', compact('dimension'));
     }
 
     public function guardarEditar(Request $req)

@@ -31,7 +31,7 @@ class CourseController extends Controller
         $target_audiences = TargetAudience::all();
         $course_names = CourseName::all();
 
-        return view('admin/certis.registroCertificaciones', compact('dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
+        return view('admin/certifications.registroCertificaciones', compact('dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
     }
 
     public function formulario2()
@@ -62,7 +62,7 @@ class CourseController extends Controller
 
         $inscribeds = Inscribed::select('course_id')->get()->pluck('course_id')->toArray();
 
-        return view('admin/certis.listaCertificaciones', compact('courses', 'inscribeds', 'meses'));
+        return view('admin/certifications.listaCertificaciones', compact('courses', 'inscribeds', 'meses'));
     }
 
     public function formularioEditar(Request $req)
@@ -77,7 +77,7 @@ class CourseController extends Controller
         $target_audiences = TargetAudience::all();
         $course_names = CourseName::all();
 
-        return view('admin/certis/editar.editCertification', compact('course', 'dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
+        return view('admin/certifications/editar.editCertification', compact('course', 'dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
     }
 
     public function guardarEditar(Request $req)
@@ -128,7 +128,6 @@ class CourseController extends Controller
             return redirect()->to('/listaCertificaciones')->with('insert', true);
         } catch (\Throwable $th) {
             // \Log::debug($th->getMessage());
-            // dd($th->getTraceAsString());
             DB::rollBack();
             return redirect()->to('/listaCertificaciones')->with('insert', false);
         }
@@ -180,7 +179,6 @@ class CourseController extends Controller
             return back()->with('insert', true);
         } catch (\Throwable $th) {
             // \Log::debug($th->getMessage());
-            // dd($th->getTraceAsString());
             DB::rollBack();
             return back()->with('insert', false);
         }

@@ -62,7 +62,7 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/registroDocente', [TeacherController::class, 'formulario']);
     Route::post('/registroDocente', [TeacherController::class, 'guardar']);
 
-    Route::get('/registroDimensiones', function () {return view('admin/certis.registroDimensiones');});
+    Route::get('/registroDimensiones', function () {return view('admin/certifications.registroDimensiones');});
     Route::post('/registroDimensiones', [DimensionController::class, 'guardar']);
 
     Route::post('/estadoCertificaciones', [StateController::class, 'guardar']);
@@ -96,15 +96,15 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::get('/registroAnalista', function () {return view('admin/users.registroAnalista');});
 
-    Route::get('/estadoCertificaciones', function () {return view('admin/certis.estadoCertificaciones');});
+    Route::get('/estadoCertificaciones', function () {return view('admin/certifications.estadoCertificaciones');});
 
-    Route::get('/relatoriaCertificaciones', function () {return view('admin/certis.relatoriaCertificaciones');});
+    Route::get('/relatoriaCertificaciones', function () {return view('admin/certifications.relatoriaCertificaciones');});
 
-    Route::get('/publico_objetivoCertificaciones', function () {return view('admin/certis.publico_objetivoCertificaciones');});
+    Route::get('/publico_objetivoCertificaciones', function () {return view('admin/certifications.publico_objetivoCertificaciones');});
 
-    Route::get('/tipoCertificaciones', function () {return view('admin/certis.tipoCertificaciones');});
+    Route::get('/tipoCertificaciones', function () {return view('admin/certifications.tipoCertificaciones');});
 
-    Route::get('/modalidadCertificaciones', function () {return view('admin/certis.modalidadCertificaciones');});
+    Route::get('/modalidadCertificaciones', function () {return view('admin/certifications.modalidadCertificaciones');});
 
     Route::get('/facultadUniversity', function () {return view('admin/university.facultadUniversity');});
 
@@ -119,7 +119,7 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/modificar-certificado', [CertificateController::class, 'form']);
     Route::post('/modificar-certificado', [CertificateController::class, 'saveForm']);
 
-    Route::get('/imagenes', function () {return view('admin/certis.imagenesCertificado');});
+    Route::get('/imagenes', function () {return view('admin/certifications.imagenesCertificado');});
 
     Route::get('/editarCertificacion', [CourseController::class, 'formularioEditar']);
     Route::post('/editarCertificacion', [CourseController::class, 'guardarEditar']);

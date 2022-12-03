@@ -37,7 +37,7 @@ class InscribedController extends Controller
             'Diciembre',
         ];
 
-        return view('admin/certis.inscribir', compact('teachers', 'courses', 'meses'));
+        return view('admin/certifications.inscribir', compact('teachers', 'courses', 'meses'));
     }
 
     public function inscritos(Request $req)
@@ -59,7 +59,7 @@ class InscribedController extends Controller
             'Diciembre',
         ];
 
-        return view('admin/certis.inscritos', compact('course', 'inscribeds'));
+        return view('admin/certifications.inscritos', compact('course', 'inscribeds'));
     }
 
     public function guardarEditar(Request $req)
