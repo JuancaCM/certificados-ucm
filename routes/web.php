@@ -67,7 +67,8 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::post('/estadoCertificaciones', [StateController::class, 'guardar']);
 
-    Route::post('/sedeCertificaciones', [CampusController::class, 'guardar']);
+    Route::get('/nueva-sede', function () {return view('admin/university.add-campus');});
+    Route::post('/nueva-sede', [CampusController::class, 'save']);
 
     Route::post('/relatoriaCertificaciones', [CourseTeacherController::class, 'guardar']);
 
@@ -95,8 +96,6 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/registroAnalista', function () {return view('admin/users.registroAnalista');});
 
     Route::get('/estadoCertificaciones', function () {return view('admin/certis.estadoCertificaciones');});
-
-    Route::get('/sedeCertificaciones', function () {return view('admin/certis.sedeCertificaciones');});
 
     Route::get('/relatoriaCertificaciones', function () {return view('admin/certis.relatoriaCertificaciones');});
 

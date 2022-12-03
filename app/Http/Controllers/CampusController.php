@@ -9,18 +9,18 @@ use Illuminate\Support\Facades\DB;
 
 class CampusController extends Controller
 {
-    public function guardar(Request $req)
+    public function save(Request $req)
     {
         DB::beginTransaction();
         try {
-            $campus = $req->input('name');
-            $observacion = $req->input('observation');
+            $campusName = $req->input('name');
+            $observation = $req->input('observation');
 
-            $sede = new Campus();
-            $sede->name = $campus;
-            $sede->observation= $observacion;
+            $campus = new Campus();
+            $campus->name = $campusName;
+            $campus->observation= $observation;
 
-            $sede->save();
+            $campus->save();
 
             DB::commit();
 
