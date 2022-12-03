@@ -8,19 +8,19 @@ use Illuminate\Support\Facades\DB;
 
 class CertificateController extends Controller
 {
-    public function formulario()
+    public function form()
     {
         $certificate = Certificate::find(1);
 
-        return view('admin/certis.contenidoCertificado', compact('certificate'));
+        return view('admin.certificate-content', compact('certificate'));
     }
 
-    public function guardarCertificado(Request $req)
+    public function saveForm(Request $req)
     {
         DB::beginTransaction();
         try {
             $title = $req->input('titulo');
-            $director = $req->input('directorname');
+            $director = $req->input('name');
             $position = $req->input('position');
             $constancy = $req->input('constancy');
             $constancyM = $req->input('constancyM');
@@ -30,9 +30,9 @@ class CertificateController extends Controller
             $organization = $req->input('organization');
             $duration = $req->input('duration');
             $content = $req->input('content');
-            $final = $req->input('final');
-            $finalM = $req->input('finalM');
-            $finalF = $req->input('finalF');
+            $end = $req->input('final');
+            $endM = $req->input('finalM');
+            $endF = $req->input('finalF');
 
             $certificate = Certificate::find(1);
             $certificate->title = $title;
@@ -46,9 +46,9 @@ class CertificateController extends Controller
             $certificate->organization = $organization;
             $certificate->varDuration = $duration;
             $certificate->varContent = $content;
-            $certificate->end = $final;
-            $certificate->endM = $finalM;
-            $certificate->endF = $finalF;
+            $certificate->end = $end;
+            $certificate->endM = $endM;
+            $certificate->endF = $endF;
 
             $certificate->save();
 
@@ -57,7 +57,6 @@ class CertificateController extends Controller
             return back()->with('insert', true);
         } catch (\Throwable $th) {
             // \Log::debug($th->getMessage());
-            // dd($th->getTraceAsString());
             DB::rollBack();
             return back()->with('insert', false);
         }

@@ -133,7 +133,7 @@
                         <span>Inscribir Docentes</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/certificado">
+                    <a class="nav-link" href="/modificar-certificado">
                         <i class="fa-solid fa-certificate"></i>
                         <span>Modificar Certificado</span></a>
                 </li>

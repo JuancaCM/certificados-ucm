@@ -117,8 +117,8 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::get('/certDocentes', [InscribedController::class, 'formulario']);
 
-    Route::get('/certificado', [CertificateController::class, 'formulario']);
-    Route::post('/certificado', [CertificateController::class, 'guardarCertificado']);
+    Route::get('/modificar-certificado', [CertificateController::class, 'form']);
+    Route::post('/modificar-certificado', [CertificateController::class, 'saveForm']);
 
     Route::get('/imagenes', function () {return view('admin/certis.imagenesCertificado');});
 
