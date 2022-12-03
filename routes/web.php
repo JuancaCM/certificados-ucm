@@ -83,7 +83,8 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::post('/facultadUniversity', [FacultyController::class, 'guardar']);
 
-    Route::post('/contratoUniversity', [ContractController::class, 'guardar']);
+    Route::get('/nuevo-contrato', function () {return view('admin/users.add-contract-type');});
+    Route::post('/nuevo-contrato', [ContractController::class, 'save']);
 
     Route::get('/listaDocentes', [TeacherController::class, 'formulario2']);
 
@@ -106,8 +107,6 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/modalidadCertificaciones', function () {return view('admin/certis.modalidadCertificaciones');});
 
     Route::get('/facultadUniversity', function () {return view('admin/university.facultadUniversity');});
-
-    Route::get('/contratoUniversity', function () {return view('admin/university.contratoUniversity');});
 
     Route::get('/inscribir', [InscribedController::class, 'formularioInscribir']);
     Route::post('/inscribir', [InscribedController::class, 'inscribir']);

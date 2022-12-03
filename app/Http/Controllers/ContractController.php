@@ -9,18 +9,18 @@ use Illuminate\Support\Facades\DB;
 
 class ContractController extends Controller
 {
-    public function guardar(Request $req)
+    public function save(Request $req)
     {
         DB::beginTransaction();
         try {
-            $contract = $req->input('name');
-            $observacion = $req->input('observation');
+            $name = $req->input('name');
+            $observation = $req->input('observation');
 
-            $contrato = new Contract();
-            $contrato->name = $contract;
-            $contrato->observation= $observacion;
+            $contract = new Contract();
+            $contract->name = $name;
+            $contract->observation= $observation;
 
-            $contrato->save();
+            $contract->save();
 
             DB::commit();
 
