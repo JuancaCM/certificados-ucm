@@ -12,10 +12,7 @@ use App\Models\Modality;
 use App\Models\State;
 use App\Models\TargetAudience;
 use App\Models\Type;
-use Carbon\Carbon;
-use DateTime;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
