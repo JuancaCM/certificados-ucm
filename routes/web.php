@@ -61,8 +61,10 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/editar-certificacion', [CourseController::class, 'editForm']);
     Route::post('/editar-certificacion', [CourseController::class, 'saveEdit']);
 
-    Route::get('/relatoriaCertificaciones', [CourseTeacherController::class, 'formulario']);
+    Route::get('/relatoriaCertificaciones', function () {return view('admin/certifications.relatoriaCertificaciones');});
     Route::post('/relatoriaCertificaciones', [CourseTeacherController::class, 'guardar']);
+
+    Route::get('/relatores', [CourseTeacherController::class, 'formulario']);
 
     Route::get('/registroDocente', [TeacherController::class, 'formulario']);
     Route::post('/registroDocente', [TeacherController::class, 'guardar']);
@@ -74,8 +76,6 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::get('/nueva-sede', function () {return view('admin/university.add-campus');});
     Route::post('/nueva-sede', [CampusController::class, 'save']);
-
-    Route::post('/relatoriaCertificaciones', [CourseTeacherController::class, 'guardar']);
 
     Route::post('/tipoCertificaciones', [TypeController::class, 'guardar']);
 
@@ -100,8 +100,6 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/registroAnalista', function () {return view('admin/users.registroAnalista');});
 
     Route::get('/estadoCertificaciones', function () {return view('admin/certifications.estadoCertificaciones');});
-
-    Route::get('/relatoriaCertificaciones', function () {return view('admin/certifications.relatoriaCertificaciones');});
 
     Route::get('/publico_objetivoCertificaciones', function () {return view('admin/certifications.publico_objetivoCertificaciones');});
 
@@ -129,8 +127,6 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::get('/inscritos', [InscribedController::class, 'inscritos']);
     Route::post('/inscritos', [InscribedController::class, 'guardarEditar']);
-
-    Route::get('/relatores', [CourseTeacherController::class, 'formulario']);
 
     Route::get('/editarRelator', [CourseTeacherController::class, 'formularioEditar']);
     Route::post('/editarRelator', [CourseTeacherController::class, 'guardarEditar']);

@@ -28,7 +28,7 @@ class CourseController extends Controller
         $target_audiences = TargetAudience::all();
         $course_names = CourseName::all();
 
-        return view('admin/certifications.registroCertificaciones', compact('dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
+        return view('admin/certifications/registroCertificaciones', compact('dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
     }
 
     public function saveForm(Request $req)
@@ -125,7 +125,7 @@ class CourseController extends Controller
         $target_audiences = TargetAudience::all();
         $course_names = CourseName::all();
 
-        return view('admin/certifications/editar.edit-certification', compact('course', 'dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
+        return view('admin/certifications/edit/edit-certification', compact('course', 'dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
     }
 
     public function saveEdit(Request $req)

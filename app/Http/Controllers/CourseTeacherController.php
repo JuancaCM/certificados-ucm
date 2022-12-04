@@ -18,13 +18,13 @@ class CourseTeacherController extends Controller
             $mail = $req->input('mail');
             $phone = $req->input('phone');
 
-            $relatoria = new CourseTeacher();
-            $relatoria->name = $name;
-            $relatoria->rut = $rut;
-            $relatoria->mail = $mail;
-            $relatoria->phone = $phone;
+            $courseTeacher = new CourseTeacher();
+            $courseTeacher->name = $name;
+            $courseTeacher->rut = $rut;
+            $courseTeacher->mail = $mail;
+            $courseTeacher->phone = $phone;
 
-            $relatoria->save();
+            $courseTeacher->save();
 
             DB::commit();
 
