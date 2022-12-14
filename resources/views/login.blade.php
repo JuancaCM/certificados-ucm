@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="col-sm-6 ">
+        <div class="col-sm-6">
             <div class="card shadow">
                 <h5 class="card-header  bg-transparent text-center text-dark font-weight-bold">
-                    Inicio de sesion</h5>
+                    Inicio de sesión</h5>
                 <div class="card-body">
                     <form method="POST">
                         @csrf

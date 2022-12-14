@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\DB;
 class CareerController extends Controller
 {
 
-    public function form()
+    public function careerForm()
     {
         $faculties = Faculty::all();
 
-        return view('admin/university.add-career', compact('faculties'));
+        return view('admin/university/add/add-career', compact('faculties'));
     }
 
-    public function saveForm(Request $req)
+    public function saveCareerForm(Request $req)
     {
         DB::beginTransaction();
         try {

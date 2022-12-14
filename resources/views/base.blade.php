@@ -79,7 +79,7 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="/nueva-certificacion">Certificaciones</a>
                             <a class="collapse-item" href="/registroDimensiones">Dimensiones</a>
-                            <a class="collapse-item" href="/relatoriaCertificaciones">Relatores</a>
+                            <a class="collapse-item" href="/nuevo-relator">Relatores</a>
                             <h6 class="collapse-header">Datos de certificaciones:</h6>
                             <a class="collapse-item" href="/estadoCertificaciones">Estado</a>
                             <a class="collapse-item" href="/nueva-sede">Sede</a>

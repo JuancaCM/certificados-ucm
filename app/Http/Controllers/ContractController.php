@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class ContractController extends Controller
 {
-    public function save(Request $req)
+    public function saveContract(Request $req)
     {
         DB::beginTransaction();
         try {

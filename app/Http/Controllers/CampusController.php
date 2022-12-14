@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class CampusController extends Controller
 {
-    public function save(Request $req)
+    public function saveCampus(Request $req)
     {
         DB::beginTransaction();
         try {

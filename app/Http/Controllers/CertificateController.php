@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 class CertificateController extends Controller
 {
-    public function form()
+    public function editCertificateForm()
     {
         $certificate = Certificate::find(1);
 
-        return view('admin.certificate-content', compact('certificate'));
+        return view('admin/certificate/certificate-content', compact('certificate'));
     }
 
-    public function saveForm(Request $req)
+    public function saveEditCertificateForm(Request $req)
     {
         DB::beginTransaction();
         try {

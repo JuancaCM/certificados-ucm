@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class CourseTeacherController extends Controller
 {
-    public function guardar(Request $req)
+    public function save(Request $req)
     {
         DB::beginTransaction();
         try {
@@ -46,7 +46,7 @@ class CourseTeacherController extends Controller
     {
         $course_teacher = CourseTeacher::find($req->input('id'));
 
-        return view('admin/users/editar.editarRelator', compact('course_teacher'));
+        return view('admin/users/edit/editarRelator', compact('course_teacher'));
     }
 
     public function guardarEditar(Request $req)

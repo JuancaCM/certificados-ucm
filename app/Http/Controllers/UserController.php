@@ -76,6 +76,6 @@ class UserController extends Controller
 
         $user = $user->first();
 
-        return view('profile', compact('user'));
+        return view('teacher/profile', compact('user'));
     }
 }

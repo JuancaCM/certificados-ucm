@@ -44,7 +44,7 @@ class TeacherController extends Controller
         $contracts = Contract::all();
         $roles = Role::all();
 
-        return view('admin/users/editar.editTeacher', compact('teacher', 'careers', 'campuses', 'contracts', 'roles'));
+        return view('admin/users/edit/editTeacher', compact('teacher', 'careers', 'campuses', 'contracts', 'roles'));
     }
 
     public function guardarEditar(Request $req)

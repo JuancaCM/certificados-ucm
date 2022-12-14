@@ -36,8 +36,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(SuperAdmin::class)->group(function () {
 
-    Route::get('/perfil', [UserController::class, 'profile']);
-
     Route::get('/registroAdmin', function () {return view('superAdmin/registroAdmin');});
 
     Route::post('/registroAdmin', [UserController::class, 'guardarAdmin']);
@@ -47,22 +45,20 @@ Route::middleware(SuperAdmin::class)->group(function () {
 
 Route::middleware(Admin::class)->group(function () {
 
-    Route::get('/perfil', [UserController::class, 'profile']);
-
     Route::get('/', function () {return view('nav.index');});
 
     Route::get('pdf', [PdfController::class, 'index']);
 
-    Route::get('/nueva-certificacion', [CourseController::class, 'form']);
-    Route::post('/nueva-certificacion', [CourseController::class, 'saveForm']);
+    Route::get('/nueva-certificacion', [CourseController::class, 'courseForm']);
+    Route::post('/nueva-certificacion', [CourseController::class, 'saveCourseForm']);
 
     Route::get('/certificaciones', [CourseController::class, 'viewList']);
 
     Route::get('/editar-certificacion', [CourseController::class, 'editForm']);
-    Route::post('/editar-certificacion', [CourseController::class, 'saveEdit']);
+    Route::post('/editar-certificacion', [CourseController::class, 'saveEditForm']);
 
-    Route::get('/relatoriaCertificaciones', function () {return view('admin/certifications.relatoriaCertificaciones');});
-    Route::post('/relatoriaCertificaciones', [CourseTeacherController::class, 'guardar']);
+    Route::get('/nuevo-relator', function () {return view('admin/certifications/relatoriaCertificaciones');});
+    Route::post('/nuevo-relator', [CourseTeacherController::class, 'save']);
 
     Route::get('/relatores', [CourseTeacherController::class, 'formulario']);
 
@@ -74,8 +70,8 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::post('/estadoCertificaciones', [StateController::class, 'guardar']);
 
-    Route::get('/nueva-sede', function () {return view('admin/university.add-campus');});
-    Route::post('/nueva-sede', [CampusController::class, 'save']);
+    Route::get('/nueva-sede', function () {return view('admin/university/add/add-campus');});
+    Route::post('/nueva-sede', [CampusController::class, 'saveCampus']);
 
     Route::post('/tipoCertificaciones', [TypeController::class, 'guardar']);
 
@@ -83,13 +79,13 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::post('/publico_objetivoCertificaciones', [TargetAudienceController::class, 'guardar']);
 
-    Route::get('/nueva-carrera', [CareerController::class, 'form']);
-    Route::post('/nueva-carrera', [CareerController::class, 'saveForm']);
+    Route::get('/nueva-carrera', [CareerController::class, 'careerForm']);
+    Route::post('/nueva-carrera', [CareerController::class, 'saveCareerForm']);
 
     Route::post('/facultadUniversity', [FacultyController::class, 'guardar']);
 
-    Route::get('/nuevo-contrato', function () {return view('admin/users.add-contract-type');});
-    Route::post('/nuevo-contrato', [ContractController::class, 'save']);
+    Route::get('/nuevo-contrato', function () {return view('admin/users/add/add-contract-type');});
+    Route::post('/nuevo-contrato', [ContractController::class, 'saveContract']);
 
     Route::get('/listaDocentes', [TeacherController::class, 'formulario2']);
 
@@ -117,8 +113,8 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::get('/certDocentes', [InscribedController::class, 'formulario']);
 
-    Route::get('/modificar-certificado', [CertificateController::class, 'form']);
-    Route::post('/modificar-certificado', [CertificateController::class, 'saveForm']);
+    Route::get('/modificar-certificado', [CertificateController::class, 'editCertificateForm']);
+    Route::post('/modificar-certificado', [CertificateController::class, 'saveEditCertificateForm']);
 
     Route::get('/imagenes', function () {return view('admin/certifications.imagenesCertificado');});
 
@@ -149,8 +145,6 @@ Route::middleware(Docente::class)->group(function () {
 });
 
 Route::middleware(Analista::class)->group(function () {
-
-    Route::get('/perfil', [UserController::class, 'profile']);
 
     Route::get('/', function () {return view('nav.index');});
 

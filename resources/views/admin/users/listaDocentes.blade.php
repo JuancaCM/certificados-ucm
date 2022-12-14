@@ -49,7 +49,7 @@
                                                 <i class="fa-solid fa-pen-to-square"></i></a>
                                         </div>
                                         <div class="text-center"><a class="btn btn-danger btn-sm" href="#"
-                                                role="button"><i class="fa-solid fa-trash"></i></i></a></div>
+                                                role="button"><i class="fa-solid fa-trash"></i></a></div>
                                     </td>
                                 </tr>
                             @endforeach

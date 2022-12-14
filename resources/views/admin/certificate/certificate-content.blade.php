@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="card shadow mb-3" style="width: 45rem;">
+        <div class="card shadow mb-3" style="min-width: 50rem;">
             <div class="col s12 m6 mt-3">
                 @if (null != session('insert') && session('insert'))
                     <div class="alert alert-success text-center">
