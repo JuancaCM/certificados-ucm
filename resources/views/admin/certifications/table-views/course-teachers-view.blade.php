@@ -38,7 +38,7 @@
                                     <td scope="row" class="align-middle">{{ $course_teacher->phone }}</td>
                                     <td scope="row" class="align-middle">
                                         <div class="text-center mb-1"><a class="btn btn-warning btn-sm"
-                                                href="/editarRelator?id={{ $course_teacher->id }}" role="button">
+                                                href="/editar-relator?id={{ $course_teacher->id }}" role="button">
                                                 <i class="fa-solid fa-pen-to-square"></i></a>
                                         </div>
                                         <div class="text-center"><a class="btn btn-danger btn-sm" href="#"

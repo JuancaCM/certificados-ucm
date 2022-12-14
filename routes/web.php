@@ -57,15 +57,18 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/editar-certificacion', [CourseController::class, 'editForm']);
     Route::post('/editar-certificacion', [CourseController::class, 'saveEditForm']);
 
-    Route::get('/nuevo-relator', function () {return view('admin/certifications/relatoriaCertificaciones');});
-    Route::post('/nuevo-relator', [CourseTeacherController::class, 'save']);
+    Route::get('/nuevo-relator', function () {return view('admin/certifications/add/add-course-teacher');});
+    Route::post('/nuevo-relator', [CourseTeacherController::class, 'saveNewCourseTeacher']);
 
-    Route::get('/relatores', [CourseTeacherController::class, 'formulario']);
+    Route::get('/relatores', [CourseTeacherController::class, 'viewList']);
+
+    Route::get('/editar-relator', [CourseTeacherController::class, 'editForm']);
+    Route::post('/editar-relator', [CourseTeacherController::class, 'saveEditForm']);
 
     Route::get('/registroDocente', [TeacherController::class, 'formulario']);
     Route::post('/registroDocente', [TeacherController::class, 'guardar']);
 
-    Route::get('/registroDimensiones', function () {return view('admin/certifications.registroDimensiones');});
+    Route::get('/registroDimensiones', function () {return view('admin/certifications/registroDimensiones');});
     Route::post('/registroDimensiones', [DimensionController::class, 'guardar']);
 
     Route::post('/estadoCertificaciones', [StateController::class, 'guardar']);
@@ -123,9 +126,6 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::get('/inscritos', [InscribedController::class, 'inscritos']);
     Route::post('/inscritos', [InscribedController::class, 'guardarEditar']);
-
-    Route::get('/editarRelator', [CourseTeacherController::class, 'formularioEditar']);
-    Route::post('/editarRelator', [CourseTeacherController::class, 'guardarEditar']);
 });
 
 Route::middleware(Docente::class)->group(function () {

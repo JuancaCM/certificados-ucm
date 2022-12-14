@@ -25,8 +25,7 @@
                                 <div class="form-label mb-3">
                                     <span class="text">
                                         <label>RUT del relator:</label>
-                                        <input name="rut" type="text" class="form-control" aria-label="Rut"
-                                            aria-describedby="basic-addon1" required>
+                                        <input name="rut" type="text" class="form-control" required>
                                         <small class="form-text text-muted">Sin puntos y con guion</small>
                                     </span>
                                 </div>
@@ -34,8 +33,7 @@
                             <div class="col s12 m6 mb-3">
                                 <span class="text">
                                     <label>Nombre del relator:</label>
-                                    <input name="name" type="text" class="form-control" aria-label="Nombre"
-                                        aria-describedby="basic-addon1" required>
+                                    <input name="name" type="text" class="form-control" required>
                                 </span>
                             </div>
                         </div>
@@ -47,15 +45,14 @@
                                 <div class="form-label mb-3">
                                     <span class="text">
                                         <label>Telefono del relator:</label>
-                                        <input name="phone" type="text" class="form-control" aria-label="Telefono"
-                                            aria-describedby="basic-addon1" required>
+                                        <input name="phone" type="text" class="form-control" required>
                                     </span>
                                 </div>
                             </div>
                             <div class="col s12 m6">
                                 <label>Correo del relator:</label>
                                 <div class="input-group mb-3">
-                                    <input name="mail" type="email" class="form-control" aria-label="Correo" required>
+                                    <input name="mail" type="email" class="form-control" required>
                                 </div>
                             </div>
                         </div>

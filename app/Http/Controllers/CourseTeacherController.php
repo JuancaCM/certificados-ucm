@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class CourseTeacherController extends Controller
 {
-    public function save(Request $req)
+    public function saveNewCourseTeacher(Request $req)
     {
         DB::beginTransaction();
         try {
@@ -35,21 +35,21 @@ class CourseTeacherController extends Controller
         }
     }
 
-    public function formulario()
+    public function viewList()
     {
         $course_teachers = CourseTeacher::all();
 
-        return view('admin/users.listaRelatores', compact('course_teachers'));
+        return view('admin/certifications/table-views/course-teachers-view', compact('course_teachers'));
     }
 
-    public function formularioEditar(Request $req)
+    public function editForm(Request $req)
     {
         $course_teacher = CourseTeacher::find($req->input('id'));
 
-        return view('admin/users/edit/editarRelator', compact('course_teacher'));
+        return view('admin/certifications/edit/edit-course-teacher', compact('course_teacher'));
     }
 
-    public function guardarEditar(Request $req)
+    public function saveEditForm(Request $req)
     {
         DB::beginTransaction();
         try {
