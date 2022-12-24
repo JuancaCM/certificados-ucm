@@ -9,14 +9,14 @@ use Illuminate\Support\Facades\DB;
 
 class DimensionController extends Controller
 {
-    public function formulario()
+    public function dimensionsViewList()
     {
         $dimensions = Dimension::all();
 
-        return view('admin/certifications.listaDimensiones', compact('dimensions'));
+        return view('admin/certifications/table-views/dimensions-view', compact('dimensions'));
     }
 
-    public function guardar(Request $req)
+    public function saveNewDimension(Request $req)
     {
         DB::beginTransaction();
         try {
@@ -38,14 +38,14 @@ class DimensionController extends Controller
         }
     }
 
-    public function formularioEditar(Request $req)
+    public function dimensionEditForm(Request $req)
     {
         $dimension = Dimension::find($req->input('id'));
 
-        return view('admin/certifications/editar.editDimension', compact('dimension'));
+        return view('admin/certifications/edit/edit-dimension', compact('dimension'));
     }
 
-    public function guardarEditar(Request $req)
+    public function saveDimensionEditForm(Request $req)
     {
         DB::beginTransaction();
         try {

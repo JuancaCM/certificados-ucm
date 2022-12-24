@@ -78,7 +78,7 @@
                     <div id="collapseReg" class="collapse" aria-labelledby="headingReg" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="/nueva-certificacion">Certificaciones</a>
-                            <a class="collapse-item" href="/registroDimensiones">Dimensiones</a>
+                            <a class="collapse-item" href="/nueva-dimension">Dimensiones</a>
                             <a class="collapse-item" href="/nuevo-relator">Relatores</a>
                             <h6 class="collapse-header">Datos de certificaciones:</h6>
                             <a class="collapse-item" href="/estadoCertificaciones">Estado</a>
@@ -102,7 +102,7 @@
                             <a class="collapse-item" href="/listaDocentes">Docentes</a>
                             <a class="collapse-item" href="/relatores">Relatores</a>
                             <a class="collapse-item" href="/certificaciones">Certificaciones</a>
-                            <a class="collapse-item" href="/listaDimensiones">Dimensiones</a>
+                            <a class="collapse-item" href="/dimensiones">Dimensiones</a>
                             <a class="collapse-item" href="/certDocentes">Docentes certificados</a>
                         </div>
                     </div>
