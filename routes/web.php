@@ -90,7 +90,8 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/nueva-carrera', [CareerController::class, 'careerForm']);
     Route::post('/nueva-carrera', [CareerController::class, 'saveCareerForm']);
 
-    Route::post('/facultadUniversity', [FacultyController::class, 'guardar']);
+    Route::get('/nueva-facultad', function () {return view('admin/university/add/add-faculty');});
+    Route::post('/nueva-facultad', [FacultyController::class, 'saveNewFaculty']);
 
     Route::get('/nuevo-contrato', function () {return view('admin/users/add/add-contract-type');});
     Route::post('/nuevo-contrato', [ContractController::class, 'saveContract']);
@@ -108,8 +109,6 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/tipoCertificaciones', function () {return view('admin/certifications.tipoCertificaciones');});
 
     Route::get('/modalidadCertificaciones', function () {return view('admin/certifications.modalidadCertificaciones');});
-
-    Route::get('/facultadUniversity', function () {return view('admin/university.facultadUniversity');});
 
     Route::get('/inscribir', [InscribedController::class, 'formularioInscribir']);
     Route::post('/inscribir', [InscribedController::class, 'inscribir']);

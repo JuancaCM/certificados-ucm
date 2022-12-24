@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 class FacultyController extends Controller
 {
-    public function guardar(Request $req)
+    public function saveNewFaculty(Request $req)
     {
         DB::beginTransaction();
         try {
             $faculty = $req->input('name');
-            $observacion = $req->input('observation');
+            $observation = $req->input('observation');
 
             $facultad = new Faculty();
             $facultad->name = $faculty;
-            $facultad->observation= $observacion;
+            $facultad->observation= $observation;
 
             $facultad->save();
 
