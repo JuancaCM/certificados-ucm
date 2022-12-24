@@ -65,7 +65,6 @@ class DimensionController extends Controller
             return redirect()->to('/listaDimensiones')->with('insert', true);
         } catch (\Throwable $th) {
             // \Log::debug($th->getMessage());
-            // dd($th->getTraceAsString());
             DB::rollBack();
             return redirect()->to('/listaDimensiones')->with('insert', false);
         }
