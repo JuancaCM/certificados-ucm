@@ -35,21 +35,21 @@ class CourseTeacherController extends Controller
         }
     }
 
-    public function viewList()
+    public function courseTeacherViewList()
     {
         $course_teachers = CourseTeacher::all();
 
         return view('admin/certifications/table-views/course-teachers-view', compact('course_teachers'));
     }
 
-    public function editForm(Request $req)
+    public function courseTeacherEditForm(Request $req)
     {
         $course_teacher = CourseTeacher::find($req->input('id'));
 
         return view('admin/certifications/edit/edit-course-teacher', compact('course_teacher'));
     }
 
-    public function saveEditForm(Request $req)
+    public function saveCourseTeacherEditForm(Request $req)
     {
         DB::beginTransaction();
         try {

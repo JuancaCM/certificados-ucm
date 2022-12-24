@@ -82,7 +82,7 @@ class CourseController extends Controller
         }
     }
 
-    public function viewList()
+    public function courseViewList()
     {
         $courses = Course::with('state')
             ->with('campus')
@@ -113,7 +113,7 @@ class CourseController extends Controller
         return view('admin/certifications/table-views/courses-view', compact('courses', 'inscribeds', 'monthsNames'));
     }
 
-    public function editForm(Request $req)
+    public function courseEditForm(Request $req)
     {
         $course = Course::find($req->input('id'));
         $dimensions = Dimension::all();
@@ -128,7 +128,7 @@ class CourseController extends Controller
         return view('admin/certifications/edit/edit-course', compact('course', 'dimensions', 'campuses', 'states', 'types', 'modalities', 'course_teachers', 'target_audiences', 'course_names'));
     }
 
-    public function saveEditForm(Request $req)
+    public function saveCourseEditForm(Request $req)
     {
         DB::beginTransaction();
         try {
