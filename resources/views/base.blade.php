@@ -103,7 +103,7 @@
                             <a class="collapse-item" href="/relatores">Relatores</a>
                             <a class="collapse-item" href="/certificaciones">Certificaciones</a>
                             <a class="collapse-item" href="/dimensiones">Dimensiones</a>
-                            <a class="collapse-item" href="/certDocentes">Docentes certificados</a>
+                            <a class="collapse-item" href="/docentes-certificados">Docentes certificados</a>
                         </div>
                     </div>
                 </li>

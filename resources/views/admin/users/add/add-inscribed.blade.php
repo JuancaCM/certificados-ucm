@@ -39,6 +39,7 @@
                                     <p>{{ $course->state->name }}</p>
                                     @if ($course->state->name === 'Pendiente' or $course->state->name === 'En curso')
                                         <option value="{{ $course->id }}">{{ $course->course_name->name }}
+                                            ({{ $course->type->name }})
                                             ({{ $mes }})
                                             ({{ $course->schedule }})</option>
                                     @endif

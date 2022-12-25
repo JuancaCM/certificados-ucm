@@ -110,21 +110,21 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::get('/modalidadCertificaciones', function () {return view('admin/certifications.modalidadCertificaciones');});
 
-    Route::get('/inscribir', [InscribedController::class, 'formularioInscribir']);
-    Route::post('/inscribir', [InscribedController::class, 'inscribir']);
+    Route::get('/docentes-certificados', [InscribedController::class, 'certifiedViewList']);
+
+    Route::get('/inscribir', [InscribedController::class, 'inscribedForm']);
+    Route::post('/inscribir', [InscribedController::class, 'saveInscribedForm']);
+
+    Route::get('/inscritos', [InscribedController::class, 'inscritos']);
+    Route::post('/inscritos', [InscribedController::class, 'guardarEditar']);
 
     Route::get('/editarDocente', [TeacherController::class, 'formularioEditar']);
     Route::post('/editarDocente', [TeacherController::class, 'guardarEditar']);
-
-    Route::get('/certDocentes', [InscribedController::class, 'formulario']);
 
     Route::get('/modificar-certificado', [CertificateController::class, 'editCertificateForm']);
     Route::post('/modificar-certificado', [CertificateController::class, 'saveEditCertificateForm']);
 
     Route::get('/imagenes', function () {return view('admin/certifications.imagenesCertificado');});
-
-    Route::get('/inscritos', [InscribedController::class, 'inscritos']);
-    Route::post('/inscritos', [InscribedController::class, 'guardarEditar']);
 });
 
 Route::middleware(Docente::class)->group(function () {

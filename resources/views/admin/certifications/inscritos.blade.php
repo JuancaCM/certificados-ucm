@@ -47,10 +47,15 @@
                                         <td scope="row" class="align-middle">{{ $inscribed->attendance }}</td>
                                         <td scope="row" class="align-middle">
                                             {{ $inscribed->course->synchronous_hours }}</td>
-                                        @if ($inscribed->authorization === 1)
+                                        @if ($inscribed->authorization === 1 and $inscribed->course->state->name === 'Realizado')
                                             <td scope="row" class="align-middle">
                                                 <div class="text-center"><a class="btn btn-info btn-sm" target="_blank"
-                                                        href="/pdf?id={{ $inscribed->id }}" role="button"><i class="fa-solid fa-eye"></i></a>
+                                                        href="/pdf?id={{ $inscribed->id }}" role="button"><i
+                                                            class="fa-solid fa-eye"></i></a>
+                                            </td>
+                                        @elseif ($inscribed->course->state->name != 'Realizado')
+                                            <td scope="row" class="align-middle">
+                                                <div class="text-center">El curso aun no termina
                                             </td>
                                         @else
                                             <td scope="row" class="align-middle">
