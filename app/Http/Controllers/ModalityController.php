@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class ModalityController extends Controller
 {
-    public function guardar(Request $req)
+    public function saveModality(Request $req)
     {
         DB::beginTransaction();
         try {

@@ -83,7 +83,8 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::post('/tipoCertificaciones', [TypeController::class, 'guardar']);
 
-    Route::post('/modalidadCertificaciones', [ModalityController::class, 'guardar']);
+    Route::get('/modalidadCertificaciones', function () {return view('admin/certifications.modalidadCertificaciones');});
+    Route::post('/modalidadCertificaciones', [ModalityController::class, 'saveModality']);
 
     Route::post('/publico_objetivoCertificaciones', [TargetAudienceController::class, 'guardar']);
 
@@ -107,8 +108,6 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/publico_objetivoCertificaciones', function () {return view('admin/certifications.publico_objetivoCertificaciones');});
 
     Route::get('/tipoCertificaciones', function () {return view('admin/certifications.tipoCertificaciones');});
-
-    Route::get('/modalidadCertificaciones', function () {return view('admin/certifications.modalidadCertificaciones');});
 
     Route::get('/docentes-certificados', [InscribedController::class, 'certifiedViewList']);
 
