@@ -70,7 +70,7 @@ class InscribedController extends Controller
         }
     }
 
-    public function inscritos(Request $req)
+    public function inscribedViewList(Request $req)
     {
         $course = Course::find($req->input('id'));
         $inscribeds = Inscribed::all()->where('course_id', '=', $req->input('id'));
@@ -92,7 +92,7 @@ class InscribedController extends Controller
         return view('admin/certifications.inscritos', compact('course', 'inscribeds'));
     }
 
-    public function guardarEditar(Request $req)
+    public function saveEditInscribedViewList(Request $req)
     {
         DB::beginTransaction();
         try {

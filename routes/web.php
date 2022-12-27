@@ -115,8 +115,8 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/inscribir', [InscribedController::class, 'inscribedForm']);
     Route::post('/inscribir', [InscribedController::class, 'saveInscribedForm']);
 
-    Route::get('/inscritos', [InscribedController::class, 'inscritos']);
-    Route::post('/inscritos', [InscribedController::class, 'guardarEditar']);
+    Route::get('/inscritos', [InscribedController::class, 'inscribedViewList']);
+    Route::post('/inscritos', [InscribedController::class, 'saveEditInscribedViewList']);
 
     Route::get('/editarDocente', [TeacherController::class, 'formularioEditar']);
     Route::post('/editarDocente', [TeacherController::class, 'guardarEditar']);
