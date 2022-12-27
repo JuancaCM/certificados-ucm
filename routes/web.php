@@ -65,8 +65,11 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/editar-relator', [CourseTeacherController::class, 'courseTeacherEditForm']);
     Route::post('/editar-relator', [CourseTeacherController::class, 'saveCourseTeacherEditForm']);
 
-    Route::get('/registroDocente', [TeacherController::class, 'formulario']);
-    Route::post('/registroDocente', [TeacherController::class, 'guardar']);
+    Route::get('/nuevo-docente', [TeacherController::class, 'teacherForm']);
+    Route::post('/nuevo-docente', [TeacherController::class, 'saveTeacherForm']);
+    Route::get('/docentes', [TeacherController::class, 'teacherViewList']);
+    Route::get('/editar-docente', [TeacherController::class, 'teacherEditForm']);
+    Route::post('/editar-docente', [TeacherController::class, 'teacherSaveEditForm']);
 
     Route::get('/dimensiones', [DimensionController::class, 'dimensionsViewList']);
 
@@ -98,8 +101,6 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/nuevo-contrato', function () {return view('admin/users/add/add-contract-type');});
     Route::post('/nuevo-contrato', [ContractController::class, 'saveContract']);
 
-    Route::get('/listaDocentes', [TeacherController::class, 'formulario2']);
-
     Route::post('/registroAnalista', [UserController::class, 'guardarAnalista']);
 
     Route::get('/registroAnalista', function () {return view('admin/users.registroAnalista');});
@@ -115,9 +116,6 @@ Route::middleware(Admin::class)->group(function () {
 
     Route::get('/inscritos', [InscribedController::class, 'inscribedViewList']);
     Route::post('/inscritos', [InscribedController::class, 'saveEditInscribedViewList']);
-
-    Route::get('/editarDocente', [TeacherController::class, 'formularioEditar']);
-    Route::post('/editarDocente', [TeacherController::class, 'guardarEditar']);
 
     Route::get('/modificar-certificado', [CertificateController::class, 'editCertificateForm']);
     Route::post('/modificar-certificado', [CertificateController::class, 'saveEditCertificateForm']);
@@ -135,9 +133,9 @@ Route::middleware(Docente::class)->group(function () {
 
     Route::get('pdf', [PdfController::class, 'index']);
 
-    Route::get('/terminados', [TeacherController::class, 'verTerminados']);
+    Route::get('/completados', [TeacherController::class, 'viewComplete']);
 
-    Route::get('/enCurso', [TeacherController::class, 'verEnCurso']);
+    Route::get('/en-curso', [TeacherController::class, 'inProgress']);
 
 });
 

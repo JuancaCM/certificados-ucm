@@ -15,78 +15,17 @@ use Illuminate\Support\Facades\Hash;
 
 class TeacherController extends Controller
 {
-    public function formulario()
+    public function teacherForm()
     {
         $careers = Career::all();
         $campuses = Campus::all();
         $contracts = Contract::all();
         $roles = Role::all();
 
-        return view('admin/users.registroDocente', compact('careers', 'campuses', 'contracts', 'roles'));
+        return view('admin/users/add/add-teacher', compact('careers', 'campuses', 'contracts', 'roles'));
     }
 
-    public function formulario2()
-    {
-        $teachers = Teacher::with('career')
-            ->with('career.faculty')
-            ->with('contract')
-            ->with('user')
-            ->with('campus')->get();
-
-        return view('admin/users.listaDocentes', compact('teachers'));
-    }
-
-    public function formularioEditar(Request $req)
-    {
-        $teacher = Teacher::find($req->input('id'));
-        $careers = Career::all();
-        $campuses = Campus::all();
-        $contracts = Contract::all();
-        $roles = Role::all();
-
-        return view('admin/users/edit/editTeacher', compact('teacher', 'careers', 'campuses', 'contracts', 'roles'));
-    }
-
-    public function guardarEditar(Request $req)
-    {
-        DB::beginTransaction();
-        try {
-            $userId = $req->input('userId');
-            $rut = $req->input('rut');
-            $name = $req->input('name');
-            $mail = $req->input('mail');
-            $career = $req->input('career');
-            $campus = $req->input('campus');
-            $contract = $req->input('contract');
-            $phone = $req->input('phone');
-
-            $user = User::find($userId);
-            $user->rut = $rut;
-            $user->name = $name;
-            $user->mail = $mail;
-            $user->phone = $phone;
-
-            $user->save();
-
-            $teacherId = $req->input('teacherId');
-
-            $teacher = Teacher::find($teacherId);
-            $teacher->career_id = $career;
-            $teacher->campus_id = $campus;
-            $teacher->contract_id = $contract;
-
-            $teacher->save();
-
-            DB::commit();
-
-            return redirect()->to('/listaDocentes')->with('insert', true);
-        } catch (\Throwable $th) {
-            DB::rollBack();
-            return redirect()->to('/listaDocentes')->with('insert', false);
-        }
-    }
-
-    public function guardar(Request $req)
+    public function saveTeacherForm(Request $req)
     {
         DB::beginTransaction();
         try {
@@ -126,34 +65,68 @@ class TeacherController extends Controller
         }
     }
 
-    public function verTerminados(Request $req)
+    public function teacherViewList()
     {
-        $teacher = Teacher::where('user_id', session('id'))->get()->first();
+        $teachers = Teacher::with('career')
+            ->with('career.faculty')
+            ->with('contract')
+            ->with('user')
+            ->with('campus')->get();
 
-        $inscribeds = Inscribed::where('teacher_id', $teacher->id)
-            ->with('course')
-            ->with('course.state')
-            ->get();
-
-        $meses = [
-            'Enero',
-            'Febrero',
-            'Marzo',
-            'Abril',
-            'Mayo',
-            'Junio',
-            'Julio',
-            'Agosto',
-            'Septiembre',
-            'Octubre',
-            'Noviembre',
-            'Diciembre',
-        ];
-
-        return view('teacher/listaTerminados', compact('inscribeds', 'meses'));
+        return view('admin/users/view-lists/view-teachers', compact('teachers'));
     }
 
-    public function verEnCurso()
+    public function teacherEditForm(Request $req)
+    {
+        $teacher = Teacher::find($req->input('id'));
+        $careers = Career::all();
+        $campuses = Campus::all();
+        $contracts = Contract::all();
+        $roles = Role::all();
+
+        return view('admin/users/edit/edit-teacher', compact('teacher', 'careers', 'campuses', 'contracts', 'roles'));
+    }
+
+    public function teacherSaveEditForm(Request $req)
+    {
+        DB::beginTransaction();
+        try {
+            $userId = $req->input('userId');
+            $rut = $req->input('rut');
+            $name = $req->input('name');
+            $mail = $req->input('mail');
+            $career = $req->input('career');
+            $campus = $req->input('campus');
+            $contract = $req->input('contract');
+            $phone = $req->input('phone');
+
+            $user = User::find($userId);
+            $user->rut = $rut;
+            $user->name = $name;
+            $user->mail = $mail;
+            $user->phone = $phone;
+
+            $user->save();
+
+            $teacherId = $req->input('teacherId');
+
+            $teacher = Teacher::find($teacherId);
+            $teacher->career_id = $career;
+            $teacher->campus_id = $campus;
+            $teacher->contract_id = $contract;
+
+            $teacher->save();
+
+            DB::commit();
+
+            return redirect()->to('/listaDocentes')->with('insert', true);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return redirect()->to('/listaDocentes')->with('insert', false);
+        }
+    }
+
+    public function viewComplete(Request $req)
     {
         $teacher = Teacher::where('user_id', session('id'))->get()->first();
 
@@ -177,6 +150,33 @@ class TeacherController extends Controller
             'Diciembre',
         ];
 
-        return view('teacher/listaEnCurso', compact('inscribeds', 'meses'));
+        return view('teacher/completados', compact('inscribeds', 'meses'));
+    }
+
+    public function inProgress()
+    {
+        $teacher = Teacher::where('user_id', session('id'))->get()->first();
+
+        $inscribeds = Inscribed::where('teacher_id', $teacher->id)
+            ->with('course')
+            ->with('course.state')
+            ->get();
+
+        $meses = [
+            'Enero',
+            'Febrero',
+            'Marzo',
+            'Abril',
+            'Mayo',
+            'Junio',
+            'Julio',
+            'Agosto',
+            'Septiembre',
+            'Octubre',
+            'Noviembre',
+            'Diciembre',
+        ];
+
+        return view('teacher/en-curso', compact('inscribeds', 'meses'));
     }
 }

@@ -59,7 +59,7 @@
                     <div id="collapseRegUser" class="collapse" aria-labelledby="headingRegUser"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="/registroDocente">Docente</a>
+                            <a class="collapse-item" href="/nuevo-docente">Docente</a>
                             <a class="collapse-item" href="/registroAnalista">Analista</a>
                             <h6 class="collapse-header">Datos de usuario:</h6>
                             <a class="collapse-item" href="/nuevo-contrato">Contrato</a>
@@ -99,7 +99,7 @@
                     <div id="collapseTable" class="collapse" aria-labelledby="headingTable"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="/listaDocentes">Docentes</a>
+                            <a class="collapse-item" href="/docentes">Docentes</a>
                             <a class="collapse-item" href="/relatores">Relatores</a>
                             <a class="collapse-item" href="/certificaciones">Certificaciones</a>
                             <a class="collapse-item" href="/dimensiones">Dimensiones</a>
@@ -119,8 +119,8 @@
                     <div id="collapseTable" class="collapse" aria-labelledby="headingTable"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="/terminados">Terminadas</a>
-                            <a class="collapse-item" href="/enCurso">En curso</a>
+                            <a class="collapse-item" href="/completados">Terminadas</a>
+                            <a class="collapse-item" href="/en-curso">En curso</a>
                         </div>
                     </div>
                 </li>
