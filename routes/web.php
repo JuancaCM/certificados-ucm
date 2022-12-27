@@ -76,15 +76,15 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/editar-dimension', [DimensionController::class, 'dimensionEditForm']);
     Route::post('/editar-dimension', [DimensionController::class, 'saveDimensionEditForm']);
 
-    Route::post('/estadoCertificaciones', [StateController::class, 'guardar']);
+    Route::post('/nuevo-estado', [StateController::class, 'saveState']);
 
     Route::get('/nueva-sede', function () {return view('admin/university/add/add-campus');});
     Route::post('/nueva-sede', [CampusController::class, 'saveCampus']);
 
     Route::post('/tipoCertificaciones', [TypeController::class, 'guardar']);
 
-    Route::get('/modalidadCertificaciones', function () {return view('admin/certifications.modalidadCertificaciones');});
-    Route::post('/modalidadCertificaciones', [ModalityController::class, 'saveModality']);
+    Route::get('/nueva-modalidad', function () {return view('admin/certifications/add/add-modality');});
+    Route::post('/nueva-modalidad', [ModalityController::class, 'saveModality']);
 
     Route::post('/publico_objetivoCertificaciones', [TargetAudienceController::class, 'guardar']);
 

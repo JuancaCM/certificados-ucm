@@ -32,7 +32,7 @@
                         <div class="form-floating mb-3">
                             <label>Observación: <i class="bi bi-question-circle" data-toggle="tooltip"
                                 data-placement="right" title="Este campo es opcional, lo puede omitir."></i></label>
-                            <textarea name="description" class="form-control" id="floatingTextarea2"
+                            <textarea name="observation" class="form-control" id="floatingTextarea2"
                                 style="height: 100px"></textarea>
                         </div>
                         <p style="color: red">*Campos obligatorios</p>

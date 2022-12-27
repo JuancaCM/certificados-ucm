@@ -24,15 +24,14 @@
                             <div class="col s12 m6 mb-3">
                                 <span class="text">
                                     <label><span style="color: red">*</span>Nombre de la modalidad:</label>
-                                    <input name="name" type="text" class="form-control" aria-label="Nombre"
-                                        aria-describedby="basic-addon1" required>
+                                    <input name="name" type="text" class="form-control" required>
                                 </span>
                             </div>
                         </div>
                         <div class="form-floating mb-3">
                             <label>Observación: <i class="bi bi-question-circle" data-toggle="tooltip"
                                     data-placement="right" title="Este campo es opcional, lo puede omitir."></i></label>
-                            <textarea name="description" class="form-control" style="height: 100px"></textarea>
+                            <textarea name="observation" class="form-control" style="height: 100px"></textarea>
                         </div>
                         <p style="color: red">*Campos obligatorios</p>
                         <div class="text-center">

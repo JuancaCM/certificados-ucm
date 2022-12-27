@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class StateController extends Controller
 {
-    public function guardar(Request $req)
+    public function saveState(Request $req)
     {
         DB::beginTransaction();
         try {
