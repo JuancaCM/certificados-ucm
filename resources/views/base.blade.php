@@ -83,7 +83,7 @@
                             <h6 class="collapse-header">Datos de certificaciones:</h6>
                             <a class="collapse-item" href="/nuevo-estado">Estado</a>
                             <a class="collapse-item" href="/nueva-sede">Sede</a>
-                            <a class="collapse-item" href="/publico_objetivoCertificaciones">Publico objetivo</a>
+                            <a class="collapse-item" href="/nuevo-publico-objetivo">Publico objetivo</a>
                             <a class="collapse-item" href="/tipoCertificaciones">Tipo certificacion</a>
                             <a class="collapse-item" href="/nueva-modalidad">Modalidad</a>
                         </div>

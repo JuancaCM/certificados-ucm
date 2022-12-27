@@ -86,7 +86,8 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/nueva-modalidad', function () {return view('admin/certifications/add/add-modality');});
     Route::post('/nueva-modalidad', [ModalityController::class, 'saveModality']);
 
-    Route::post('/publico_objetivoCertificaciones', [TargetAudienceController::class, 'guardar']);
+    Route::get('/nuevo-publico-objetivo', function () {return view('admin/certifications/add/add-target-audience');});
+    Route::post('/nuevo-publico-objetivo', [TargetAudienceController::class, 'saveTargetAudience']);
 
     Route::get('/nueva-carrera', [CareerController::class, 'careerForm']);
     Route::post('/nueva-carrera', [CareerController::class, 'saveCareerForm']);
@@ -104,8 +105,6 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/registroAnalista', function () {return view('admin/users.registroAnalista');});
 
     Route::get('/estadoCertificaciones', function () {return view('admin/certifications.estadoCertificaciones');});
-
-    Route::get('/publico_objetivoCertificaciones', function () {return view('admin/certifications.publico_objetivoCertificaciones');});
 
     Route::get('/tipoCertificaciones', function () {return view('admin/certifications.tipoCertificaciones');});
 
