@@ -24,8 +24,7 @@
                             <div class="col s12 m6 mb-3">
                                 <span class="text">
                                     <label><span style="color: red">*</span>Nombre del tipo de certificacion:</label>
-                                    <input name="name" type="text" class="form-control" aria-label="Nombre"
-                                        aria-describedby="basic-addon1" required>
+                                    <input name="name" type="text" class="form-control" required>
                                 </span>
                             </div>
                         </div>

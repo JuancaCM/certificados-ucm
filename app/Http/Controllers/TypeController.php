@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class TypeController extends Controller
 {
-    public function guardar(Request $req)
+    public function saveNewType(Request $req)
     {
         DB::beginTransaction();
         try {

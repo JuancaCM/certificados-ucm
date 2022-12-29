@@ -84,7 +84,7 @@
                             <a class="collapse-item" href="/nuevo-estado">Estado</a>
                             <a class="collapse-item" href="/nueva-sede">Sede</a>
                             <a class="collapse-item" href="/nuevo-publico-objetivo">Publico objetivo</a>
-                            <a class="collapse-item" href="/tipoCertificaciones">Tipo certificacion</a>
+                            <a class="collapse-item" href="/nuevo-tipo">Tipo certificacion</a>
                             <a class="collapse-item" href="/nueva-modalidad">Modalidad</a>
                         </div>
                     </div>

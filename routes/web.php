@@ -84,7 +84,8 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/nueva-sede', function () {return view('admin/university/add/add-campus');});
     Route::post('/nueva-sede', [CampusController::class, 'saveCampus']);
 
-    Route::post('/tipoCertificaciones', [TypeController::class, 'guardar']);
+    Route::get('/nuevo-tipo', function () {return view('admin/certifications/add/add-type');});
+    Route::post('/nuevo-tipo', [TypeController::class, 'saveNewType']);
 
     Route::get('/nueva-modalidad', function () {return view('admin/certifications/add/add-modality');});
     Route::post('/nueva-modalidad', [ModalityController::class, 'saveModality']);
@@ -106,8 +107,6 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/registroAnalista', function () {return view('admin/users.registroAnalista');});
 
     Route::get('/estadoCertificaciones', function () {return view('admin/certifications.estadoCertificaciones');});
-
-    Route::get('/tipoCertificaciones', function () {return view('admin/certifications.tipoCertificaciones');});
 
     Route::get('/docentes-certificados', [InscribedController::class, 'certifiedViewList']);
 
