@@ -150,7 +150,7 @@ class TeacherController extends Controller
             'Diciembre',
         ];
 
-        return view('teacher/completados', compact('inscribeds', 'meses'));
+        return view('teacher/completed', compact('inscribeds', 'meses'));
     }
 
     public function inProgress()
@@ -177,6 +177,6 @@ class TeacherController extends Controller
             'Diciembre',
         ];
 
-        return view('teacher/en-curso', compact('inscribeds', 'meses'));
+        return view('teacher/in-progress', compact('inscribeds', 'meses'));
     }
 }

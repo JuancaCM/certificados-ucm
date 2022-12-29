@@ -78,6 +78,7 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/editar-dimension', [DimensionController::class, 'dimensionEditForm']);
     Route::post('/editar-dimension', [DimensionController::class, 'saveDimensionEditForm']);
 
+    Route::get('/nuevo-estado', function () {return view('admin/certifications/add/add-state');});
     Route::post('/nuevo-estado', [StateController::class, 'saveState']);
 
     Route::get('/nueva-sede', function () {return view('admin/university/add/add-campus');});
@@ -104,8 +105,6 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/nuevo-analista', function () {return view('admin/users/add/add-analyst');});
     Route::post('/nuevo-analista', [UserController::class, 'saveNewAnalyst']);
 
-    Route::get('/estadoCertificaciones', function () {return view('admin/certifications.estadoCertificaciones');});
-
     Route::get('/docentes-certificados', [InscribedController::class, 'certifiedViewList']);
 
     Route::get('/inscribir', [InscribedController::class, 'inscribedForm']);
@@ -117,7 +116,7 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/modificar-certificado', [CertificateController::class, 'editCertificateForm']);
     Route::post('/modificar-certificado', [CertificateController::class, 'saveEditCertificateForm']);
 
-    Route::get('/imagenes', function () {return view('admin/certifications.imagenesCertificado');});
+    Route::get('/imagenes', function () {return view('admin/certificate/edit-images');});
 });
 
 Route::middleware(Docente::class)->group(function () {

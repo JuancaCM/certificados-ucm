@@ -89,7 +89,7 @@ class InscribedController extends Controller
             'Diciembre',
         ];
 
-        return view('admin/certifications.inscritos', compact('course', 'inscribeds'));
+        return view('admin/certifications/table-views/inscribeds', compact('course', 'inscribeds'));
     }
 
     public function saveEditInscribedViewList(Request $req)
