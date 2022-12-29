@@ -14,11 +14,11 @@ class TypeController extends Controller
         DB::beginTransaction();
         try {
             $type = $req->input('name');
-            $observacion = $req->input('observation');
+            $observation = $req->input('observation');
 
             $tipo = new Type();
             $tipo->name = $type;
-            $tipo->observation= $observacion;
+            $tipo->observation= $observation;
 
             $tipo->save();
 

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function guardarAdmin(Request $req)
+    public function saveNewAdmin(Request $req)
     {
         DB::beginTransaction();
         try {
@@ -37,7 +37,7 @@ class UserController extends Controller
         }
     }
 
-    public function guardarAnalista(Request $req)
+    public function saveNewAnalyst(Request $req)
     {
         DB::beginTransaction();
         try {

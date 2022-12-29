@@ -36,9 +36,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(SuperAdmin::class)->group(function () {
 
-    Route::get('/registroAdmin', function () {return view('superAdmin/registroAdmin');});
-
-    Route::post('/registroAdmin', [UserController::class, 'guardarAdmin']);
+    Route::get('/nuevo-administrador', function () {return view('superAdmin/add/add-admin');});
+    Route::post('/nuevo-administrador', [UserController::class, 'saveNewAdmin']);
 
     Route::get('/', function () {return view('nav.index');});
 });
@@ -102,9 +101,8 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/nuevo-contrato', function () {return view('admin/users/add/add-contract-type');});
     Route::post('/nuevo-contrato', [ContractController::class, 'saveContract']);
 
-    Route::post('/registroAnalista', [UserController::class, 'guardarAnalista']);
-
-    Route::get('/registroAnalista', function () {return view('admin/users.registroAnalista');});
+    Route::get('/nuevo-analista', function () {return view('admin/users/add/add-analyst');});
+    Route::post('/nuevo-analista', [UserController::class, 'saveNewAnalyst']);
 
     Route::get('/estadoCertificaciones', function () {return view('admin/certifications.estadoCertificaciones');});
 

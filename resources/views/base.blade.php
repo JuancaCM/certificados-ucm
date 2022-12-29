@@ -43,7 +43,7 @@
                     <div id="collapseRegSuperAdmin" class="collapse" aria-labelledby="headingReg"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="/registroAdmin">Administrador</a>
+                            <a class="collapse-item" href="/nuevo-administrador">Administrador</a>
                         </div>
                     </div>
                 </li>
@@ -60,7 +60,7 @@
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="/nuevo-docente">Docente</a>
-                            <a class="collapse-item" href="/registroAnalista">Analista</a>
+                            <a class="collapse-item" href="/nuevo-analista">Analista</a>
                             <h6 class="collapse-header">Datos de usuario:</h6>
                             <a class="collapse-item" href="/nuevo-contrato">Contrato</a>
                             <a class="collapse-item" href="/nueva-facultad">Facultad</a>
