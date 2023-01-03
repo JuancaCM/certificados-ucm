@@ -31,10 +31,10 @@ class DimensionController extends Controller
 
             DB::commit();
 
-            return back()->with('insert', true);
+            return redirect()->to('/nuevo-nombre-certificacion')->with('insert', true);
         } catch (\Throwable $th) {
             DB::rollBack();
-            return back()->with('insert', false);
+            return redirect()->to('/nuevo-nombre-certificacion')->with('insert', false);
         }
     }
 

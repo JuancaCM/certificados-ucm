@@ -73,7 +73,7 @@ class TeacherController extends Controller
             ->with('user')
             ->with('campus')->get();
 
-        return view('admin/users/view-lists/view-teachers', compact('teachers'));
+        return view('admin/users/table-views/view-teachers', compact('teachers'));
     }
 
     public function teacherEditForm(Request $req)
@@ -119,10 +119,10 @@ class TeacherController extends Controller
 
             DB::commit();
 
-            return redirect()->to('/listaDocentes')->with('insert', true);
+            return redirect()->to('/docentes')->with('insert', true);
         } catch (\Throwable $th) {
             DB::rollBack();
-            return redirect()->to('/listaDocentes')->with('insert', false);
+            return redirect()->to('/docentes')->with('insert', false);
         }
     }
 

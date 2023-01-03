@@ -18,7 +18,7 @@
             <div class="card-body">
                 <ol class="list-group list-group-numbered">
                     <table id='table' class="table table-striped table-bordered">
-                        <thead>
+                        <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">RUT</th>

@@ -45,7 +45,7 @@
                                     <td scope="row" class="align-middle">{{ $teacher->contract->name }}</td>
                                     <td scope="row" class="align-middle">
                                         <div class="text-center mb-1"><a class="btn btn-warning btn-sm"
-                                                href="/editarDocente?id={{ $teacher->id }}" role="button">
+                                                href="/editar-docente?id={{ $teacher->id }}" role="button">
                                                 <i class="fa-solid fa-pen-to-square"></i></a>
                                         </div>
                                         <div class="text-center"><a class="btn btn-danger btn-sm" href="#"

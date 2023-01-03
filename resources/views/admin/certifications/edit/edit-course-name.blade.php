@@ -6,23 +6,33 @@
             <div class="card shadow">
                 <form method="POST">
                     @csrf
-                    <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Modificación
-                        de relatores</h5>
+                    <h5 class="card-header bg-transparent text-center text-dark font-weight-bold">Modificacion
+                        de cursos</h5>
                     <div class="card-body">
                         <div class="row">
                             <div class="col s12 m6">
                                 <div class="form-label mb-3">
                                     <span class="text">
-                                        <label>RUT del relator:</label>
-                                        <input name="rut" type="text" class="form-control" value="{{ $course_teacher->rut }}" required>
-                                        <small class="form-text text-muted">Sin puntos y con guion</small>
+                                        <label>Nombre:</label>
+                                        <input name="rut" type="text" class="form-control"
+                                            value="{{ $courseName->name }}" required>
                                     </span>
                                 </div>
                             </div>
                             <div class="col s12 m6 mb-3">
                                 <span class="text">
-                                    <label>Nombre del relator:</label>
-                                    <input name="name" type="text" class="form-control" value="{{ $course_teacher->name }}" required>
+                                    <label>Dimensión:</label>
+                                    <select name="dimension" class="form-control mb-3" required>
+                                        <option disabled>Dimensión</option>
+                                        @foreach ($dimensions as $dimension)
+                                            @if ($dimension->id === $courseName->dimension_id)
+                                                <option selected value="{{ $dimension->id }}">{{ $dimension->name }}
+                                                </option>
+                                            @else
+                                                <option value="{{ $dimension->id }}">{{ $dimension->name }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
                                 </span>
                             </div>
                         </div>
@@ -33,15 +43,9 @@
                             <div class="col s12 m6">
                                 <div class="form-label mb-3">
                                     <span class="text">
-                                        <label>Telefono del relator:</label>
-                                        <input name="phone" type="text" class="form-control" value="{{ $course_teacher->phone }}" required>
+                                        <label>Contenidos:</label>
+                                        <textarea name="contents" class="form-control" style="height: 250px" required>{{ $courseName->contents }}</textarea>
                                     </span>
-                                </div>
-                            </div>
-                            <div class="col s12 m6">
-                                <label>Correo del relator:</label>
-                                <div class="input-group mb-3">
-                                    <input name="mail" type="email" class="form-control" value="{{ $course_teacher->mail }}" required>
                                 </div>
                             </div>
                         </div>

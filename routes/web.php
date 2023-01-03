@@ -13,6 +13,7 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\ContractController;
+use App\Http\Controllers\CourseNameController;
 use App\Http\Controllers\InscribedController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\SessionController;
@@ -69,6 +70,11 @@ Route::middleware(Admin::class)->group(function () {
     Route::get('/docentes', [TeacherController::class, 'teacherViewList']);
     Route::get('/editar-docente', [TeacherController::class, 'teacherEditForm']);
     Route::post('/editar-docente', [TeacherController::class, 'teacherSaveEditForm']);
+
+    Route::get('/editar-nombre-curso', [CourseNameController::class, 'courseNameEditForm']);
+    Route::get('/nombres-cursos', [CourseNameController::class, 'courseNameViewList']);
+    Route::get('/nuevo-nombre-certificacion', [CourseNameController::class, 'courseNameForm']);
+    Route::post('/nuevo-nombre-certificacion', [CourseNameController::class, 'saveNewCourseName']);
 
     Route::get('/dimensiones', [DimensionController::class, 'dimensionsViewList']);
 
